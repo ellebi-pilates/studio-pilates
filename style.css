@@ -57,3 +57,30 @@ footer {
   background-color: #eee;
   font-size: 0.9rem;
 }
+
+#prenota {
+  display: flex;
+  flex-direction: column;
+}
+
+#prenota .calendly-container {
+  flex: 1;
+  margin: 10px;
+}
+
+@media (min-width: 900px) {
+  #prenota {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  #prenota h3 {
+    width: 100%;
+  }
+  #prenota .calendly-container {
+    min-width: 45%;
+  }
+}
+
+
+
+
