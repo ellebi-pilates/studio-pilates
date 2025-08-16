@@ -4,18 +4,19 @@ body {
   padding: 0;
   line-height: 1.6;
   background-color: #f9f9f9;
+  color: #333;
 }
 
 header {
-  background-color: #6ab7b7;
-  color: white;
-  padding: 20px;
+  background-color: #000;
+  padding: 15px 20px;
   text-align: center;
 }
 
-header h1 {
-  margin: 0;
-  font-size: 2rem;
+header .logo {
+  max-width: 250px;
+  height: auto;
+  margin-bottom: 10px;
 }
 
 nav {
@@ -29,8 +30,12 @@ nav a {
   font-weight: bold;
 }
 
+nav a.active {
+  border-bottom: 2px solid #6ab7b7;
+}
+
 nav a:hover {
-  text-decoration: underline;
+  color: #6ab7b7;
 }
 
 main {
@@ -47,7 +52,7 @@ section {
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-section h2 {
+section h1 {
   color: #6ab7b7;
 }
 
@@ -57,30 +62,3 @@ footer {
   background-color: #eee;
   font-size: 0.9rem;
 }
-
-#prenota {
-  display: flex;
-  flex-direction: column;
-}
-
-#prenota .calendly-container {
-  flex: 1;
-  margin: 10px;
-}
-
-@media (min-width: 900px) {
-  #prenota {
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-  #prenota h3 {
-    width: 100%;
-  }
-  #prenota .calendly-container {
-    min-width: 45%;
-  }
-}
-
-
-
-
