@@ -31,11 +31,11 @@ nav a {
 }
 
 nav a.active {
-  border-bottom: 2px solid #6ab7b7;
+  border-bottom: 2px solid #333;
 }
 
 nav a:hover {
-  color: #6ab7b7;
+  color: #333;
 }
 
 main {
