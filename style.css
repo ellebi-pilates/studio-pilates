@@ -86,4 +86,38 @@ footer {
   font-size: 0.9rem;
   color: #555;
 }
+.image-center {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.image-center img {
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.image-center figcaption {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  color: #555;
+  font-style: italic;
+}
+
+blockquote {
+  background: #f1f1f1;
+  padding: 15px 20px;
+  border-left: 5px solid #6ab7b7;
+  margin: 20px 0;
+  font-style: italic;
+  color: #444;
+}
+
+blockquote cite {
+  display: block;
+  margin-top: 5px;
+  font-size: 0.9rem;
+  text-align: right;
+  color: #666;
+}
 
