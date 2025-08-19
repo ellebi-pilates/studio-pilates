@@ -1,10 +1,37 @@
+/* Font Glacial Indifference */
+@font-face {
+  font-family: 'Glacial Indifference';
+  src: url('GlacialIndifference-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Glacial Indifference';
+  src: url('GlacialIndifference-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* Font Kudryashev */
+@font-face {
+  font-family: 'Kudryashev';
+  src: url('Kudryashev.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Glacial Indifference', Arial, sans-serif;
   margin: 0;
   padding: 0;
   line-height: 1.6;
   background-color: #f9f9f9;
   color: #333;
+}
+
+h1, h2, h3, nav a {
+  font-family: 'Kudryashev', serif;
 }
 
 header {
