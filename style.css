@@ -266,15 +266,28 @@ section .btn {
 }
 
 .social-links a {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;          /* dimensione pulsante */
+  height: 50px;
   margin: 0 10px;
+  background: #cbb5a6;  /* colore titoli */
+  border-radius: 12px;  /* smussatura angoli */
+  overflow: hidden;     /* così l’immagine resta dentro */
+  transition: transform 0.2s ease, background 0.2s ease;
 }
 
 .social-links img {
-  width: 32px;   /* puoi aumentare se vuoi icone più grandi */
-  height: 32px;
-  transition: transform 0.2s ease;
+  width: 28px;   /* ridimensiona l'icona dentro */
+  height: 28px;
 }
+
+.social-links a:hover {
+  transform: scale(1.1);
+  background: #b59f90;  /* leggermente più scuro all’hover */
+}
+
 
 .social-links img:hover {
   transform: scale(1.2); /* piccolo effetto al passaggio del mouse */
