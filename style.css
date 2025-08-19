@@ -1,14 +1,14 @@
 /* Font Glacial Indifference */
 @font-face {
   font-family: 'Glacial Indifference';
-  src: url('GlacialIndifference-Regular.ttf') format('truetype');
+  src: url('GlacialIndifference-Regular.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Glacial Indifference';
-  src: url('GlacialIndifference-Bold.ttf') format('truetype');
+  src: url('GlacialIndifference-Bold.otf') format('opentype');
   font-weight: bold;
   font-style: normal;
 }
