@@ -236,3 +236,27 @@ blockquote cite {
 .hours-list span {
   color: #555;
 }
+
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  margin: 20px auto 0 auto; /* margine sopra e centrato */
+  background-color: #cbb5a6;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+  text-align: center;
+}
+
+.btn:hover {
+  background-color: #a98d7b;
+}
+
+/* Per centrare il bottone dentro la section */
+section .btn {
+  display: block;
+  width: fit-content;
+}
+
