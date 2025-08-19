@@ -79,7 +79,7 @@ section {
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-section h1 {
+section h1, section h2, section h3 {
   color: #cbb5a6;
 }
 
