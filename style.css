@@ -347,4 +347,48 @@ section .btn {
   display: block;
 }
 
+/* Hamburger menu */
+.hamburger-menu {
+  position: relative;
+  background-color: #333; /* colore identico alla barra attuale */
+  text-align: left;
+}
+
+.menu-toggle {
+  font-size: 26px;
+  color: white;
+  padding: 14px 20px;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Menu nascosto */
+.menu-content {
+  display: none;
+  position: absolute;
+  top: 100%; /* subito sotto la barra */
+  left: 0;
+  width: 200px;
+  background-color: #333;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  z-index: 1000;
+}
+
+.menu-content li a {
+  display: block;
+  padding: 12px 16px;
+  color: white;
+  text-decoration: none;
+}
+
+.menu-content li a:hover {
+  background-color: #575757;
+}
+
+/* Mostra menu quando si passa sopra il bottone ☰ */
+.hamburger-menu:hover .menu-content {
+  display: block;
+}
 
