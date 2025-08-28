@@ -350,7 +350,7 @@ section .btn {
 /* Hamburger menu */
 .hamburger-menu {
   position: relative;
-  background-color: #333; /* colore identico alla barra attuale */
+  background-color: #cbb5a6; /* colore identico alla barra attuale */
   text-align: left;
 }
 
@@ -369,7 +369,7 @@ section .btn {
   top: 100%; /* subito sotto la barra */
   left: 0;
   width: 200px;
-  background-color: #333;
+  background-color: #cbb5a6;
   list-style: none;
   margin: 0;
   padding: 0;
