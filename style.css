@@ -293,3 +293,58 @@ section .btn {
   transform: scale(1.2); /* piccolo effetto al passaggio del mouse */
 }
 
+/* Menu principale */
+.menu {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  background-color: #333;
+}
+
+.menu > li {
+  position: relative;
+}
+
+.menu > li > a {
+  display: block;
+  color: white;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+.menu > li > a:hover {
+  background-color: #575757;
+}
+
+/* Dropdown */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #333;
+  min-width: 160px;
+  top: 100%;
+  left: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  z-index: 1000;
+}
+
+.dropdown-content li a {
+  display: block;
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+}
+
+.dropdown-content li a:hover {
+  background-color: #575757;
+}
+
+/* Mostra menu al passaggio del mouse */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
