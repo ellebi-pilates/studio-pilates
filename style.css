@@ -396,3 +396,34 @@ section .btn {
   display: block;
 }
 
+/* Nuovo sistema con checkbox */
+.menu-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 200px;
+  background-color: #cbb5a6;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  z-index: 1000;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Mostra il menu quando il checkbox è selezionato */
+#menu-toggle:checked ~ .menu-content {
+  display: block;
+}
+
+/* Stile del bottone ☰ */
+.menu-icon {
+  font-size: 26px;
+  color: white;
+  cursor: pointer;
+  user-select: none;
+  padding: 14px 20px;
+  display: inline-block;
+}
+
