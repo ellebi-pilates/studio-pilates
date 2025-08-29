@@ -1,3 +1,6 @@
+/* ============================= */
+/* FONT FAMILIES */
+/* ============================= */
 /* Font Glacial Indifference */
 @font-face {
   font-family: 'Glacial Indifference';
@@ -21,7 +24,9 @@
   font-style: normal;
 }
 
-/* ====== BASE ====== */
+/* ============================= */
+/* BASE STYLES */
+/* ============================= */
 body {
   font-family: 'Glacial Indifference', Arial, sans-serif;
   margin: 0;
@@ -35,7 +40,6 @@ h1, h2, h3, nav a {
   font-family: 'Kudryashev', serif;
 }
 
-/* ====== HEADER ====== */
 header {
   background-color: #cbb5a6;
   padding: 15px 20px;
@@ -48,94 +52,6 @@ header .logo {
   margin-bottom: 10px;
 }
 
-/* ====== MENU ORIZZONTALE (desktop) ====== */
-nav.desktop-menu {
-  margin-top: 10px;
-}
-
-nav.desktop-menu ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-}
-
-nav.desktop-menu li {
-  margin: 0 15px;
-}
-
-nav.desktop-menu a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  padding: 8px 0;
-}
-
-nav.desktop-menu a.active {
-  border-bottom: 2px solid white;
-}
-
-nav.desktop-menu a:hover {
-  color: #333;
-}
-
-/* ====== HAMBURGER MENU (mobile) ====== */
-.hamburger-menu {
-  position: relative;
-  text-align: left;
-  display: none; /* nascosto su desktop */
-}
-
-/* Nascondo il checkbox */
-#menu-toggle {
-  display: none;
-}
-
-/* Icona ☰ */
-.menu-icon {
-  font-size: 26px;
-  color: white;
-  cursor: pointer;
-  user-select: none;
-  padding: 14px 20px;
-  display: inline-block;
-}
-
-/* Menu nascosto di default */
-.menu-content {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 200px;
-  background-color: #cbb5a6;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  z-index: 1000;
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-/* Link dentro il menu */
-.menu-content li a {
-  display: block;
-  padding: 12px 16px;
-  color: white;
-  text-decoration: none;
-}
-
-.menu-content li a:hover {
-  background-color: #575757;
-}
-
-/* Mostra il menu quando il checkbox è selezionato */
-#menu-toggle:checked ~ .menu-content {
-  display: block;
-}
-
-/* ====== MAIN ====== */
 main {
   max-width: 900px;
   margin: auto;
@@ -154,7 +70,6 @@ section h1, section h2, section h3 {
   color: #cbb5a6;
 }
 
-/* ====== FOOTER ====== */
 footer {
   text-align: center;
   padding: 10px;
@@ -162,7 +77,9 @@ footer {
   font-size: 0.9rem;
 }
 
-/* ====== GALLERIA ====== */
+/* ============================= */
+/* GALLERIE E IMMAGINI */
+/* ============================= */
 .gallery .images {
   display: flex;
   flex-wrap: wrap;
@@ -187,7 +104,6 @@ footer {
   color: #555;
 }
 
-/* ====== IMMAGINI CENTRATE ====== */
 .image-center {
   text-align: center;
   margin: 30px 0;
@@ -208,7 +124,9 @@ footer {
   font-style: italic;
 }
 
-/* ====== CITAZIONI ====== */
+/* ============================= */
+/* BLOCKQUOTE */
+/* ============================= */
 blockquote {
   background: #f1f1f1;
   padding: 15px 20px;
@@ -226,7 +144,9 @@ blockquote cite {
   color: #666;
 }
 
-/* ====== CONTATTI ====== */
+/* ============================= */
+/* CONTACT CARD */
+/* ============================= */
 .contact-card {
   display: flex;
   align-items: center;
@@ -267,7 +187,9 @@ blockquote cite {
   text-decoration: underline;
 }
 
-/* ====== POSIZIONE + ORARI ====== */
+/* ============================= */
+/* LOCATION + HOURS */
+/* ============================= */
 .location-hours {
   display: grid;
   gap: 20px;
@@ -314,7 +236,9 @@ blockquote cite {
   color: #555;
 }
 
-/* ====== BOTTONI ====== */
+/* ============================= */
+/* BUTTONS */
+/* ============================= */
 .btn {
   display: inline-block;
   padding: 12px 24px;
@@ -332,13 +256,14 @@ blockquote cite {
   background-color: #a98d7b;
 }
 
-/* Per centrare il bottone dentro la section */
 section .btn {
   display: block;
   width: fit-content;
 }
 
-/* ====== SOCIAL ====== */
+/* ============================= */
+/* SOCIAL LINKS */
+/* ============================= */
 .social-links {
   margin-top: 15px;
   text-align: center;
@@ -371,13 +296,129 @@ section .btn {
   transform: scale(1.2);
 }
 
-/* ====== RESPONSIVE ====== */
+/* ============================= */
+/* MENU DESKTOP */
+/* ============================= */
+nav {
+  margin-top: 10px;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  background-color: #333;
+}
+
+nav ul li {
+  position: relative;
+}
+
+nav ul li a {
+  display: block;
+  color: white;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  background-color: #575757;
+}
+
+nav a.active {
+  border-bottom: 2px solid white;
+}
+
+/* Dropdown desktop */
+nav ul li .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #333;
+  min-width: 160px;
+  top: 100%;
+  left: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  z-index: 1000;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+nav ul li:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content li a {
+  padding: 12px 16px;
+}
+
+/* ============================= */
+/* HAMBURGER MENU MOBILE */
+/* ============================= */
+.hamburger-menu {
+  display: none; /* nascosto su desktop */
+  position: relative;
+  background-color: #cbb5a6;
+  text-align: left;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+.menu-icon {
+  font-size: 26px;
+  color: white;
+  cursor: pointer;
+  user-select: none;
+  padding: 14px 20px;
+  display: inline-block;
+}
+
+.menu-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 200px;
+  background-color: #cbb5a6;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  z-index: 1000;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.menu-content li a {
+  display: block;
+  padding: 12px 16px;
+  color: white;
+  text-decoration: none;
+}
+
+.menu-content li a:hover {
+  background-color: #575757;
+}
+
+/* Attiva il menu quando il checkbox è selezionato */
+#menu-toggle:checked ~ .menu-content {
+  display: block;
+}
+
+/* ============================= */
+/* MEDIA QUERY */
 @media (max-width: 768px) {
-  nav.desktop-menu {
-    display: none; /* nascondo il menu orizzontale */
+  /* Nascondo il menu desktop */
+  nav ul {
+    display: none;
   }
 
+  /* Mostro l’hamburger */
   .hamburger-menu {
-    display: block; /* mostro il menu hamburger */
+    display: block;
   }
 }
