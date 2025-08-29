@@ -362,7 +362,7 @@ nav ul li:hover .dropdown-content {
   display: none; /* nascosto su desktop */
   position: relative;
   background-color: #cbb5a6;
-  text-align: left;
+  text-align: right;
 }
 
 #menu-toggle {
