@@ -335,7 +335,7 @@ nav a.active {
 nav ul li .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #333;
+  background-color: #cbb5a6;
   min-width: 160px;
   top: 100%;
   left: 0;
