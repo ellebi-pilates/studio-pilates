@@ -382,7 +382,7 @@ nav ul li:hover .dropdown-content {
   display: none;
   position: absolute;
   top: 100%;
-  left: 0;
+  right: 0; /* Spostato a destra */
   width: 200px;
   background-color: #cbb5a6;
   list-style: none;
@@ -391,7 +391,9 @@ nav ul li:hover .dropdown-content {
   z-index: 1000;
   border-radius: 8px;
   overflow: hidden;
+  text-align: right; /* allinea i link a destra */
 }
+
 
 .menu-content li a {
   display: block;
