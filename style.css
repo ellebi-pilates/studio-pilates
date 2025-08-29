@@ -21,6 +21,7 @@
   font-style: normal;
 }
 
+/* ====== BASE ====== */
 body {
   font-family: 'Glacial Indifference', Arial, sans-serif;
   margin: 0;
@@ -34,6 +35,7 @@ h1, h2, h3, nav a {
   font-family: 'Kudryashev', serif;
 }
 
+/* ====== HEADER ====== */
 header {
   background-color: #cbb5a6;
   padding: 15px 20px;
@@ -46,25 +48,94 @@ header .logo {
   margin-bottom: 10px;
 }
 
-nav {
+/* ====== MENU ORIZZONTALE (desktop) ====== */
+nav.desktop-menu {
   margin-top: 10px;
 }
 
-nav a {
+nav.desktop-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+nav.desktop-menu li {
   margin: 0 15px;
+}
+
+nav.desktop-menu a {
   color: white;
   text-decoration: none;
   font-weight: bold;
+  padding: 8px 0;
 }
 
-nav a.active {
+nav.desktop-menu a.active {
   border-bottom: 2px solid white;
 }
 
-nav a:hover {
+nav.desktop-menu a:hover {
   color: #333;
 }
 
+/* ====== HAMBURGER MENU (mobile) ====== */
+.hamburger-menu {
+  position: relative;
+  text-align: left;
+  display: none; /* nascosto su desktop */
+}
+
+/* Nascondo il checkbox */
+#menu-toggle {
+  display: none;
+}
+
+/* Icona ☰ */
+.menu-icon {
+  font-size: 26px;
+  color: white;
+  cursor: pointer;
+  user-select: none;
+  padding: 14px 20px;
+  display: inline-block;
+}
+
+/* Menu nascosto di default */
+.menu-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 200px;
+  background-color: #cbb5a6;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  z-index: 1000;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Link dentro il menu */
+.menu-content li a {
+  display: block;
+  padding: 12px 16px;
+  color: white;
+  text-decoration: none;
+}
+
+.menu-content li a:hover {
+  background-color: #575757;
+}
+
+/* Mostra il menu quando il checkbox è selezionato */
+#menu-toggle:checked ~ .menu-content {
+  display: block;
+}
+
+/* ====== MAIN ====== */
 main {
   max-width: 900px;
   margin: auto;
@@ -83,13 +154,15 @@ section h1, section h2, section h3 {
   color: #cbb5a6;
 }
 
+/* ====== FOOTER ====== */
 footer {
   text-align: center;
   padding: 10px;
   background-color: #eee;
   font-size: 0.9rem;
 }
-/* Galleria immagini */
+
+/* ====== GALLERIA ====== */
 .gallery .images {
   display: flex;
   flex-wrap: wrap;
@@ -113,6 +186,8 @@ footer {
   font-size: 0.9rem;
   color: #555;
 }
+
+/* ====== IMMAGINI CENTRATE ====== */
 .image-center {
   text-align: center;
   margin: 30px 0;
@@ -120,7 +195,7 @@ footer {
 
 .image-center img {
   width: 100%;
-  max-width: 400px; /* limite massimo, così tutte restano uniformi */
+  max-width: 400px;
   height: auto;
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.2);
@@ -133,6 +208,7 @@ footer {
   font-style: italic;
 }
 
+/* ====== CITAZIONI ====== */
 blockquote {
   background: #f1f1f1;
   padding: 15px 20px;
@@ -150,6 +226,7 @@ blockquote cite {
   color: #666;
 }
 
+/* ====== CONTATTI ====== */
 .contact-card {
   display: flex;
   align-items: center;
@@ -190,7 +267,7 @@ blockquote cite {
   text-decoration: underline;
 }
 
-/* Posizione + Orari */
+/* ====== POSIZIONE + ORARI ====== */
 .location-hours {
   display: grid;
   gap: 20px;
@@ -237,10 +314,11 @@ blockquote cite {
   color: #555;
 }
 
+/* ====== BOTTONI ====== */
 .btn {
   display: inline-block;
   padding: 12px 24px;
-  margin: 20px auto 0 auto; /* margine sopra e centrato */
+  margin: 20px auto 0 auto;
   background-color: #cbb5a6;
   color: white;
   text-decoration: none;
@@ -260,6 +338,7 @@ section .btn {
   width: fit-content;
 }
 
+/* ====== SOCIAL ====== */
 .social-links {
   margin-top: 15px;
   text-align: center;
@@ -269,161 +348,36 @@ section .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 50px;          /* dimensione pulsante */
+  width: 50px;
   height: 50px;
   margin: 0 10px;
-  background: #cbb5a6;  /* colore titoli */
-  border-radius: 12px;  /* smussatura angoli */
-  overflow: hidden;     /* così l’immagine resta dentro */
+  background: #cbb5a6;
+  border-radius: 12px;
+  overflow: hidden;
   transition: transform 0.2s ease, background 0.2s ease;
 }
 
 .social-links img {
-  width: 28px;   /* ridimensiona l'icona dentro */
+  width: 28px;
   height: 28px;
 }
 
 .social-links a:hover {
   transform: scale(1.1);
-  background: #b59f90;  /* leggermente più scuro all’hover */
+  background: #b59f90;
 }
-
 
 .social-links img:hover {
-  transform: scale(1.2); /* piccolo effetto al passaggio del mouse */
+  transform: scale(1.2);
 }
 
-/* Menu principale */
-.menu {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  background-color: #333;
-}
+/* ====== RESPONSIVE ====== */
+@media (max-width: 768px) {
+  nav.desktop-menu {
+    display: none; /* nascondo il menu orizzontale */
+  }
 
-.menu > li {
-  position: relative;
+  .hamburger-menu {
+    display: block; /* mostro il menu hamburger */
+  }
 }
-
-.menu > li > a {
-  display: block;
-  color: white;
-  padding: 14px 20px;
-  text-decoration: none;
-}
-
-.menu > li > a:hover {
-  background-color: #575757;
-}
-
-/* Dropdown */
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #333;
-  min-width: 160px;
-  top: 100%;
-  left: 0;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  z-index: 1000;
-  border-radius: 8px; /* 👈 aggiunto */
-  overflow: hidden;   /* per far aderire gli <a> ai bordi */
-}
-
-.dropdown-content li a {
-  display: block;
-  color: white;
-  padding: 12px 16px;
-  text-decoration: none;
-}
-
-.dropdown-content li a:hover {
-  background-color: #575757;
-}
-
-/* Mostra menu al passaggio del mouse */
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-/* Hamburger menu */
-.hamburger-menu {
-  position: relative;
-  background-color: #cbb5a6; /* colore identico alla barra attuale */
-  text-align: left;
-}
-
-.menu-toggle {
-  font-size: 26px;
-  color: white;
-  padding: 14px 20px;
-  cursor: pointer;
-  user-select: none;
-}
-
-/* Menu nascosto */
-.menu-content {
-  display: none;
-  position: absolute;
-  top: 100%; /* subito sotto la barra */
-  left: 0;
-  width: 200px;
-  background-color: #cbb5a6;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  z-index: 1000;
-  border-radius: 8px; /* 👈 aggiunto */
-  overflow: hidden;   /* per far aderire gli <a> ai bordi */
-}
-
-.menu-content li a {
-  display: block;
-  padding: 12px 16px;
-  color: white;
-  text-decoration: none;
-}
-
-.menu-content li a:hover {
-  background-color: #575757;
-}
-
-/* Mostra menu quando si passa sopra il bottone ☰ */
-.hamburger-menu:hover .menu-content {
-  display: block;
-}
-
-/* Nuovo sistema con checkbox */
-.menu-content {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 200px;
-  background-color: #cbb5a6;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  z-index: 1000;
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-/* Mostra il menu quando il checkbox è selezionato */
-#menu-toggle:checked ~ .menu-content {
-  display: block;
-}
-
-/* Stile del bottone ☰ */
-.menu-icon {
-  font-size: 26px;
-  color: white;
-  cursor: pointer;
-  user-select: none;
-  padding: 14px 20px;
-  display: inline-block;
-}
-
