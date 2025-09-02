@@ -44,6 +44,7 @@ header {
   background-color: #cbb5a6;
   padding: 15px 20px;
   text-align: center;
+  position: relative;
 }
 
 header .logo {
@@ -299,11 +300,7 @@ section .btn {
 /* ============================= */
 /* MENU DESKTOP */
 /* ============================= */
-nav {
-  margin-top: 10px;
-}
-
-nav ul {
+nav.desktop-menu ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -312,27 +309,27 @@ nav ul {
   background-color: #cbb5a6;
 }
 
-nav ul li {
+nav.desktop-menu ul li {
   position: relative;
 }
 
-nav ul li a {
+nav.desktop-menu ul li a {
   display: block;
   color: white;
   padding: 14px 20px;
   text-decoration: none;
 }
 
-nav ul li a:hover {
+nav.desktop-menu ul li a:hover {
   background-color: #575757;
 }
 
-nav a.active {
+nav.desktop-menu a.active {
   border-bottom: 2px solid white;
 }
 
 /* Dropdown desktop */
-nav ul li .dropdown-content {
+nav.desktop-menu ul li .dropdown-content {
   display: none;
   position: absolute;
   background-color: #cbb5a6;
@@ -347,7 +344,7 @@ nav ul li .dropdown-content {
   overflow: hidden;
 }
 
-nav ul li:hover .dropdown-content {
+nav.desktop-menu ul li:hover .dropdown-content {
   display: block;
 }
 
@@ -359,10 +356,10 @@ nav ul li:hover .dropdown-content {
 /* HAMBURGER MENU MOBILE FULLSCREEN */
 /* ============================= */
 .hamburger-menu {
-  display: none; /* nascosto su desktop */
-  position: relative;
-  background-color: #cbb5a6;
-  text-align: right;
+  display: none;
+  position: absolute;
+  top: 15px;
+  right: 20px;
 }
 
 #menu-toggle {
@@ -374,15 +371,13 @@ nav ul li:hover .dropdown-content {
   color: white;
   cursor: pointer;
   user-select: none;
-  padding: 14px 20px;
+  padding: 10px;
   display: inline-block;
-  z-index: 1100; /* resta sopra al menu */
-  position: relative;
+  z-index: 1100;
 }
 
-/* Menu fullscreen nascosto di default */
+/* Menu fullscreen */
 .menu-content {
-  display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -393,9 +388,9 @@ nav ul li:hover .dropdown-content {
   margin: 0;
   padding: 0;
   z-index: 1000;
+  display: none;
 
-  /* Centra le voci */
-  display: flex;
+  /* centratura */
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -415,20 +410,18 @@ nav ul li:hover .dropdown-content {
   color: #333;
 }
 
-/* Attiva il menu quando il checkbox è selezionato */
+/* attiva menu */
 #menu-toggle:checked ~ .menu-content {
   display: flex;
 }
 
 /* ============================= */
 /* MEDIA QUERY */
+/* ============================= */
 @media (max-width: 768px) {
-  /* Nascondo il menu desktop */
-  nav ul {
+  nav.desktop-menu {
     display: none;
   }
-
-  /* Mostro l’hamburger */
   .hamburger-menu {
     display: block;
   }
