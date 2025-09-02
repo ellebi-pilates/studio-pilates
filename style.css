@@ -1,7 +1,6 @@
 /* ============================= */
 /* FONT FAMILIES */
 /* ============================= */
-/* Font Glacial Indifference */
 @font-face {
   font-family: 'Glacial Indifference';
   src: url('GlacialIndifference-Regular.otf') format('opentype');
@@ -16,7 +15,6 @@
   font-style: normal;
 }
 
-/* Font Kudryashev */
 @font-face {
   font-family: 'Kudryashev';
   src: url('Kudryashev.otf') format('opentype');
@@ -355,10 +353,8 @@ nav.desktop-menu ul li:hover .dropdown-content {
 /* ============================= */
 /* HAMBURGER MENU MOBILE FULLSCREEN */
 /* ============================= */
-
-/* Hamburger menu mobile */
 .hamburger-menu {
-  display: none; /* nascosto su desktop */
+  display: none;
   position: absolute;
   top: 15px;
   right: 20px;
@@ -376,7 +372,6 @@ nav.desktop-menu ul li:hover .dropdown-content {
   user-select: none;
 }
 
-/* Menu fullscreen nascosto di default */
 .menu-content {
   display: none;
   position: fixed;
@@ -411,21 +406,9 @@ nav.desktop-menu ul li:hover .dropdown-content {
   text-decoration: underline;
 }
 
-/* Mostra il menu quando checkbox selezionato */
 #menu-toggle:checked ~ .menu-content {
   display: flex;
 }
-
-/* Mostra hamburger su schermi piccoli */
-@media (max-width: 768px) {
-  nav.desktop-menu {
-    display: none;
-  }
-  .hamburger-menu {
-    display: block;
-  }
-}
-
 
 /* ============================= */
 /* MEDIA QUERY */
