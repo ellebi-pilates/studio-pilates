@@ -326,7 +326,6 @@ nav.desktop-menu a.active {
   border-bottom: 2px solid white;
 }
 
-/* Dropdown desktop */
 nav.desktop-menu ul li .dropdown-content {
   display: none;
   position: absolute;
@@ -384,7 +383,6 @@ nav.desktop-menu ul li:hover .dropdown-content {
   margin: 0;
   padding: 0;
   z-index: 1000;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
