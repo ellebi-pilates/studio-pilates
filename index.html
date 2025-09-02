@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ellebi Studio - Home</title>
-  <link rel="stylesheet" href="style.css">
   <style>
     /* ============================= */
     /* FONT FAMILIES */
@@ -15,14 +14,12 @@
       font-weight: normal;
       font-style: normal;
     }
-
     @font-face {
       font-family: 'Glacial Indifference';
       src: url('GlacialIndifference-Bold.otf') format('opentype');
       font-weight: bold;
       font-style: normal;
     }
-
     @font-face {
       font-family: 'Kudryashev';
       src: url('Kudryashev.otf') format('opentype');
@@ -41,30 +38,25 @@
       background-color: #f9f9f9;
       color: #333;
     }
-
     h1, h2, h3, nav a {
       font-family: 'Kudryashev', serif;
     }
-
     header {
       background-color: #cbb5a6;
       padding: 15px 20px;
       text-align: center;
       position: relative;
     }
-
     header .logo {
       max-width: 250px;
       height: auto;
       margin-bottom: 10px;
     }
-
     main {
       max-width: 900px;
       margin: auto;
       padding: 20px;
     }
-
     section {
       padding: 20px;
       margin-bottom: 20px;
@@ -72,118 +64,13 @@
       border-radius: 8px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
-
     section h1, section h2, section h3 {
       color: #cbb5a6;
     }
-
-    footer {
-      text-align: center;
-      padding: 10px;
-      background-color: #eee;
-      font-size: 0.9rem;
-    }
-
-    /* ============================= */
-    /* MENU DESKTOP */
-    /* ============================= */
-    nav.desktop-menu ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      background-color: #cbb5a6;
-    }
-
-    nav.desktop-menu li {
-      position: relative;
-    }
-
-    nav.desktop-menu li a {
-      display: block;
-      color: white;
-      padding: 14px 20px;
-      text-decoration: none;
-    }
-
-    nav.desktop-menu li a:hover {
-      background-color: #575757;
-    }
-
-    nav.desktop-menu a.active {
-      border-bottom: 2px solid white;
-    }
-
-    /* ============================= */
-    /* HAMBURGER MOBILE FULLSCREEN */
-    /* ============================= */
-    .hamburger-menu {
-      display: none;
-      position: absolute;
-      top: 15px;
-      right: 20px;
-      z-index: 1100;
-    }
-
-    #menu-toggle {
-      display: none;
-    }
-
-    .menu-icon {
-      font-size: 28px;
-      color: white;
-      cursor: pointer;
-      user-select: none;
-    }
-
-    .menu-content {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background-color: #cbb5a6;
-      margin: 0;
-      padding: 0;
-      list-style: none;
-      z-index: 1000;
-
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .menu-content li {
-      margin: 20px 0;
-    }
-
-    .menu-content li a {
-      font-size: 2rem;
-      color: white;
-      text-decoration: none;
-    }
-
-    .menu-content li a:hover {
-      text-decoration: underline;
-      color: #333;
-    }
-
-    /* Toggle menu con checkbox */
-    #menu-toggle:checked + .menu-icon + .menu-content {
-      display: flex;
-    }
-
-    /* ============================= */
-    /* GALLERIE E IMMAGINI */
-    /* ============================= */
     .image-center {
       text-align: center;
       margin: 30px 0;
     }
-
     .image-center img {
       width: 100%;
       max-width: 400px;
@@ -207,11 +94,9 @@
       transition: background-color 0.3s ease;
       text-align: center;
     }
-
     .btn:hover {
       background-color: #a98d7b;
     }
-
     section .btn {
       display: block;
       width: fit-content;
@@ -224,7 +109,6 @@
       margin-top: 15px;
       text-align: center;
     }
-
     .social-links a {
       display: inline-flex;
       align-items: center;
@@ -237,19 +121,92 @@
       overflow: hidden;
       transition: transform 0.2s ease, background 0.2s ease;
     }
-
     .social-links img {
       width: 28px;
       height: 28px;
     }
-
     .social-links a:hover {
       transform: scale(1.1);
       background: #b59f90;
     }
-
     .social-links img:hover {
       transform: scale(1.2);
+    }
+
+    /* ============================= */
+    /* MENU DESKTOP */
+    /* ============================= */
+    nav.desktop-menu ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      background-color: #cbb5a6;
+    }
+    nav.desktop-menu ul li a {
+      display: block;
+      color: white;
+      padding: 14px 20px;
+      text-decoration: none;
+    }
+    nav.desktop-menu ul li a:hover {
+      background-color: #575757;
+    }
+    nav.desktop-menu a.active {
+      border-bottom: 2px solid white;
+    }
+
+    /* ============================= */
+    /* HAMBURGER MOBILE FULLSCREEN */
+    /* ============================= */
+    .hamburger-menu {
+      display: none;
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      z-index: 1100;
+    }
+    #menu-toggle {
+      display: none;
+    }
+    .menu-icon {
+      font-size: 28px;
+      color: white;
+      cursor: pointer;
+      user-select: none;
+    }
+    .menu-content {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: #cbb5a6;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      z-index: 1000;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+    }
+    .menu-content li {
+      margin: 20px 0;
+    }
+    .menu-content li a {
+      font-size: 2rem;
+      color: white;
+      text-decoration: none;
+    }
+    .menu-content li a:hover {
+      color: #333;
+      text-decoration: underline;
+    }
+    #menu-toggle:checked ~ .menu-content {
+      display: flex;
     }
 
     /* ============================= */
@@ -267,30 +224,30 @@
 </head>
 <body>
   <header>
-  <img src="logo.png" alt="Ellebi Studio Pilates e Yoga" class="logo">
+    <img src="logo.png" alt="Ellebi Studio Pilates e Yoga" class="logo">
 
-  <!-- Menu desktop -->
-  <nav class="desktop-menu">
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="corsi.html">Corsi</a></li>
-      <li><a href="eventi.html">Eventi</a></li>
-      <li><a href="contatti.html">Contatti</a></li>
-    </ul>
-  </nav>
+    <!-- Menu desktop -->
+    <nav class="desktop-menu">
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="corsi.html">Corsi</a></li>
+        <li><a href="eventi.html">Eventi</a></li>
+        <li><a href="contatti.html">Contatti</a></li>
+      </ul>
+    </nav>
 
-  <!-- Hamburger menu mobile -->
-  <nav class="hamburger-menu">
-  <input type="checkbox" id="menu-toggle">
-  <label for="menu-toggle" class="menu-icon">☰</label>
-  <ul class="menu-content">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="corsi.html">Corsi</a></li>
-    <li><a href="eventi.html">Eventi</a></li>
-    <li><a href="contatti.html">Contatti</a></li>
-  </ul>
-</nav>
-</header>
+    <!-- Hamburger menu mobile -->
+    <nav class="hamburger-menu">
+      <input type="checkbox" id="menu-toggle">
+      <label for="menu-toggle" class="menu-icon">☰</label>
+      <ul class="menu-content">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="corsi.html">Corsi</a></li>
+        <li><a href="eventi.html">Eventi</a></li>
+        <li><a href="contatti.html">Contatti</a></li>
+      </ul>
+    </nav>
+  </header>
 
   <main>
     <section>
