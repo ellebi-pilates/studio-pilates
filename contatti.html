@@ -4,7 +4,269 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ellebi Studio - Contatti</title>
-  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ============================= */
+    /* FONT FAMILIES */
+    /* ============================= */
+    @font-face {
+      font-family: 'Glacial Indifference';
+      src: url('GlacialIndifference-Regular.otf') format('opentype');
+      font-weight: normal;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Glacial Indifference';
+      src: url('GlacialIndifference-Bold.otf') format('opentype');
+      font-weight: bold;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Kudryashev';
+      src: url('Kudryashev.otf') format('opentype');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    /* ============================= */
+    /* BASE STYLES */
+    /* ============================= */
+    body {
+      font-family: 'Glacial Indifference', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    h1, h2, h3, nav a {
+      font-family: 'Kudryashev', serif;
+    }
+    header {
+      background-color: #cbb5a6;
+      padding: 15px 20px;
+      text-align: center;
+      position: relative;
+    }
+    header .logo {
+      max-width: 250px;
+      height: auto;
+      margin-bottom: 10px;
+    }
+    main {
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+    }
+    section {
+      padding: 20px;
+      margin-bottom: 20px;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    section h1, section h2, section h3 {
+      color: #cbb5a6;
+    }
+
+    /* ============================= */
+    /* CONTACT CARDS */
+    /* ============================= */
+    .contact-card {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 14px 16px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+      margin: 12px 0;
+    }
+    .icon-circle {
+      width: 44px;
+      height: 44px;
+      min-width: 44px;
+      border-radius: 50%;
+      background: #cbb5a6;
+      color: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+    }
+    .contact-label {
+      font-size: 0.85rem;
+      color: #666;
+    }
+    .contact-link {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #333;
+      text-decoration: none;
+    }
+    .contact-link:hover {
+      text-decoration: underline;
+    }
+
+    /* ============================= */
+    /* LOCATION + HOURS */
+    /* ============================= */
+    .location-hours {
+      display: grid;
+      gap: 20px;
+    }
+    .location, .hours {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+      padding: 18px;
+    }
+    .map-embed {
+      margin-top: 12px;
+      border-radius: 10px;
+      overflow: hidden;
+      aspect-ratio: 16/9;
+    }
+    .map-embed iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+    .hours-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .hours-list li {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 0;
+      border-bottom: 1px dashed #ddd;
+    }
+    .hours-list li:last-child {
+      border-bottom: none;
+    }
+    .hours-list span {
+      color: #555;
+    }
+
+    /* ============================= */
+    /* SOCIAL LINKS */
+    /* ============================= */
+    .social-links {
+      margin-top: 15px;
+      text-align: center;
+    }
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+      margin: 0 10px;
+      background: #cbb5a6;
+      border-radius: 12px;
+      overflow: hidden;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+    .social-links img {
+      width: 28px;
+      height: 28px;
+    }
+    .social-links a:hover {
+      transform: scale(1.1);
+      background: #b59f90;
+    }
+    .social-links img:hover {
+      transform: scale(1.2);
+    }
+
+    /* ============================= */
+    /* MENU DESKTOP */
+    /* ============================= */
+    nav.desktop-menu ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      background-color: #cbb5a6;
+    }
+    nav.desktop-menu ul li a {
+      display: block;
+      color: white;
+      padding: 14px 20px;
+      text-decoration: none;
+    }
+    nav.desktop-menu ul li a:hover,
+    nav.desktop-menu ul li a.active {
+      background-color: #575757;
+      border-bottom: 2px solid white;
+    }
+
+    /* ============================= */
+    /* HAMBURGER MOBILE FULLSCREEN */
+    /* ============================= */
+    .hamburger-menu {
+      display: none;
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      z-index: 1100;
+    }
+    #menu-toggle {
+      display: none;
+    }
+    .menu-icon {
+      font-size: 28px;
+      color: white;
+      cursor: pointer;
+      user-select: none;
+    }
+    .menu-content {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: #cbb5a6;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      z-index: 1000;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .menu-content li {
+      margin: 20px 0;
+    }
+    .menu-content li a {
+      font-size: 2rem;
+      color: white;
+      text-decoration: none;
+    }
+    .menu-content li a:hover,
+    .menu-content li a.active {
+      color: #333;
+      text-decoration: underline;
+    }
+    #menu-toggle:checked ~ .menu-content {
+      display: flex;
+    }
+
+    /* ============================= */
+    /* MEDIA QUERY */
+    /* ============================= */
+    @media (max-width: 768px) {
+      nav.desktop-menu {
+        display: none;
+      }
+      .hamburger-menu {
+        display: block;
+      }
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -22,13 +284,13 @@
 
     <!-- Hamburger Menu Mobile -->
     <nav class="hamburger-menu">
-      <input type="checkbox" id="menu-toggle" hidden>
+      <input type="checkbox" id="menu-toggle">
       <label for="menu-toggle" class="menu-icon">☰</label>
       <ul class="menu-content">
         <li><a href="index.html">Home</a></li>
         <li><a href="corsi.html">Corsi</a></li>
         <li><a href="eventi.html">Eventi</a></li>
-        <li><a href="contatti.html">Contatti</a></li>
+        <li><a href="contatti.html" class="active">Contatti</a></li>
       </ul>
     </nav>
   </header>
@@ -39,11 +301,7 @@
 
       <!-- Telefono -->
       <div class="contact-card">
-        <div class="icon-circle">
-          <svg viewBox="0 0 24 24" width="20" height="20">
-            <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l1.82-1.82a1 1 0 011.01-.25 11.36 11.36 0 003.56.57 1 1 0 011 1v2.86a1 1 0 01-.91 1A19 19 0 013 5.91a1 1 0 011-.91H6.9a1 1 0 011 1 11.36 11.36 0 00.57 3.56 1 1 0 01-.25 1.01l-1.6 1.6z" fill="currentColor"/>
-          </svg>
-        </div>
+        <div class="icon-circle">📞</div>
         <div>
           <div class="contact-label">Telefono</div>
           <a class="contact-link" href="tel:+393485782729">+39 348 578 2729</a>
