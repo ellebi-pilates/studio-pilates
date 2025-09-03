@@ -69,11 +69,46 @@ section h1, section h2, section h3 {
   color: #cbb5a6;
 }
 
+/* ============================= */
+/* FOOTER */
+/* ============================= */
 footer {
+  background-color: #cbb5a6; /* stesso colore dell'header */
   text-align: center;
-  padding: 10px;
-  background-color: #eee;
+  padding: 20px 10px;
+  color: white;
   font-size: 0.9rem;
+}
+
+footer p {
+  margin: 0 0 10px 0;
+}
+
+.social-links {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  margin: 0 10px;
+  background: white; /* sfondo icona in contrasto */
+  border-radius: 12px;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.social-links img {
+  width: 28px;
+  height: 28px;
+}
+
+.social-links a:hover {
+  transform: scale(1.1);
+  background: #eee;
 }
 
 /* ============================= */
@@ -258,41 +293,6 @@ blockquote cite {
 section .btn {
   display: block;
   width: fit-content;
-}
-
-/* ============================= */
-/* SOCIAL LINKS */
-/* ============================= */
-.social-links {
-  margin-top: 15px;
-  text-align: center;
-}
-
-.social-links a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 50px;
-  height: 50px;
-  margin: 0 10px;
-  background: #cbb5a6;
-  border-radius: 12px;
-  overflow: hidden;
-  transition: transform 0.2s ease, background 0.2s ease;
-}
-
-.social-links img {
-  width: 28px;
-  height: 28px;
-}
-
-.social-links a:hover {
-  transform: scale(1.1);
-  background: #b59f90;
-}
-
-.social-links img:hover {
-  transform: scale(1.2);
 }
 
 /* ============================= */
