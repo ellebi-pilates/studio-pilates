@@ -74,15 +74,21 @@ section h1, section h2, section h3 {
 /* ============================= */
 footer {
   background-color: #cbb5a6; /* stesso colore dell'header */
-  text-align: center;
-  padding: 20px 10px;
-  color: white;
-  font-size: 0.9rem;
+  padding: 20px 0;
+  text-align: center; /* centra il testo */
+  color: white; /* scritta bianca */
 }
 
 footer p {
-  margin: 0 0 10px 0;
+  margin: 0;
+  font-family: 'Kudryashev', serif;
 }
+
+footer .social-links {
+  margin-top: 10px;
+  text-align: center;
+}
+
 
 .social-links {
   margin-top: 10px;
