@@ -23,56 +23,7 @@
 }
 
 /* ============================= */
-/* BASE STYLES */
-/* ============================= */
-body {
-  font-family: 'Glacial Indifference', Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  line-height: 1.6;
-  background-color: #f9f9f9;
-  color: #333;
-}
-
-h1, h2, h3, nav a {
-  font-family: 'Kudryashev', serif;
-}
-
-header {
-  background-color: #cbb5a6;
-  padding: 15px 20px;
-  text-align: center;
-  position: relative;
-}
-
-header .logo {
-  max-width: 250px;
-  height: auto;
-  margin-bottom: 10px;
-}
-
-main {
-  max-width: 900px;
-  margin: 0 auto; /* solo centratura orizzontale */
-  padding: 20px;
-  flex: 1; /* assicura che occupi tutto lo spazio verticale */
-}
-
-
-section {
-  padding: 20px;
-  margin-bottom: 20px;
-  background-color: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-section h1, section h2, section h3 {
-  color: #cbb5a6;
-}
-
-/* ============================= */
-/* FOOTER */
+/* BASE LAYOUT */
 /* ============================= */
 html, body {
   height: 100%;
@@ -83,19 +34,48 @@ html, body {
 body {
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
+  font-family: 'Glacial Indifference', Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f9f9f9;
+  color: #333;
 }
 
 main {
-  flex: 1;
+  flex: 1; /* occupa tutto lo spazio verticale tra header e footer */
+  max-width: 900px;
+  margin: 0 auto; /* centratura orizzontale */
+  padding: 20px;
 }
 
-/* Footer */
+h1, h2, h3, nav a {
+  font-family: 'Kudryashev', serif;
+}
+
+/* ============================= */
+/* HEADER */
+/* ============================= */
+header {
+  background-color: #cbb5a6;
+  padding: 15px 20px;
+  text-align: center;
+}
+
+header .logo {
+  max-width: 250px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+/* ============================= */
+/* FOOTER */
+/* ============================= */
 footer {
   background-color: #cbb5a6;
+  width: 100%;
   padding: 20px 0;
   text-align: center;
   color: white;
-  width: 100%;
 }
 
 footer p {
@@ -108,12 +88,6 @@ footer .social-links {
   text-align: center;
 }
 
-
-.social-links {
-  margin-top: 10px;
-  text-align: center;
-}
-
 .social-links a {
   display: inline-flex;
   align-items: center;
@@ -121,7 +95,7 @@ footer .social-links {
   width: 50px;
   height: 50px;
   margin: 0 10px;
-  background: white; /* sfondo icona in contrasto */
+  background: white;
   border-radius: 12px;
   transition: transform 0.2s ease, background 0.2s ease;
 }
@@ -137,7 +111,47 @@ footer .social-links {
 }
 
 /* ============================= */
-/* GALLERIE E IMMAGINI */
+/* SECTIONS */
+/* ============================= */
+section {
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+section h1, section h2, section h3 {
+  color: #cbb5a6;
+}
+
+/* ============================= */
+/* BUTTONS */
+/* ============================= */
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  margin: 20px auto 0 auto;
+  background-color: #cbb5a6;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+  text-align: center;
+}
+
+.btn:hover {
+  background-color: #a98d7b;
+}
+
+section .btn {
+  display: block;
+  width: fit-content;
+}
+
+/* ============================= */
+/* GALLERY & IMAGES */
 /* ============================= */
 .gallery .images {
   display: flex;
@@ -296,31 +310,6 @@ blockquote cite {
 }
 
 /* ============================= */
-/* BUTTONS */
-/* ============================= */
-.btn {
-  display: inline-block;
-  padding: 12px 24px;
-  margin: 20px auto 0 auto;
-  background-color: #cbb5a6;
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  border-radius: 6px;
-  transition: background-color 0.3s ease;
-  text-align: center;
-}
-
-.btn:hover {
-  background-color: #a98d7b;
-}
-
-section .btn {
-  display: block;
-  width: fit-content;
-}
-
-/* ============================= */
 /* MENU DESKTOP */
 /* ============================= */
 nav.desktop-menu ul {
@@ -375,7 +364,7 @@ nav.desktop-menu ul li:hover .dropdown-content {
 }
 
 /* ============================= */
-/* HAMBURGER MENU MOBILE FULLSCREEN */
+/* HAMBURGER MENU MOBILE */
 /* ============================= */
 .hamburger-menu {
   display: none;
