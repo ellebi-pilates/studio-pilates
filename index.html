@@ -101,12 +101,20 @@
   </footer>
 
   <!-- Script per chiudere l’hamburger menu al click -->
-  <script>
-    document.querySelectorAll('.menu-content a').forEach(link => {
-      link.addEventListener('click', () => {
-        document.getElementById('menu-toggle').checked = false;
-      });
+  <!-- Script per chiudere l’hamburger menu al click -->
+<script>
+  document.querySelectorAll('.menu-content a').forEach(link => {
+    link.addEventListener('click', (e) => {
+      // Chiude sempre il menu
+      document.getElementById('menu-toggle').checked = false;
+
+      // Se il link è "Home" (#top) forziamo lo scroll in alto
+      if (link.getAttribute('href') === '#top') {
+        e.preventDefault(); // evita comportamento predefinito
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
     });
-  </script>
+  });
+</script>
 </body>
 </html>
