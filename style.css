@@ -53,9 +53,11 @@ header .logo {
 
 main {
   max-width: 900px;
-  margin: auto;
+  margin: 0 auto; /* solo centratura orizzontale */
   padding: 20px;
+  flex: 1; /* assicura che occupi tutto lo spazio verticale */
 }
+
 
 section {
   padding: 20px;
