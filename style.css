@@ -73,15 +73,12 @@ section h1, section h2, section h3 {
 /* FOOTER */
 /* ============================= */
 footer {
-  background-color: #cbb5a6; /* stesso colore dell'header */
+  background-color: #cbb5a6;
   padding: 20px 0;
   text-align: center;
   color: white;
-  width: 100vw; /* occuperà tutta la larghezza della finestra */
-  position: relative; /* utile se vuoi posizionare elementi sopra */
-  left: 0; /* assicura che parta da sinistra */
+  width: 100%; /* meglio di 100vw */
 }
-
 
 footer p {
   margin: 0;
