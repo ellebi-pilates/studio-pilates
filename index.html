@@ -4,8 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ellebi Studio - Home</title>
-
-  <!-- Collega il foglio di stile ESTERNO -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -27,7 +25,7 @@
       <input type="checkbox" id="menu-toggle">
       <label for="menu-toggle" class="menu-icon">☰</label>
       <ul class="menu-content">
-        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html" class="active">Home</a></li>
         <li><a href="corsi.html">Corsi</a></li>
         <li><a href="eventi.html">Eventi</a></li>
         <li><a href="contatti.html">Contatti</a></li>
@@ -101,5 +99,14 @@
       </a>
     </div>
   </footer>
+
+  <!-- Script per chiudere l’hamburger menu al click -->
+  <script>
+    document.querySelectorAll('.menu-content a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.getElementById('menu-toggle').checked = false;
+      });
+    });
+  </script>
 </body>
 </html>
