@@ -104,7 +104,6 @@ footer .social-links {
   width: 28px;
   height: 28px;
   border-radius: 50%; /* arrotonda le icone */
-
 }
 
 .social-links a:hover {
@@ -425,7 +424,7 @@ nav.desktop-menu ul li:hover .dropdown-content {
 }
 
 /* ============================= */
-/* MEDIA QUERY */
+/* MEDIA QUERY MOBILE (<=768px) */
 /* ============================= */
 @media (max-width: 768px) {
   nav.desktop-menu {
@@ -434,8 +433,9 @@ nav.desktop-menu ul li:hover .dropdown-content {
   .hamburger-menu {
     display: block;
   }
+}
 
-  /* ============================= */
+/* ============================= */
 /* LAYOUT DESKTOP (>=1024px) */
 /* ============================= */
 @media (min-width: 1024px) {
@@ -443,22 +443,21 @@ nav.desktop-menu ul li:hover .dropdown-content {
   /* Header: logo a sinistra, menu a destra */
   header {
     display: flex;
-    justify-content: space-between; /* logo a sx, nav a dx */
+    justify-content: space-between;
     align-items: center;
-    text-align: left; /* override centratura mobile */
-    padding: 18px 40px; /* puoi regolare */
+    text-align: left;
+    padding: 18px 40px;
   }
 
-  /* Assicuriamo di coprire entrambe le varianti di markup nav */
   nav.desktop-menu ul,
   nav.menu-desktop ul {
-    justify-content: flex-end; /* menu a destra */
+    justify-content: flex-end;
     display: flex;
   }
 
   header .logo {
     margin: 0;
-    max-width: 200px; /* dimensione logo desktop */
+    max-width: 200px;
     height: auto;
   }
 
@@ -469,10 +468,9 @@ nav.desktop-menu ul li:hover .dropdown-content {
     gap: 32px;
   }
 
-  /* Se l'immagine è dentro <figure>, gestiamo anche quello */
   .two-columns > img,
   .two-columns > figure {
-    flex: 0 0 45%;     /* colonna immagine fissa ~45% */
+    flex: 0 0 45%;
     max-width: 45%;
     margin: 0;
   }
@@ -488,7 +486,7 @@ nav.desktop-menu ul li:hover .dropdown-content {
   }
 
   .two-columns .text {
-    flex: 1; /* colonna testo occupa il resto */
+    flex: 1;
   }
 
   .two-columns .text h2,
@@ -496,10 +494,7 @@ nav.desktop-menu ul li:hover .dropdown-content {
     margin-top: 0;
   }
 
-  /* Piccoli aggiustamenti tipografici per desktop */
   body { font-size: 16px; line-height: 1.7; }
   h1 { font-size: 2.2rem; }
   h2 { font-size: 1.5rem; }
-}
-
 }
