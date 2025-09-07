@@ -434,4 +434,72 @@ nav.desktop-menu ul li:hover .dropdown-content {
   .hamburger-menu {
     display: block;
   }
+
+  /* ============================= */
+/* LAYOUT DESKTOP (>=1024px) */
+/* ============================= */
+@media (min-width: 1024px) {
+
+  /* Header: logo a sinistra, menu a destra */
+  header {
+    display: flex;
+    justify-content: space-between; /* logo a sx, nav a dx */
+    align-items: center;
+    text-align: left; /* override centratura mobile */
+    padding: 18px 40px; /* puoi regolare */
+  }
+
+  /* Assicuriamo di coprire entrambe le varianti di markup nav */
+  nav.desktop-menu ul,
+  nav.menu-desktop ul {
+    justify-content: flex-end; /* menu a destra */
+    display: flex;
+  }
+
+  header .logo {
+    margin: 0;
+    max-width: 200px; /* dimensione logo desktop */
+    height: auto;
+  }
+
+  /* ===== two-columns: immagine sinistra, testo destra ===== */
+  .two-columns {
+    display: flex;
+    align-items: flex-start;
+    gap: 32px;
+  }
+
+  /* Se l'immagine è dentro <figure>, gestiamo anche quello */
+  .two-columns > img,
+  .two-columns > figure {
+    flex: 0 0 45%;     /* colonna immagine fissa ~45% */
+    max-width: 45%;
+    margin: 0;
+  }
+
+  .two-columns > figure img,
+  .two-columns > img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+    object-fit: cover;
+  }
+
+  .two-columns .text {
+    flex: 1; /* colonna testo occupa il resto */
+  }
+
+  .two-columns .text h2,
+  .two-columns .text h3 {
+    margin-top: 0;
+  }
+
+  /* Piccoli aggiustamenti tipografici per desktop */
+  body { font-size: 16px; line-height: 1.7; }
+  h1 { font-size: 2.2rem; }
+  h2 { font-size: 1.5rem; }
+}
+
 }
