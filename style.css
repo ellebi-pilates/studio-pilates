@@ -43,9 +43,9 @@ body {
 
 main {
   flex: 1; /* occupa tutto lo spazio verticale tra header e footer */
-  max-width: 900px;
+  max-width: 1200px;
   margin: 0 auto; /* centratura orizzontale */
-  padding: 20px;
+  padding: 40px 20px;
 }
 
 h1, h2, h3, nav a {
@@ -187,7 +187,7 @@ section .btn {
 
 .image-center img {
   width: 100%;
-  max-width: 400px;
+  max-width: 600px;
   height: auto;
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.2);
@@ -472,8 +472,8 @@ nav.desktop-menu ul li:hover .dropdown-content {
 
   .two-columns > img,
   .two-columns > figure {
-    flex: 0 0 45%;
-    max-width: 45%;
+    flex: 0 0 55%;
+    max-width: 55%;
     margin: 0;
   }
 
@@ -496,7 +496,9 @@ nav.desktop-menu ul li:hover .dropdown-content {
     margin-top: 0;
   }
 
-  body { font-size: 16px; line-height: 1.7; }
-  h1 { font-size: 2.2rem; }
-  h2 { font-size: 1.5rem; }
+  body { font-size: 18px; line-height: 1.8; }
+  h1 { font-size: 2.8rem; }
+  h2 { font-size: 2.2rem; }
+  h3 { font-size: 1.8rem; }
+  section p, blockquote { font-size: 1.2rem; }
 }
