@@ -96,6 +96,7 @@ footer .social-links {
   height: 50px;
   margin: 0 10px;
   background: white;
+  background: #cbb5a6;
   border-radius: 12px;
   transition: transform 0.2s ease, background 0.2s ease;
 }
@@ -104,6 +105,8 @@ footer .social-links {
   width: 28px;
   height: 28px;
   border-radius: 50%; /* arrotonda le icone */
+  background-color: #333;  /* nuovo: colore dietro l'icona */
+  display: block;  
 }
 
 .social-links a:hover {
