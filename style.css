@@ -36,6 +36,7 @@ body {
   flex-direction: column;
   min-height: 100vh;
   font-family: 'Glacial Indifference', Arial, sans-serif;
+  font-size: 16px;
   line-height: 1.6;
   background-color: #f9f9f9;
   color: #333;
@@ -43,9 +44,9 @@ body {
 
 main {
   flex: 1; /* occupa tutto lo spazio verticale tra header e footer */
-  max-width: 1200px;
+  max-width: 900px; /* più stretto su mobile/tablet */
   margin: 0 auto; /* centratura orizzontale */
-  padding: 40px 20px;
+  padding: 20px;
 }
 
 h1, h2, h3, nav a {
@@ -187,7 +188,7 @@ section .btn {
 
 .image-center img {
   width: 100%;
-  max-width: 600px;
+  max-width: 400px;
   height: auto;
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.2);
@@ -315,7 +316,7 @@ blockquote cite {
 /* ============================= */
 /* MENU DESKTOP */
 /* ============================= */
-nav.desktop-menu ul {
+nav.menu-desktop ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -324,26 +325,26 @@ nav.desktop-menu ul {
   background-color: #cbb5a6;
 }
 
-nav.desktop-menu ul li {
+nav.menu-desktop ul li {
   position: relative;
 }
 
-nav.desktop-menu ul li a {
+nav.menu-desktop ul li a {
   display: block;
   color: white;
   padding: 14px 20px;
   text-decoration: none;
 }
 
-nav.desktop-menu ul li a:hover {
+nav.menu-desktop ul li a:hover {
   background-color: #575757;
 }
 
-nav.desktop-menu a.active {
+nav.menu-desktop a.active {
   border-bottom: 2px solid white;
 }
 
-nav.desktop-menu ul li .dropdown-content {
+nav.menu-desktop ul li .dropdown-content {
   display: none;
   position: absolute;
   background-color: #cbb5a6;
@@ -358,7 +359,7 @@ nav.desktop-menu ul li .dropdown-content {
   overflow: hidden;
 }
 
-nav.desktop-menu ul li:hover .dropdown-content {
+nav.menu-desktop ul li:hover .dropdown-content {
   display: block;
 }
 
@@ -429,7 +430,7 @@ nav.desktop-menu ul li:hover .dropdown-content {
 /* MEDIA QUERY MOBILE (<=768px) */
 /* ============================= */
 @media (max-width: 768px) {
-  nav.desktop-menu {
+  nav.menu-desktop {
     display: none;
   }
   .hamburger-menu {
@@ -451,7 +452,6 @@ nav.desktop-menu ul li:hover .dropdown-content {
     padding: 18px 40px;
   }
 
-  nav.desktop-menu ul,
   nav.menu-desktop ul {
     justify-content: flex-end;
     display: flex;
@@ -461,6 +461,11 @@ nav.desktop-menu ul li:hover .dropdown-content {
     margin: 0;
     max-width: 200px;
     height: auto;
+  }
+
+  main {
+    max-width: 1200px;
+    padding: 40px 20px;
   }
 
   /* ===== two-columns: immagine sinistra, testo destra ===== */
@@ -501,4 +506,8 @@ nav.desktop-menu ul li:hover .dropdown-content {
   h2 { font-size: 2.2rem; }
   h3 { font-size: 1.8rem; }
   section p, blockquote { font-size: 1.2rem; }
+
+  .image-center img {
+    max-width: 600px;
+  }
 }
