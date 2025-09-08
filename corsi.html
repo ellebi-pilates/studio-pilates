@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ellebi Studio - Corsi</title>
-  <link rel="stylesheet" href="style.css">
   <style>
     /* ============================= */
     /* FONT FAMILIES */
@@ -29,19 +28,35 @@
     }
 
     /* ============================= */
-    /* BASE STYLES */
+    /* BASE LAYOUT */
     /* ============================= */
-    body {
-      font-family: 'Glacial Indifference', Arial, sans-serif;
+    html, body {
+      height: 100%;
       margin: 0;
       padding: 0;
+    }
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      font-family: 'Glacial Indifference', Arial, sans-serif;
       line-height: 1.6;
       background-color: #f9f9f9;
       color: #333;
     }
+    main {
+      flex: 1;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+    }
     h1, h2, h3, nav a {
       font-family: 'Kudryashev', serif;
     }
+
+    /* ============================= */
+    /* HEADER */
+    /* ============================= */
     header {
       background-color: #cbb5a6;
       padding: 15px 20px;
@@ -53,11 +68,50 @@
       height: auto;
       margin-bottom: 10px;
     }
-    main {
-      max-width: 900px;
-      margin: auto;
-      padding: 20px;
+
+    /* ============================= */
+    /* FOOTER */
+    /* ============================= */
+    footer {
+      background-color: #cbb5a6;
+      width: 100%;
+      padding: 20px 0;
+      text-align: center;
+      color: white;
     }
+    footer p {
+      margin: 0;
+      font-family: 'Kudryashev', serif;
+    }
+    footer .social-links {
+      margin-top: 10px;
+      text-align: center;
+    }
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+      margin: 0 10px;
+      background: white;
+      border-radius: 12px;
+      transition: transform 0.2s ease, background 0.2s ease;
+      overflow: hidden;
+    }
+    .social-links img {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+    }
+    .social-links a:hover {
+      transform: scale(1.1);
+      background: #eee;
+    }
+
+    /* ============================= */
+    /* SECTIONS */
+    /* ============================= */
     section {
       padding: 20px;
       margin-bottom: 20px;
@@ -67,17 +121,6 @@
     }
     section h1, section h2, section h3 {
       color: #cbb5a6;
-    }
-    .image-center {
-      text-align: center;
-      margin: 30px 0;
-    }
-    .image-center img {
-      width: 100%;
-      max-width: 400px;
-      height: auto;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
     }
 
     /* ============================= */
@@ -104,35 +147,37 @@
     }
 
     /* ============================= */
-    /* SOCIAL LINKS */
+    /* IMAGES */
     /* ============================= */
-    .social-links {
-      margin-top: 15px;
+    .image-center {
       text-align: center;
+      margin: 30px 0;
     }
-    .social-links a {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 50px;
-      height: 50px;
-      margin: 0 10px;
-      background: #cbb5a6;
-      border-radius: 12px;
-      overflow: hidden;
-      transition: transform 0.2s ease, background 0.2s ease;
+    .image-center img {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
     }
-    .social-links img {
-      width: 28px;
-      height: 28px;
-      border-radius: 25%;
+
+    /* ============================= */
+    /* BLOCKQUOTE */
+    /* ============================= */
+    blockquote {
+      background: #f1f1f1;
+      padding: 15px 20px;
+      border-left: 5px solid #cbb5a6;
+      margin: 20px 0;
+      font-style: italic;
+      color: #444;
     }
-    .social-links a:hover {
-      transform: scale(1.1);
-      background: #b59f90;
-    }
-    .social-links img:hover {
-      transform: scale(1.2);
+    blockquote cite {
+      display: block;
+      margin-top: 5px;
+      font-size: 0.9rem;
+      text-align: right;
+      color: #666;
     }
 
     /* ============================= */
@@ -157,12 +202,12 @@
     }
     nav.menu-desktop ul li a:hover,
     nav.menu-desktop ul li a.active {
-      background-color: #a98d7b; /* marrone scuro */
+      background-color: #a98d7b;
       border-bottom: 2px solid white;
     }
 
     /* ============================= */
-    /* HAMBURGER MOBILE FULLSCREEN */
+    /* HAMBURGER MENU MOBILE */
     /* ============================= */
     .hamburger-menu {
       display: none;
@@ -214,7 +259,7 @@
     }
 
     /* ============================= */
-    /* MEDIA QUERY */
+    /* MEDIA QUERY MOBILE */
     /* ============================= */
     @media (max-width: 768px) {
       nav.menu-desktop {
@@ -222,6 +267,52 @@
       }
       .hamburger-menu {
         display: block;
+      }
+      /* two-columns diventa verticale su mobile */
+      .two-columns {
+        display: block;
+      }
+      .two-columns img {
+        margin-bottom: 20px;
+        width: 100%;
+      }
+    }
+
+    /* ============================= */
+    /* MEDIA QUERY DESKTOP */
+    /* ============================= */
+    @media (min-width: 1024px) {
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+        padding: 18px 40px;
+      }
+      header .logo {
+        margin: 0;
+        max-width: 200px;
+      }
+      nav.menu-desktop ul {
+        justify-content: flex-end;
+      }
+      .two-columns {
+        display: flex;
+        align-items: flex-start;
+        gap: 32px;
+      }
+      .two-columns img {
+        flex: 0 0 45%;
+        max-width: 45%;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+      }
+      .two-columns .text {
+        flex: 1;
+      }
+      .two-columns .text h2,
+      .two-columns .text h3 {
+        margin-top: 0;
       }
     }
   </style>
@@ -261,14 +352,13 @@
       </p>
     </section>
 
-    <!-- Pilates in due colonne -->
+    <!-- Pilates -->
     <section class="two-columns">
       <img src="Reformer.jpg" alt="Pilates con Reformer">
       <div class="text">
         <h2>Pilates</h2>
         <p>
           Il <strong>Pilates</strong> si basa su un programma di esercizi incentrati sulla <strong>muscolatura posturale</strong>, che possono essere svolti a corpo libero o con l'aiuto di attrezzature dedicate.
-          Questa muscolatura aiuta a mantenere il corpo bilanciato e fornisce supporto alla colonna vertebrale.
         </p>
         <p>
           Migliorando la postura, il Pilates dona <strong>forza, tonicità e consapevolezza del corpo</strong>, aiutando a prevenire i disturbi della schiena. L'obiettivo è unire corpo e mente in un’unica entità dinamica, armoniosa ed equilibrata.
@@ -279,7 +369,7 @@
       </div>
     </section>
 
-    <!-- Yoga in due colonne -->
+    <!-- Yoga -->
     <section class="two-columns">
       <img src="lalla.jpg" alt="Yoga in pratica">
       <div class="text">
@@ -291,33 +381,44 @@
         </blockquote>
         <p>
           Lo <strong>Yoga</strong> è la scienza del giusto vivere e può essere incorporato nella vita quotidiana.
-          Agisce su tutti gli aspetti della persona: <strong>fisico, vitale, mentale, emozionale, psichico e spirituale</strong>.
         </p>
         <h3>Hatha e Vinyasa Yoga</h3>
         <p>
           L’<strong>Hatha Yoga</strong> è lento e meditativo, con posizioni mantenute più a lungo per favorire calma e consapevolezza.
+        </p>
+        <p>
           Il <strong>Vinyasa Yoga</strong> è dinamico e fluido, sincronizza respiro e movimento in sequenze continue, quasi come una danza.
         </p>
         <h3>Yin Yoga</h3>
         <p>
           Lo <strong>Yin Yoga</strong> lavora sui tessuti profondi (legamenti, articolazioni, fasce, ossa).
+        </p>
+        <p>
           Le posizioni, semplici ma intense, vengono mantenute a lungo (da 1 a 20 minuti) per nutrire in profondità corpo e mente.
         </p>
         <h3>Yoga Nidra</h3>
         <p>
           Lo <strong>Yoga Nidra</strong> è una tecnica di rilassamento consapevole che porta a uno stato di <em>sonno dinamico</em>.
+        </p>
+        <p>
           Favorisce memoria, creatività e benessere, aiutando a trasformare la propria natura interiore.
         </p>
         <h3>Yoga Prenatale</h3>
         <p>
           Un percorso per le donne in gravidanza che unisce respiro, movimento e consapevolezza.
+        </p>
+        <p>
           Aiuta a prepararsi a un parto naturale e a rafforzare la connessione con il proprio bambino.
           <strong>Non è necessaria esperienza pregressa di yoga.</strong>
         </p>
         <h3>Yoga Mum&Baby</h3>
         <p>
           Corso speciale dedicato alle neomamme e ai loro bambini.
+        </p>
+        <p>
           Comprende posizioni yoga post-parto, tecniche di respirazione, massaggio infantile e momenti di gioco.
+        </p>
+        <p>
           L’obiettivo è recuperare il benessere del corpo, proteggere la schiena e il pavimento pelvico,
           e imparare l’arte di rilassarsi insieme al proprio bimbo.
         </p>
