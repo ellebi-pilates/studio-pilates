@@ -46,7 +46,7 @@ body {
 main {
   flex: 1; 
   width: 90%;          /* colonna elastica */
-  max-width: 1400px;   /* limite massimo su desktop */
+  max-width: 2500px;   /* limite massimo su desktop */
   margin: 0 auto; 
   padding: 20px;
 }
