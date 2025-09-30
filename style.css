@@ -44,10 +44,9 @@ body {
 }
 
 main {
-  flex: 1; 
-  width: 90%;          /* colonna elastica */
-  max-width: 1400px;   /* limite massimo su desktop */
-  margin: 0 auto; 
+  flex: 1;
+  width: 100%;     /* piena larghezza */
+  margin: 0;
   padding: 20px;
 }
 
@@ -120,11 +119,12 @@ footer .social-links {
 /* SECTIONS */
 /* ============================= */
 section {
-  padding: 20px;
+  width: 100%;      /* piena larghezza */
   margin-bottom: 20px;
   background-color: white;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  padding: 20px;
 }
 
 section h1, section h2, section h3 {
@@ -328,8 +328,7 @@ nav.menu-desktop a.active {
   }
 
   main {
-    width: 90%;          /* elastico anche su desktop */
-    max-width: 1400px;
+    width: 100%;     /* piena larghezza desktop */
     padding: 40px 30px;
   }
 
