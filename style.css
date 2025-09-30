@@ -1,3 +1,4 @@
+```css
 /* ============================= */
 /* FONT FAMILIES */
 /* ============================= */
@@ -44,7 +45,8 @@ body {
 
 main {
   flex: 1; 
-  max-width: 900px; /* più stretto su mobile/tablet */
+  width: 90%;          /* colonna elastica */
+  max-width: 1400px;   /* limite massimo su desktop */
   margin: 0 auto; 
   padding: 20px;
 }
@@ -326,7 +328,8 @@ nav.menu-desktop a.active {
   }
 
   main {
-    max-width: 1400px; /* aumentata larghezza desktop */
+    width: 90%;          /* elastico anche su desktop */
+    max-width: 1400px;
     padding: 40px 30px;
   }
 
@@ -339,7 +342,7 @@ nav.menu-desktop a.active {
 
   .two-columns > img,
   .two-columns > figure {
-    flex: 0 0 50%; /* più largo */
+    flex: 0 0 50%;
     max-width: 50%;
     margin: 0;
   }
@@ -370,6 +373,7 @@ nav.menu-desktop a.active {
   section p, blockquote { font-size: 1.2rem; }
 
   .image-center img {
-    max-width: 700px; /* immagini centrali più grandi su desktop */
+    max-width: 700px;
   }
 }
+```
