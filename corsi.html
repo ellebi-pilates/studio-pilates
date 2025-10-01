@@ -1,12 +1,321 @@
-```html
 <!DOCTYPE html>
 <html lang="it">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ellebi Studio - Corsi</title>
-  <!-- collegamento al CSS esterno -->
-  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ============================= */
+    /* FONT FAMILIES */
+    /* ============================= */
+    @font-face {
+      font-family: 'Glacial Indifference';
+      src: url('GlacialIndifference-Regular.otf') format('opentype');
+      font-weight: normal;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Glacial Indifference';
+      src: url('GlacialIndifference-Bold.otf') format('opentype');
+      font-weight: bold;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Kudryashev';
+      src: url('Kudryashev.otf') format('opentype');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    /* ============================= */
+    /* BASE LAYOUT */
+    /* ============================= */
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      font-family: 'Glacial Indifference', Arial, sans-serif;
+      line-height: 1.6;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    main {
+      flex: 1;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    h1, h2, h3, nav a {
+      font-family: 'Kudryashev', serif;
+    }
+
+    /* ============================= */
+    /* HEADER */
+    /* ============================= */
+    header {
+      background-color: #cbb5a6;
+      padding: 15px 20px;
+      text-align: center;
+      position: relative;
+    }
+    header .logo {
+      max-width: 250px;
+      height: auto;
+      margin-bottom: 10px;
+    }
+
+    /* ============================= */
+    /* FOOTER */
+    /* ============================= */
+    footer {
+      background-color: #cbb5a6;
+      width: 100%;
+      padding: 20px 0;
+      text-align: center;
+      color: white;
+    }
+    footer p {
+      margin: 0;
+      font-family: 'Kudryashev', serif;
+    }
+    footer .social-links {
+      margin-top: 10px;
+      text-align: center;
+    }
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+      margin: 0 10px;
+      background: #cbb5a6;
+      border-radius: 12px;
+      transition: transform 0.2s ease, background 0.2s ease;
+      overflow: hidden;
+    }
+    .social-links img {
+      width: 28px;
+      height: 28px;
+      border-radius: 25%;
+    }
+    .social-links a:hover {
+      transform: scale(1.1);
+      background: #b59f90;
+    }
+
+    /* ============================= */
+    /* SECTIONS */
+    /* ============================= */
+    section {
+      padding: 20px;
+      margin-bottom: 20px;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    section h1, section h2, section h3 {
+      color: #cbb5a6;
+    }
+
+    /* ============================= */
+    /* BUTTONS */
+    /* ============================= */
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      margin: 20px auto 0 auto;
+      background-color: #cbb5a6;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 6px;
+      transition: background-color 0.3s ease;
+      text-align: center;
+    }
+    .btn:hover {
+      background-color: #a98d7b;
+    }
+    section .btn {
+      display: block;
+      width: fit-content;
+    }
+
+    /* ============================= */
+    /* IMAGES */
+    /* ============================= */
+    .image-center {
+      text-align: center;
+      margin: 30px 0;
+    }
+    .image-center img {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+    /* ============================= */
+    /* BLOCKQUOTE */
+    /* ============================= */
+    blockquote {
+      background: #f1f1f1;
+      padding: 15px 20px;
+      border-left: 5px solid #cbb5a6;
+      margin: 20px 0;
+      font-style: italic;
+      color: #444;
+    }
+    blockquote cite {
+      display: block;
+      margin-top: 5px;
+      font-size: 0.9rem;
+      text-align: right;
+      color: #666;
+    }
+
+    /* ============================= */
+    /* MENU DESKTOP */
+    /* ============================= */
+    nav.menu-desktop ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      background-color: #cbb5a6;
+    }
+    nav.menu-desktop ul li {
+      position: relative;
+    }
+    nav.menu-desktop ul li a {
+      display: block;
+      color: white;
+      padding: 14px 20px;
+      text-decoration: none;
+    }
+    nav.menu-desktop ul li a:hover,
+    nav.menu-desktop ul li a.active {
+      background-color: #a98d7b;
+      border-bottom: 2px solid white;
+    }
+
+    /* ============================= */
+    /* HAMBURGER MENU MOBILE */
+    /* ============================= */
+    .hamburger-menu {
+      display: none;
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      z-index: 1100;
+    }
+    #menu-toggle {
+      display: none;
+    }
+    .menu-icon {
+      font-size: 28px;
+      color: white;
+      cursor: pointer;
+      user-select: none;
+    }
+    .menu-content {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: #cbb5a6;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      z-index: 1000;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .menu-content li {
+      margin: 20px 0;
+    }
+    .menu-content li a {
+      font-size: 2rem;
+      color: white;
+      text-decoration: none;
+    }
+    .menu-content li a:hover,
+    .menu-content li a.active {
+      color: #333;
+      text-decoration: underline;
+    }
+    #menu-toggle:checked ~ .menu-content {
+      display: flex;
+    }
+
+    /* ============================= */
+    /* MEDIA QUERY MOBILE */
+    /* ============================= */
+    @media (max-width: 768px) {
+      nav.menu-desktop {
+        display: none;
+      }
+      .hamburger-menu {
+        display: block;
+      }
+      /* two-columns diventa verticale su mobile */
+      .two-columns {
+        display: block;
+      }
+      .two-columns img {
+        margin-top: 20px;
+        width: 100%;
+      }
+    }
+
+    /* ============================= */
+    /* MEDIA QUERY DESKTOP */
+    /* ============================= */
+    @media (min-width: 1024px) {
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+        padding: 18px 40px;
+      }
+      header .logo {
+        margin: 0;
+        max-width: 200px;
+      }
+      nav.menu-desktop ul {
+        justify-content: flex-end;
+      }
+      .two-columns {
+        display: flex;
+        align-items: flex-start;
+        gap: 32px;
+      }
+      .two-columns img {
+        flex: 0 0 45%;
+        max-width: 45%;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+      }
+      .two-columns .text {
+        flex: 1;
+      }
+      .two-columns .text h2,
+      .two-columns .text h3 {
+        margin-top: 0;
+      }
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -130,4 +439,3 @@
   </footer>
 </body>
 </html>
-```
