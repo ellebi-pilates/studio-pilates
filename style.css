@@ -1,3 +1,4 @@
+```css
 /* ============================= */
 /* FONT FAMILIES */
 /* ============================= */
@@ -7,14 +8,12 @@
   font-weight: normal;
   font-style: normal;
 }
-
 @font-face {
   font-family: 'Glacial Indifference';
   src: url('GlacialIndifference-Bold.otf') format('opentype');
   font-weight: bold;
   font-style: normal;
 }
-
 @font-face {
   font-family: 'Kudryashev';
   src: url('Kudryashev.otf') format('opentype');
@@ -30,7 +29,6 @@ html, body {
   margin: 0;
   padding: 0;
 }
-
 body {
   display: flex;
   flex-direction: column;
@@ -41,27 +39,23 @@ body {
   background-color: #f9f9f9;
   color: #333;
 }
-
 main {
   flex: 1; 
-  max-width: 900px; /* più stretto su mobile/tablet */
+  max-width: 900px; /* mobile/tablet */
   margin: 0 auto; 
   padding: 20px;
 }
-
 h1, h2, h3, nav a {
   font-family: 'Kudryashev', serif;
 }
 
 /* ============================= */
 /* HEADER */
-/* ============================= */
 header {
   background-color: #cbb5a6;
   padding: 15px 20px;
   text-align: center;
 }
-
 header .logo {
   max-width: 250px;
   height: auto;
@@ -70,7 +64,6 @@ header .logo {
 
 /* ============================= */
 /* FOOTER */
-/* ============================= */
 footer {
   background-color: #cbb5a6;
   width: 100%;
@@ -78,17 +71,14 @@ footer {
   text-align: center;
   color: white;
 }
-
 footer p {
   margin: 0;
   font-family: 'Kudryashev', serif;
 }
-
 footer .social-links {
   margin-top: 10px;
   text-align: center;
 }
-
 .social-links a {
   display: inline-flex;
   align-items: center;
@@ -100,7 +90,6 @@ footer .social-links {
   border-radius: 12px;
   transition: transform 0.2s ease, background 0.2s ease;
 }
-
 .social-links img {
   width: 28px;
   height: 28px;
@@ -108,7 +97,6 @@ footer .social-links {
   background-color: #cbb5a6;
   display: block;  
 }
-
 .social-links a:hover {
   transform: scale(1.1);
   background: #eee;
@@ -116,7 +104,6 @@ footer .social-links {
 
 /* ============================= */
 /* SECTIONS */
-/* ============================= */
 section {
   padding: 20px;
   margin-bottom: 20px;
@@ -124,14 +111,12 @@ section {
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
-
 section h1, section h2, section h3 {
   color: #cbb5a6;
 }
 
 /* ============================= */
 /* BUTTONS */
-/* ============================= */
 .btn {
   display: inline-block;
   padding: 12px 24px;
@@ -144,24 +129,20 @@ section h1, section h2, section h3 {
   transition: background-color 0.3s ease;
   text-align: center;
 }
-
 .btn:hover {
   background-color: #a98d7b;
 }
-
 section .btn {
   display: block;
   width: fit-content;
 }
 
 /* ============================= */
-/* IMAGES & GALLERY */
-/* ============================= */
+/* IMAGES */
 .image-center {
   text-align: center;
   margin: 30px 0;
 }
-
 .image-center img {
   width: 100%;
   max-width: 400px;
@@ -172,7 +153,6 @@ section .btn {
 
 /* ============================= */
 /* BLOCKQUOTE */
-/* ============================= */
 blockquote {
   background: #f1f1f1;
   padding: 15px 20px;
@@ -181,7 +161,6 @@ blockquote {
   font-style: italic;
   color: #444;
 }
-
 blockquote cite {
   display: block;
   margin-top: 5px;
@@ -192,7 +171,6 @@ blockquote cite {
 
 /* ============================= */
 /* MENU DESKTOP */
-/* ============================= */
 nav.menu-desktop ul {
   list-style-type: none;
   margin: 0;
@@ -201,111 +179,61 @@ nav.menu-desktop ul {
   justify-content: center;
   background-color: #cbb5a6;
 }
-
 nav.menu-desktop ul li {
   position: relative;
 }
-
 nav.menu-desktop ul li a {
   display: block;
   color: white;
   padding: 14px 20px;
   text-decoration: none;
 }
-
 nav.menu-desktop ul li a:hover {
   background-color: #575757;
 }
-
 nav.menu-desktop a.active {
   border-bottom: 2px solid white;
 }
 
 /* ============================= */
 /* HAMBURGER MENU MOBILE */
-/* ============================= */
-.hamburger-menu {
-  display: none;
-  position: absolute;
-  top: 15px;
-  right: 20px;
-  z-index: 1100;
-}
-
-#menu-toggle {
-  display: none;
-}
-
-.menu-icon {
-  font-size: 28px;
-  color: white;
-  cursor: pointer;
-  user-select: none;
-}
-
+.hamburger-menu { display: none; position: absolute; top: 15px; right: 20px; z-index: 1100; }
+#menu-toggle { display: none; }
+.menu-icon { font-size: 28px; color: white; cursor: pointer; user-select: none; }
 .menu-content {
   display: none;
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
   background-color: #cbb5a6;
   list-style: none;
-  margin: 0;
-  padding: 0;
+  margin: 0; padding: 0;
   z-index: 1000;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  display: flex; flex-direction: column;
+  justify-content: center; align-items: center;
 }
-
-.menu-content li {
-  margin: 20px 0;
-}
-
+.menu-content li { margin: 20px 0; }
 .menu-content li a {
-  font-size: 2rem;
-  color: white;
-  text-decoration: none;
+  font-size: 2rem; color: white; text-decoration: none;
 }
-
 .menu-content li a:hover {
-  color: #333;
-  text-decoration: underline;
+  color: #333; text-decoration: underline;
 }
-
-#menu-toggle:checked ~ .menu-content {
-  display: flex;
-}
+#menu-toggle:checked ~ .menu-content { display: flex; }
 
 /* ============================= */
 /* MEDIA QUERY MOBILE (<=768px) */
-/* ============================= */
 @media (max-width: 768px) {
-  nav.menu-desktop {
-    display: none;
-  }
-  .hamburger-menu {
-    display: block;
-  }
-
-  /* two-columns diventa verticale su mobile */
-  .two-columns {
-    display: block;
-  }
-  .two-columns img {
-    margin-bottom: 20px;
-    width: 100%;
-  }
+  nav.menu-desktop { display: none; }
+  .hamburger-menu { display: block; }
+  .two-columns { display: block; }
+  .two-columns img { margin-bottom: 20px; width: 100%; }
 }
 
 /* ============================= */
 /* LAYOUT DESKTOP (>=1024px) */
 /* ============================= */
 @media (min-width: 1024px) {
-
   header {
     display: flex;
     justify-content: space-between;
@@ -313,63 +241,44 @@ nav.menu-desktop a.active {
     text-align: left;
     padding: 18px 40px;
   }
+  header .logo { margin: 0; max-width: 200px; height: auto; }
+  nav.menu-desktop ul { justify-content: flex-end; display: flex; }
 
-  nav.menu-desktop ul {
-    justify-content: flex-end;
-    display: flex;
-  }
-
-  header .logo {
-    margin: 0;
-    max-width: 200px;
-    height: auto;
-  }
-
+  /* MAIN più largo e dinamico */
   main {
-    max-width: 1400px; /* aumentata larghezza desktop */
+    max-width: 1500px;
+    width: 95%;
     padding: 40px 30px;
   }
 
-  /* two-columns: immagine sinistra, testo destra */
+  /* SECTIONS più "pieni" */
+  section {
+    padding: 50px 60px;
+    margin-bottom: 40px;
+  }
+
+  /* TWO-COLUMNS più equilibrato */
   .two-columns {
     display: flex;
     align-items: flex-start;
     gap: 40px;
   }
-
   .two-columns > img,
   .two-columns > figure {
-    flex: 0 0 50%; /* più largo */
-    max-width: 50%;
+    flex: 0 0 45%;
+    max-width: 45%;
     margin: 0;
   }
+  .two-columns .text { flex: 1; }
 
-  .two-columns > figure img,
-  .two-columns > img {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.12);
-    object-fit: cover;
-  }
-
-  .two-columns .text {
-    flex: 1;
-  }
-
-  .two-columns .text h2,
-  .two-columns .text h3 {
-    margin-top: 0;
-  }
-
+  /* Testi più grandi */
   body { font-size: 18px; line-height: 1.8; }
-  h1 { font-size: 2.8rem; }
-  h2 { font-size: 2.2rem; }
-  h3 { font-size: 1.8rem; }
+  h1 { font-size: 3rem; }
+  h2 { font-size: 2.4rem; }
+  h3 { font-size: 2rem; }
   section p, blockquote { font-size: 1.2rem; }
 
-  .image-center img {
-    max-width: 700px; /* immagini centrali più grandi su desktop */
-  }
+  /* Immagini centrali più grandi */
+  .image-center img { max-width: 800px; }
 }
+```
