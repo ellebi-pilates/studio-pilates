@@ -1,6 +1,6 @@
 ```css
 /* ============================= */
-/* FONT FAMILIES */
+/* FONT FAMILIES (se servono i tuoi font custom) */
 /* ============================= */
 @font-face {
   font-family: 'Glacial Indifference';
@@ -47,7 +47,7 @@ main {
   flex: 1;
   width: 100%;     /* piena larghezza */
   margin: 0;
-  padding: 20px;
+  padding: 0;
 }
 
 h1, h2, h3, nav a {
@@ -116,15 +116,14 @@ footer .social-links {
 }
 
 /* ============================= */
-/* SECTIONS */
+/* SECTIONS (full width) */
 /* ============================= */
 section {
   width: 100%;      /* piena larghezza */
   margin-bottom: 20px;
   background-color: white;
-  border-radius: 8px;
+  padding: 40px 5%;  /* respiro laterale */
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  padding: 20px;
 }
 
 section h1, section h2, section h3 {
@@ -166,7 +165,7 @@ section .btn {
 
 .image-center img {
   width: 100%;
-  max-width: 400px;
+  max-width: 700px;
   height: auto;
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.2);
@@ -329,7 +328,7 @@ nav.menu-desktop a.active {
 
   main {
     width: 100%;     /* piena larghezza desktop */
-    padding: 40px 30px;
+    padding: 40px 0;
   }
 
   /* two-columns: immagine sinistra, testo destra */
@@ -341,8 +340,8 @@ nav.menu-desktop a.active {
 
   .two-columns > img,
   .two-columns > figure {
-    flex: 0 0 50%;
-    max-width: 50%;
+    flex: 0 0 45%;
+    max-width: 45%;
     margin: 0;
   }
 
@@ -370,9 +369,5 @@ nav.menu-desktop a.active {
   h2 { font-size: 2.2rem; }
   h3 { font-size: 1.8rem; }
   section p, blockquote { font-size: 1.2rem; }
-
-  .image-center img {
-    max-width: 700px;
-  }
 }
 ```
