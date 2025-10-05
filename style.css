@@ -233,7 +233,11 @@ nav.menu-desktop a.active {
 /* ============================= */
 /* LAYOUT DESKTOP (>=1024px) */
 /* ============================= */
+/* ============================= */
+/* LAYOUT DESKTOP (>=1024px) */
+/* ============================= */
 @media (min-width: 1024px) {
+
   header {
     display: flex;
     justify-content: space-between;
@@ -241,37 +245,64 @@ nav.menu-desktop a.active {
     text-align: left;
     padding: 18px 40px;
   }
-  header .logo { margin: 0; max-width: 200px; height: auto; }
-  nav.menu-desktop ul { justify-content: flex-end; display: flex; }
+
+  header .logo {
+    margin: 0;
+    max-width: 200px;
+    height: auto;
+  }
+
+  nav.menu-desktop ul {
+    justify-content: flex-end;
+    display: flex;
+  }
 
   /* MAIN più largo e dinamico */
   main {
     max-width: 1500px;
     width: 95%;
-    padding: 40px 30px;
+    margin: 0 auto;
+    padding: 60px 30px;
   }
 
-  /* SECTIONS più "pieni" */
+  /* SECTIONS più ampie e vive */
   section {
-    padding: 50px 60px;
-    margin-bottom: 40px;
+    padding: 60px 70px;
+    margin-bottom: 50px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
   }
 
   /* TWO-COLUMNS più equilibrato */
   .two-columns {
     display: flex;
-    align-items: flex-start;
-    gap: 40px;
+    align-items: center;
+    gap: 50px;
   }
+
   .two-columns > img,
   .two-columns > figure {
     flex: 0 0 45%;
     max-width: 45%;
     margin: 0;
   }
-  .two-columns .text { flex: 1; }
 
-  /* Testi più grandi */
+  .two-columns .text {
+    flex: 1;
+  }
+
+  .two-columns.reverse {
+    flex-direction: row-reverse;
+  }
+
+  /* Tipografia più grande e ariosa */
   body { font-size: 18px; line-height: 1.8; }
   h1 { font-size: 3rem; }
   h2 { font-size: 2.4rem; }
@@ -279,6 +310,7 @@ nav.menu-desktop a.active {
   section p, blockquote { font-size: 1.2rem; }
 
   /* Immagini centrali più grandi */
-  .image-center img { max-width: 800px; }
+  .image-center img {
+    max-width: 900px;
+  }
 }
-```
