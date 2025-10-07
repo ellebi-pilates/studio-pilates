@@ -4,11 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ellebi Studio - Contatti</title>
-  <link rel="stylesheet" href="style.css">
   <style>
-    /* ============================= */
-    /* FONT FAMILIES */
-    /* ============================= */
     @font-face {
       font-family: 'Glacial Indifference';
       src: url('GlacialIndifference-Regular.otf') format('opentype');
@@ -28,16 +24,32 @@
       font-style: normal;
     }
 
-    /* ============================= */
-    /* BASE STYLES */
-    /* ============================= */
-    body {
-      font-family: 'Glacial Indifference', Arial, sans-serif;
+    html, body {
+      height: 100%;
       margin: 0;
       padding: 0;
+    }
+    body {
+      font-family: 'Glacial Indifference', Arial, sans-serif;
       line-height: 1.6;
       background-color: #f9f9f9;
       color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    main {
+      flex: 1;
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+    }
+    footer {
+      background-color: #cbb5a6;
+      padding: 20px 0;
+      text-align: center;
+      color: white;
+      width: 100%;
     }
     h1, h2, h3, nav a {
       font-family: 'Kudryashev', serif;
@@ -53,106 +65,48 @@
       height: auto;
       margin-bottom: 10px;
     }
-    main {
-      max-width: 900px;
-      margin: auto;
-      padding: 20px;
-    }
     section {
       padding: 20px;
       margin-bottom: 20px;
       background-color: white;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    section:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 35px rgba(0, 0, 0, 0.12);
     }
     section h1, section h2, section h3 {
       color: #cbb5a6;
     }
 
-    /* ============================= */
-    /* CONTACT CARDS */
-    /* ============================= */
-    .contact-card {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      padding: 14px 16px;
-      background: #fff;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.08);
-      margin: 12px 0;
-    }
-    .icon-circle {
-      width: 44px;
-      height: 44px;
-      min-width: 44px;
-      border-radius: 50%;
-      background: #cbb5a6;
-      color: #000;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: bold;
-    }
-    .contact-label {
-      font-size: 0.85rem;
-      color: #666;
-    }
-    .contact-link {
-      font-size: 1rem;
-      font-weight: 600;
-      color: #333;
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      margin: 20px auto 0 auto;
+      background-color: #cbb5a6;
+      color: white;
       text-decoration: none;
+      font-weight: bold;
+      border-radius: 6px;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
     }
-    .contact-link:hover {
-      text-decoration: underline;
+    .btn:hover {
+      background-color: #a98d7b;
+      transform: translateY(-2px);
     }
-
-    /* ============================= */
-    /* LOCATION + HOURS */
-    /* ============================= */
-    .location-hours {
-      display: grid;
-      gap: 20px;
+    .btn-light {
+      background-color: rgba(255, 255, 255, 0.85);
+      color: #cbb5a6;
     }
-    .location, .hours {
-      background: #fff;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.08);
-      padding: 18px;
-    }
-    .map-embed {
-      margin-top: 12px;
-      border-radius: 10px;
-      overflow: hidden;
-      aspect-ratio: 16/9;
-    }
-    .map-embed iframe {
-      width: 100%;
-      height: 100%;
-      border: 0;
-    }
-    .hours-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-    .hours-list li {
-      display: flex;
-      justify-content: space-between;
-      padding: 8px 0;
-      border-bottom: 1px dashed #ddd;
-    }
-    .hours-list li:last-child {
-      border-bottom: none;
-    }
-    .hours-list span {
-      color: #555;
+    .btn-light:hover {
+      background-color: rgba(255, 255, 255, 0.95);
+      color: #9c8270;
     }
 
-    /* ============================= */
-    /* SOCIAL LINKS */
-    /* ============================= */
     .social-links {
       margin-top: 15px;
       text-align: center;
@@ -178,13 +132,109 @@
       transform: scale(1.1);
       background: #b59f90;
     }
-    .social-links img:hover {
-      transform: scale(1.2);
+
+    .desktop-hero-copy {
+      display: none;
+    }
+    .desktop-hero-copy p {
+      font-size: 1.05rem;
+      margin: 0;
+      color: rgba(255, 255, 255, 0.9);
+    }
+    .hero-cta {
+      margin-top: 18px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
     }
 
-    /* ============================= */
-    /* MENU DESKTOP */
-    /* ============================= */
+    .contact-grid {
+      display: grid;
+      gap: 18px;
+      margin-top: 16px;
+    }
+    .contact-card {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 16px 18px;
+      border-radius: 14px;
+      background: linear-gradient(140deg, #fffefd, #f6f1ec);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7), 0 16px 28px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .contact-card:hover {
+      transform: translateY(-4px);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.75), 0 24px 36px rgba(0, 0, 0, 0.12);
+    }
+    .icon-circle {
+      width: 46px;
+      height: 46px;
+      min-width: 46px;
+      border-radius: 50%;
+      background: #cbb5a6;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+    }
+    .contact-label {
+      font-size: 0.85rem;
+      color: #666;
+    }
+    .contact-link {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #333;
+      text-decoration: none;
+    }
+    .contact-link:hover {
+      text-decoration: underline;
+    }
+
+    .location-grid {
+      display: grid;
+      gap: 20px;
+      margin-top: 16px;
+    }
+    .location-card {
+      border-radius: 14px;
+      background: #fff;
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.08);
+      padding: 18px;
+    }
+    .map-embed {
+      margin-top: 12px;
+      border-radius: 12px;
+      overflow: hidden;
+      aspect-ratio: 16/9;
+    }
+    .map-embed iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+    .hours-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 10px;
+    }
+    .hours-list li {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 0;
+      border-bottom: 1px dashed #ddd;
+    }
+    .hours-list li:last-child {
+      border-bottom: none;
+    }
+    .hours-list span {
+      color: #555;
+    }
+
     nav.desktop-menu ul {
       list-style: none;
       margin: 0;
@@ -198,16 +248,15 @@
       color: white;
       padding: 14px 20px;
       text-decoration: none;
+      transition: background-color 0.3s ease;
     }
-    nav.desktop-menu ul li a:hover,
-    nav.desktop-menu ul li a.active {
-      background-color: #5a3d2b;
-      border-bottom: 2px solid white;
+    nav.desktop-menu ul li a:hover {
+      background-color: #a98d7b;
+    }
+    nav.desktop-menu a.active {
+      background-color: #a98d7b;
     }
 
-    /* ============================= */
-    /* HAMBURGER MOBILE FULLSCREEN */
-    /* ============================= */
     .hamburger-menu {
       display: none;
       position: absolute;
@@ -248,8 +297,7 @@
       color: white;
       text-decoration: none;
     }
-    .menu-content li a:hover,
-    .menu-content li a.active {
+    .menu-content li a:hover {
       color: #333;
       text-decoration: underline;
     }
@@ -257,9 +305,78 @@
       display: flex;
     }
 
-    /* ============================= */
-    /* MEDIA QUERY */
-    /* ============================= */
+    @media (min-width: 992px) {
+      body {
+        background: linear-gradient(180deg, #f7f4f1 0%, #fdfcfb 35%, #f4f0ec 100%);
+      }
+      header {
+        background: linear-gradient(135deg, rgba(203, 181, 166, 0.78), rgba(63, 47, 36, 0.55)), url('Studio.jpg');
+        background-size: cover;
+        background-position: center;
+        padding: 40px 60px 220px;
+        min-height: 70vh;
+        color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+        overflow: hidden;
+      }
+      header .logo {
+        max-width: 260px;
+        filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.25));
+      }
+      nav.desktop-menu ul {
+        background: rgba(255, 255, 255, 0.18);
+        backdrop-filter: blur(12px);
+        border-radius: 999px;
+        padding: 10px 24px;
+        gap: 10px;
+      }
+      nav.desktop-menu ul li a {
+        padding: 12px 18px;
+        border-radius: 999px;
+      }
+      nav.desktop-menu ul li a:hover,
+      nav.desktop-menu a.active {
+        background-color: rgba(255, 255, 255, 0.35);
+      }
+      .desktop-hero-copy {
+        display: block;
+        text-align: center;
+        max-width: 540px;
+        margin-top: auto;
+      }
+      .desktop-hero-copy h1 {
+        font-size: 2.8rem;
+        margin: 0 0 10px 0;
+        color: #ffffff;
+      }
+      .desktop-hero-copy .btn {
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+      }
+      main {
+        max-width: 1200px;
+        margin: -140px auto 80px auto;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 30px;
+      }
+      main section {
+        margin-bottom: 0;
+      }
+      main section.full-span {
+        grid-column: span 2;
+      }
+      .contact-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .location-grid {
+        grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+        align-items: start;
+      }
+    }
+
     @media (max-width: 768px) {
       nav.desktop-menu {
         display: none;
@@ -274,7 +391,6 @@
   <header>
     <img src="logo.png" alt="Ellebi Studio Pilates e Yoga" class="logo">
 
-    <!-- Menu Desktop -->
     <nav class="desktop-menu">
       <ul>
         <li><a href="index.html">Home</a></li>
@@ -284,7 +400,15 @@
       </ul>
     </nav>
 
-    <!-- Hamburger Menu Mobile -->
+    <div class="desktop-hero-copy">
+      <h1>Restiamo in contatto</h1>
+      <p>Scrivici o chiamaci per prenotare una prova, organizzare lezioni personalizzate o chiedere informazioni sugli eventi.</p>
+      <div class="hero-cta">
+        <a href="#prenota" class="btn">Prenota una prova</a>
+        <a href="mailto:lara.bernardi90@gmail.com" class="btn btn-light">Scrivici ora</a>
+      </div>
+    </div>
+
     <nav class="hamburger-menu">
       <input type="checkbox" id="menu-toggle">
       <label for="menu-toggle" class="menu-icon">☰</label>
@@ -298,33 +422,45 @@
   </header>
 
   <main>
-    <section>
-      <h1>Contatti</h1>
-
-      <!-- Telefono -->
-      <div class="contact-card">
-        <div class="icon-circle">📞</div>
-        <div>
-          <div class="contact-label">Telefono</div>
-          <a class="contact-link" href="tel:+393485782729">+39 348 578 2729</a>
+    <section id="prenota" class="full-span">
+      <h1>Contatti diretti</h1>
+      <p>Siamo disponibili dal lunedì al sabato per supportarti nella scelta del percorso più adatto.</p>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <div class="icon-circle">📞</div>
+          <div>
+            <div class="contact-label">Telefono</div>
+            <a class="contact-link" href="tel:+393485782729">+39 348 578 2729</a>
+          </div>
         </div>
-      </div>
-
-      <!-- Email -->
-      <div class="contact-card">
-        <div class="icon-circle">@</div>
-        <div>
-          <div class="contact-label">Email</div>
-          <a class="contact-link" href="mailto:lara.bernardi90@gmail.com">lara.bernardi90@gmail.com</a>
+        <div class="contact-card">
+          <div class="icon-circle">💬</div>
+          <div>
+            <div class="contact-label">WhatsApp</div>
+            <a class="contact-link" href="https://wa.me/393485782729" target="_blank">Chatta con noi</a>
+          </div>
+        </div>
+        <div class="contact-card">
+          <div class="icon-circle">@</div>
+          <div>
+            <div class="contact-label">Email</div>
+            <a class="contact-link" href="mailto:lara.bernardi90@gmail.com">lara.bernardi90@gmail.com</a>
+          </div>
+        </div>
+        <div class="contact-card">
+          <div class="icon-circle">📸</div>
+          <div>
+            <div class="contact-label">Instagram</div>
+            <a class="contact-link" href="https://www.instagram.com/ellebi.studio.pilates/" target="_blank">@ellebi.studio.pilates</a>
+          </div>
         </div>
       </div>
     </section>
 
-    <section>
+    <section class="full-span">
       <h2>Posizione e orari</h2>
-
-      <div class="location-hours">
-        <div class="location">
+      <div class="location-grid">
+        <div class="location-card">
           <h3>Indirizzo</h3>
           <p>Via Santa Maria, 63, Nettuno, RM, Italia</p>
           <div class="map-embed">
@@ -335,8 +471,7 @@
             </iframe>
           </div>
         </div>
-
-        <div class="hours">
+        <div class="location-card">
           <h3>Orari di apertura</h3>
           <ul class="hours-list">
             <li><span>Lunedì</span><strong>07:00 - 20:00</strong></li>
@@ -356,10 +491,10 @@
     <p>© 2025 Ellebi Studio • Pilates & Yoga</p>
     <div class="social-links">
       <a href="https://www.instagram.com/ellebi.studio.pilates/" target="_blank">
-        <img src="instagram.png" alt="Instagram" />
+        <img src="instagram.png" alt="Instagram">
       </a>
       <a href="https://wa.me/393485782729" target="_blank">
-        <img src="whatsup.png" alt="WhatsApp" />
+        <img src="whatsup.png" alt="WhatsApp">
       </a>
     </div>
   </footer>

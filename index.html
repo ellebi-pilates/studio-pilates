@@ -30,40 +30,33 @@
     /* ============================= */
     /* BASE STYLES */
     /* ============================= */
-    body {
-      font-family: 'Glacial Indifference', Arial, sans-serif;
+    html, body {
+      height: 100%;
       margin: 0;
       padding: 0;
+    }
+    body {
+      font-family: 'Glacial Indifference', Arial, sans-serif;
       line-height: 1.6;
       background-color: #f9f9f9;
       color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
     }
-    
-    html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    }
-
-    body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh; /* il body occupa tutta la finestra */
-    }
-
     main {
-    flex: 1; /* spinge il footer in basso */
+      flex: 1;
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
     }
-
     footer {
-    background-color: #cbb5a6; /* stesso colore dell'header */
-    padding: 20px 0;
-    text-align: center;
-    color: white;
-    width: 100%;
+      background-color: #cbb5a6;
+      padding: 20px 0;
+      text-align: center;
+      color: white;
+      width: 100%;
     }
-
-    
     h1, h2, h3, nav a {
       font-family: 'Kudryashev', serif;
     }
@@ -78,17 +71,17 @@
       height: auto;
       margin-bottom: 10px;
     }
-    main {
-      max-width: 900px;
-      margin: auto;
-      padding: 20px;
-    }
     section {
       padding: 20px;
       margin-bottom: 20px;
       background-color: white;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    section:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 35px rgba(0, 0, 0, 0.12);
     }
     section h1, section h2, section h3 {
       color: #cbb5a6;
@@ -117,15 +110,25 @@
       text-decoration: none;
       font-weight: bold;
       border-radius: 6px;
-      transition: background-color 0.3s ease;
+      transition: background-color 0.3s ease, transform 0.3s ease;
       text-align: center;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
     }
     .btn:hover {
       background-color: #a98d7b;
+      transform: translateY(-2px);
+    }
+    .btn-light {
+      background-color: rgba(255, 255, 255, 0.85);
+      color: #cbb5a6;
+    }
+    .btn-light:hover {
+      background-color: rgba(255, 255, 255, 0.95);
+      color: #9c8270;
     }
     section .btn {
-      display: block;
-      width: fit-content;
+      display: inline-flex;
+      align-self: flex-start;
     }
 
     /* ============================= */
@@ -150,7 +153,7 @@
     .social-links img {
       width: 28px;
       height: 28px;
-      border-radius: 25%; /* rende le icone tonde */
+      border-radius: 25%;
     }
     .social-links a:hover {
       transform: scale(1.1);
@@ -158,6 +161,79 @@
     }
     .social-links img:hover {
       transform: scale(1.2);
+    }
+
+    /* ============================= */
+    /* HERO COPY */
+    /* ============================= */
+    .desktop-hero-copy {
+      display: none;
+    }
+    .desktop-hero-copy p {
+      font-size: 1.05rem;
+      margin: 0;
+      color: rgba(255, 255, 255, 0.9);
+    }
+    .hero-cta {
+      margin-top: 18px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    /* ============================= */
+    /* LAYOUT UTILITIES */
+    /* ============================= */
+    .split-content {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-top: 18px;
+    }
+    .split-text {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .split-gallery {
+      display: grid;
+      gap: 18px;
+    }
+    .split-gallery figure {
+      margin: 0;
+    }
+    .split-gallery img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.15);
+    }
+    .feature-list {
+      padding-left: 20px;
+      display: grid;
+      gap: 12px;
+    }
+    .bio-grid {
+      display: grid;
+      gap: 18px;
+      margin-top: 20px;
+    }
+    .bio-grid figure {
+      margin: 0;
+      text-align: center;
+    }
+    .bio-grid img {
+      max-width: 360px;
+      border-radius: 16px;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.16);
+    }
+    .bio-text {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .bio-text h3 {
+      margin-top: 0;
     }
 
     /* ============================= */
@@ -237,8 +313,107 @@
     }
 
     /* ============================= */
-    /* MEDIA QUERY */
+    /* DESKTOP ENHANCEMENTS */
     /* ============================= */
+    @media (min-width: 992px) {
+      body {
+        background: linear-gradient(180deg, #f7f4f1 0%, #fdfcfb 35%, #f4f0ec 100%);
+      }
+      header {
+        background: linear-gradient(135deg, rgba(203, 181, 166, 0.78), rgba(63, 47, 36, 0.55)), url('Reformer.jpg');
+        background-size: cover;
+        background-position: center;
+        padding: 40px 60px 220px;
+        min-height: 70vh;
+        color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+        overflow: hidden;
+      }
+      header .logo {
+        max-width: 280px;
+        filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.25));
+      }
+      nav.desktop-menu ul {
+        background: rgba(255, 255, 255, 0.18);
+        backdrop-filter: blur(12px);
+        border-radius: 999px;
+        padding: 10px 24px;
+        gap: 10px;
+      }
+      nav.desktop-menu ul li a {
+        padding: 12px 18px;
+        border-radius: 999px;
+      }
+      nav.desktop-menu ul li a:hover,
+      nav.desktop-menu a.active {
+        background-color: rgba(255, 255, 255, 0.35);
+      }
+      .desktop-hero-copy {
+        display: block;
+        text-align: center;
+        max-width: 540px;
+        margin-top: auto;
+      }
+      .desktop-hero-copy h1 {
+        font-size: 2.8rem;
+        margin: 0 0 10px 0;
+        color: #ffffff;
+      }
+      .desktop-hero-copy .btn {
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+      }
+      main {
+        max-width: 1200px;
+        margin: -140px auto 80px auto;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 30px;
+      }
+      main section {
+        margin-bottom: 0;
+      }
+      main section.full-span {
+        grid-column: span 2;
+      }
+      .split-content {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
+        align-items: center;
+        gap: 30px;
+      }
+      .split-gallery figure:nth-child(2) {
+        transform: translateX(18px);
+      }
+      .feature-list {
+        grid-template-columns: 1fr 1fr;
+        gap: 14px 30px;
+        padding-left: 10px;
+      }
+      .feature-list li {
+        position: relative;
+        padding-left: 18px;
+      }
+      .feature-list li::before {
+        content: '•';
+        position: absolute;
+        left: 0;
+        color: #cbb5a6;
+      }
+      .bio-grid {
+        grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+        align-items: center;
+      }
+      .bio-grid figure {
+        text-align: right;
+      }
+      .bio-text {
+        padding: 0 10px;
+      }
+    }
+
     @media (max-width: 768px) {
       nav.desktop-menu {
         display: none;
@@ -263,6 +438,15 @@
       </ul>
     </nav>
 
+    <div class="desktop-hero-copy">
+      <h1>Benessere in equilibrio</h1>
+      <p>Sessioni personalizzate di Pilates e Yoga in uno studio raccolto e luminoso al centro di Roma.</p>
+      <div class="hero-cta">
+        <a href="corsi.html" class="btn hero-btn">Scopri i corsi</a>
+        <a href="contatti.html" class="btn btn-light">Prenota una prova</a>
+      </div>
+    </div>
+
     <!-- Hamburger menu mobile -->
     <nav class="hamburger-menu">
       <input type="checkbox" id="menu-toggle">
@@ -277,29 +461,35 @@
   </header>
 
   <main>
-    <section>
+    <section id="introduzione" class="intro-section full-span">
       <h1>Benvenuti in Ellebi Studio</h1>
       <p>Uno spazio dedicato al benessere, al movimento e all’armonia attraverso <strong>Pilates</strong> e <strong>Yoga</strong>.</p>
       <p>Ellebi Studio nasce con l’intenzione di accogliere tutte le persone che vogliono prendersi cura del proprio benessere, non solo <strong>fisico</strong> ma anche <strong>mentale e spirituale</strong>. L’ambiente è intimo e accogliente: un luogo dove rigenerarsi e stare bene.</p>
     </section>
 
-    <section>
+    <section id="offerta" class="split-section full-span">
       <h2>La nostra offerta corsi</h2>
-      <p><strong>Pilates</strong> – Lezioni a corpo libero <strong>(Matwork)</strong> e con macchinari <strong>Reformer</strong> e <strong>Cadillac (Tower)</strong>, per un lavoro completo e personalizzato.</p>
-      <figure class="image-center">
-        <img src="Studio.jpg" alt="Macchinario Reformer">
-      </figure>
-      <p><strong>Yoga</strong> – È possibile praticare <em>Hatha</em>, <em>Vinyasa</em>, <em>Yin</em>, <em>Nidra</em>, in base alla propria preferenza.</p>
-      <p><strong>Yoga Prenatale e Mum&Baby</strong> – Un percorso dedicato alle donne in dolce attesa o che hanno appena partorito e vogliono riacquistare familiarità con il proprio corpo, senza doversi separare dai propri piccoli.</p>
-      <figure class="image-center">
-        <img src="Tappetini.jpg" alt="Lezioni su tappetini">
-      </figure>
-      <a href="corsi.html" class="btn">Scopri di più</a>
+      <div class="split-content">
+        <div class="split-text">
+          <p><strong>Pilates</strong> – Lezioni a corpo libero <strong>(Matwork)</strong> e con macchinari <strong>Reformer</strong> e <strong>Cadillac (Tower)</strong>, per un lavoro completo e personalizzato.</p>
+          <p><strong>Yoga</strong> – È possibile praticare <em>Hatha</em>, <em>Vinyasa</em>, <em>Yin</em>, <em>Nidra</em>, in base alla propria preferenza.</p>
+          <p><strong>Yoga Prenatale e Mum&Baby</strong> – Un percorso dedicato alle donne in dolce attesa o che hanno appena partorito e vogliono riacquistare familiarità con il proprio corpo, senza doversi separare dai propri piccoli.</p>
+          <a href="corsi.html" class="btn">Scopri di più</a>
+        </div>
+        <div class="split-gallery">
+          <figure>
+            <img src="Studio.jpg" alt="Macchinario Reformer">
+          </figure>
+          <figure>
+            <img src="Tappetini.jpg" alt="Lezioni su tappetini">
+          </figure>
+        </div>
+      </div>
     </section>
 
-    <section>
+    <section class="info-section">
       <h2>Modalità di lezione</h2>
-      <ul>
+      <ul class="feature-list">
         <li>Lezioni <strong>individuali</strong> o in <strong>piccoli gruppi</strong> (max 3 persone) per un’attenzione dedicata.</li>
         <li>Corsi di gruppo limitati a 3 persone in presenza, con possibilità di seguirli anche <strong>online</strong>.</li>
         <li>Lezioni con macchinari solo <strong>individuali</strong> e in presenza.</li>
@@ -308,26 +498,30 @@
       <a href="contatti.html" class="btn">Scopri di più</a>
     </section>
 
-    <section>
+    <section class="info-section">
       <h2>Acquisto e pagamenti</h2>
       <p>Tutti i corsi possono essere acquistati <strong>singolarmente</strong> oppure con pacchetti da <strong>5 o 10 lezioni</strong>.<br>
       Pagamenti accettati: contanti, carte, PayPal, bonifico bancario.<br>
       <strong>Nessun costo aggiuntivo di associazione</strong>.<br></p>
     </section>
 
-    <section>
+    <section id="chi-sono" class="bio-section full-span">
       <h2>Chi sono</h2>
-      <figure class="image-center">
-        <img src="Lallaspiaggia.jpg" alt="Lara Bernardi sulla spiaggia">
-      </figure>
-      <h3>Lara Bernardi</h3>
-      <p>Sono cresciuta praticando danza classica dall’età di 5 anni, diplomandomi presso la Royal Academy of Dance di Londra nel 2009.</p>
-      <p>Ho incontrato il Pilates all’età di 13 anni circa, comprendendo sin da subito la potenza del metodo.</p>
-      <p>La mia vita ha preso poi una strada un po’ diversa, laureandomi in <strong>Scienze Biologiche</strong> e poi in <strong>Biotecnologie del farmaco</strong>. Ho lavorato per 7 anni in aziende farmaceutiche finché, durante la pandemia Covid, ho iniziato a chiedermi se quella fosse davvero la mia strada.</p>
-      <p>Mi sono avvicinata anche allo <strong>yoga</strong> e me ne sono innamorata.</p>
-      <p>Ho conseguito la certificazione di <strong>CovaTech® Pilates® Teacher</strong> lavorando per diversi studi in provincia di Milano e di Pavia, a Lanzarote, a Roma e in provincia.</p>
-      <p>Ho conseguito la certificazione di <strong>200h Hatha e Ashtanga Yoga Teacher</strong>, <strong>Yoga Nidra</strong>, <strong>Prenatal Yoga Teacher</strong> e <strong>Yoga Postpartum with Baby</strong>.</p>
-      <p>Da queste esperienze è nata la voglia di creare uno spazio mio, dove poter portare appieno la mia visione di benessere e poter condividere la mia esperienza di vita.</p>
+      <div class="bio-grid">
+        <figure>
+          <img src="Lallaspiaggia.jpg" alt="Lara Bernardi sulla spiaggia">
+        </figure>
+        <div class="bio-text">
+          <h3>Lara Bernardi</h3>
+          <p>Sono cresciuta praticando danza classica dall’età di 5 anni, diplomandomi presso la Royal Academy of Dance di Londra nel 2009.</p>
+          <p>Ho incontrato il Pilates all’età di 13 anni circa, comprendendo sin da subito la potenza del metodo.</p>
+          <p>La mia vita ha preso poi una strada un po’ diversa, laureandomi in <strong>Scienze Biologiche</strong> e poi in <strong>Biotecnologie del farmaco</strong>. Ho lavorato per 7 anni in aziende farmaceutiche finché, durante la pandemia Covid, ho iniziato a chiedermi se quella fosse davvero la mia strada.</p>
+          <p>Mi sono avvicinata anche allo <strong>yoga</strong> e me ne sono innamorata.</p>
+          <p>Ho conseguito la certificazione di <strong>CovaTech® Pilates® Teacher</strong> lavorando per diversi studi in provincia di Milano e di Pavia, a Lanzarote, a Roma e in provincia.</p>
+          <p>Ho conseguito la certificazione di <strong>200h Hatha e Ashtanga Yoga Teacher</strong>, <strong>Yoga Nidra</strong>, <strong>Prenatal Yoga Teacher</strong> e <strong>Yoga Postpartum with Baby</strong>.</p>
+          <p>Da queste esperienze è nata la voglia di creare uno spazio mio, dove poter portare appieno la mia visione di benessere e poter condividere la mia esperienza di vita.</p>
+        </div>
+      </div>
     </section>
   </main>
 
