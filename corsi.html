@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ellebi Studio - Corsi</title>
   <style>
+    /* ============================= */
+    /* FONT FAMILIES */
+    /* ============================= */
     @font-face {
       font-family: 'Glacial Indifference';
       src: url('GlacialIndifference-Regular.otf') format('opentype');
@@ -24,91 +27,68 @@
       font-style: normal;
     }
 
+    /* ============================= */
+    /* BASE LAYOUT */
+    /* ============================= */
     html, body {
       height: 100%;
       margin: 0;
       padding: 0;
     }
     body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
       font-family: 'Glacial Indifference', Arial, sans-serif;
       line-height: 1.6;
       background-color: #f9f9f9;
       color: #333;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
     }
     main {
       flex: 1;
       max-width: 900px;
-      margin: auto;
+      margin: 0 auto;
       padding: 20px;
-    }
-    footer {
-      background-color: #cbb5a6;
-      padding: 20px 0;
-      text-align: center;
-      color: white;
-      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
     }
     h1, h2, h3, nav a {
       font-family: 'Kudryashev', serif;
     }
+
+    /* ============================= */
+    /* HEADER */
+    /* ============================= */
     header {
       background-color: #cbb5a6;
-      padding: 15px 20px;
+      padding: 15px 20px 40px;
       text-align: center;
       position: relative;
+      overflow: hidden;
     }
     header .logo {
       max-width: 250px;
       height: auto;
       margin-bottom: 10px;
     }
-    section {
-      padding: 20px;
-      margin-bottom: 20px;
-      background-color: white;
-      border-radius: 12px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    section:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 18px 35px rgba(0, 0, 0, 0.12);
-    }
-    section h1, section h2, section h3 {
-      color: #cbb5a6;
-    }
 
-    .btn {
-      display: inline-block;
-      padding: 12px 24px;
-      margin: 20px auto 0 auto;
+    /* ============================= */
+    /* FOOTER */
+    /* ============================= */
+    footer {
       background-color: #cbb5a6;
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 6px;
-      transition: background-color 0.3s ease, transform 0.3s ease;
+      width: 100%;
+      padding: 20px 0;
       text-align: center;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+      color: white;
     }
-    .btn:hover {
-      background-color: #a98d7b;
-      transform: translateY(-2px);
+    footer p {
+      margin: 0;
+      font-family: 'Kudryashev', serif;
     }
-    .btn-light {
-      background-color: rgba(255, 255, 255, 0.85);
-      color: #cbb5a6;
-    }
-    .btn-light:hover {
-      background-color: rgba(255, 255, 255, 0.95);
-      color: #9c8270;
-    }
-
-    .social-links {
-      margin-top: 15px;
+    footer .social-links {
+      margin-top: 10px;
       text-align: center;
     }
     .social-links a {
@@ -120,8 +100,8 @@
       margin: 0 10px;
       background: #cbb5a6;
       border-radius: 12px;
-      overflow: hidden;
       transition: transform 0.2s ease, background 0.2s ease;
+      overflow: hidden;
     }
     .social-links img {
       width: 28px;
@@ -133,63 +113,104 @@
       background: #b59f90;
     }
 
-    .desktop-hero-copy {
+    /* ============================= */
+    /* SECTIONS */
+    /* ============================= */
+    section {
+      padding: 20px;
+      background-color: white;
+      border-radius: 16px;
+      box-shadow: 0 8px 22px rgba(0,0,0,0.08);
+    }
+    section h1, section h2, section h3 {
+      color: #cbb5a6;
+    }
+
+    /* ============================= */
+    /* BUTTONS */
+    /* ============================= */
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      margin: 20px auto 0 auto;
+      background-color: #cbb5a6;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 8px;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      text-align: center;
+      box-shadow: 0 12px 26px rgba(0,0,0,0.12);
+    }
+    .btn:hover {
+      background-color: #a98d7b;
+      transform: translateY(-2px);
+    }
+
+    /* ============================= */
+    /* CONTENT UTILITIES */
+    /* ============================= */
+    .hero-desktop {
       display: none;
     }
-    .desktop-hero-copy p {
-      font-size: 1.05rem;
+    .hero-desktop p {
       margin: 0;
-      color: rgba(255, 255, 255, 0.9);
     }
     .hero-cta {
-      margin-top: 18px;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 12px;
+      margin-top: 16px;
     }
-
+    .hero-cta .btn {
+      margin: 0;
+    }
+    .btn-light {
+      background-color: rgba(255,255,255,0.85);
+      color: #7a5a45;
+    }
+    .btn-light:hover {
+      background-color: rgba(255,255,255,0.95);
+      color: #5a3f2f;
+    }
+    .two-columns {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .two-columns .text {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .two-columns img {
+      width: 100%;
+      border-radius: 16px;
+      box-shadow: 0 18px 36px rgba(0,0,0,0.15);
+    }
+    .two-columns.reverse {
+      flex-direction: column-reverse;
+    }
     blockquote {
       background: #f1f1f1;
-      padding: 15px 20px;
+      padding: 18px 20px;
       border-left: 5px solid #cbb5a6;
-      margin: 20px 0;
+      margin: 10px 0 20px 0;
       font-style: italic;
       color: #444;
-      border-radius: 12px;
     }
     blockquote cite {
       display: block;
-      margin-top: 5px;
+      margin-top: 6px;
       font-size: 0.9rem;
       text-align: right;
       color: #666;
     }
 
-    .split-content {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      margin-top: 18px;
-    }
-    .split-text {
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-    }
-    .split-gallery {
-      display: grid;
-      gap: 18px;
-    }
-    .split-gallery figure {
-      margin: 0;
-    }
-    .split-gallery img {
-      width: 100%;
-      border-radius: 12px;
-      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.15);
-    }
-
+    /* ============================= */
+    /* MENU DESKTOP */
+    /* ============================= */
     nav.desktop-menu ul {
       list-style: none;
       margin: 0;
@@ -205,13 +226,14 @@
       text-decoration: none;
       transition: background-color 0.3s ease;
     }
-    nav.desktop-menu ul li a:hover {
-      background-color: #a98d7b;
-    }
+    nav.desktop-menu ul li a:hover,
     nav.desktop-menu a.active {
       background-color: #a98d7b;
     }
 
+    /* ============================= */
+    /* HAMBURGER MENU MOBILE */
+    /* ============================= */
     .hamburger-menu {
       display: none;
       position: absolute;
@@ -252,7 +274,8 @@
       color: white;
       text-decoration: none;
     }
-    .menu-content li a:hover {
+    .menu-content li a:hover,
+    .menu-content li a.active {
       color: #333;
       text-decoration: underline;
     }
@@ -260,80 +283,9 @@
       display: flex;
     }
 
-    @media (min-width: 992px) {
-      body {
-        background: linear-gradient(180deg, #f7f4f1 0%, #fdfcfb 35%, #f4f0ec 100%);
-      }
-      header {
-        background: linear-gradient(135deg, rgba(203, 181, 166, 0.78), rgba(63, 47, 36, 0.55)), url('Tappetini.jpg');
-        background-size: cover;
-        background-position: center;
-        padding: 40px 60px 220px;
-        min-height: 70vh;
-        color: #ffffff;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 24px;
-        overflow: hidden;
-      }
-      header .logo {
-        max-width: 260px;
-        filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.25));
-      }
-      nav.desktop-menu ul {
-        background: rgba(255, 255, 255, 0.18);
-        backdrop-filter: blur(12px);
-        border-radius: 999px;
-        padding: 10px 24px;
-        gap: 10px;
-      }
-      nav.desktop-menu ul li a {
-        padding: 12px 18px;
-        border-radius: 999px;
-      }
-      nav.desktop-menu ul li a:hover,
-      nav.desktop-menu a.active {
-        background-color: rgba(255, 255, 255, 0.35);
-      }
-      .desktop-hero-copy {
-        display: block;
-        text-align: center;
-        max-width: 560px;
-        margin-top: auto;
-      }
-      .desktop-hero-copy h1 {
-        font-size: 2.8rem;
-        margin: 0 0 10px 0;
-        color: #ffffff;
-      }
-      .desktop-hero-copy .btn {
-        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
-      }
-      main {
-        max-width: 1200px;
-        margin: -140px auto 80px auto;
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 30px;
-      }
-      main section {
-        margin-bottom: 0;
-      }
-      main section.full-span {
-        grid-column: span 2;
-      }
-      .split-content {
-        display: grid;
-        grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-        align-items: center;
-        gap: 32px;
-      }
-      .split-gallery figure:nth-child(2) {
-        transform: translateX(18px);
-      }
-    }
-
+    /* ============================= */
+    /* MEDIA QUERY MOBILE */
+    /* ============================= */
     @media (max-width: 768px) {
       nav.desktop-menu {
         display: none;
@@ -342,12 +294,107 @@
         display: block;
       }
     }
+
+    /* ============================= */
+    /* MEDIA QUERY DESKTOP */
+    /* ============================= */
+    @media (min-width: 1024px) {
+      body {
+        background: linear-gradient(180deg, #f8f5f2 0%, #fdfcfb 35%, #f4f0ec 100%);
+      }
+      header {
+        background: linear-gradient(135deg, rgba(203, 181, 166, 0.78), rgba(63, 47, 36, 0.55)), url('Studio.jpg');
+        background-size: cover;
+        background-position: center;
+        padding: 40px 60px 240px;
+        color: #ffffff;
+      }
+      header .logo {
+        max-width: 300px;
+        margin-bottom: 20px;
+        filter: drop-shadow(0 12px 28px rgba(0,0,0,0.35));
+      }
+      nav.desktop-menu ul {
+        background: rgba(255,255,255,0.2);
+        backdrop-filter: blur(12px);
+        border-radius: 999px;
+        padding: 10px 24px;
+        gap: 12px;
+      }
+      nav.desktop-menu ul li a {
+        padding: 12px 20px;
+        border-radius: 999px;
+      }
+      nav.desktop-menu ul li a:hover,
+      nav.desktop-menu a.active {
+        background-color: rgba(255,255,255,0.35);
+        color: #2f241a;
+      }
+      .hero-desktop {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+        max-width: 560px;
+        margin: 40px auto 0 auto;
+        text-align: center;
+      }
+      .hero-desktop h1 {
+        font-size: 2.8rem;
+        margin: 0;
+        color: #ffffff;
+      }
+      .hero-desktop p {
+        font-size: 1.05rem;
+        color: rgba(255,255,255,0.9);
+      }
+      .hero-cta .btn {
+        padding: 14px 30px;
+        border-radius: 999px;
+        box-shadow: 0 18px 40px rgba(0,0,0,0.18);
+      }
+      main {
+        max-width: 1180px;
+        margin: -170px auto 80px auto;
+        padding: 0 20px;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 28px;
+      }
+      main section {
+        margin: 0;
+        padding: 32px;
+        border-radius: 24px;
+        box-shadow: 0 22px 45px rgba(0,0,0,0.12);
+      }
+      .desktop-span-2 {
+        grid-column: span 2;
+      }
+      .two-columns {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 0.95fr);
+        gap: 32px;
+        align-items: center;
+      }
+      .two-columns.reverse {
+        grid-template-columns: minmax(0, 0.95fr) minmax(0, 1fr);
+      }
+      .two-columns img {
+        width: 100%;
+        border-radius: 20px;
+        box-shadow: 0 26px 55px rgba(0,0,0,0.18);
+      }
+      .two-columns.reverse img {
+        order: -1;
+      }
+    }
   </style>
 </head>
 <body>
   <header>
     <img src="logo.png" alt="Ellebi Studio Pilates e Yoga" class="logo">
 
+    <!-- Menu desktop -->
     <nav class="desktop-menu">
       <ul>
         <li><a href="index.html">Home</a></li>
@@ -357,15 +404,16 @@
       </ul>
     </nav>
 
-    <div class="desktop-hero-copy">
-      <h1>Corsi costruiti su di te</h1>
-      <p>Dal Pilates con macchinari allo Yoga più rigenerante: scegli l’energia giusta per ogni momento.</p>
+    <div class="hero-desktop">
+      <h1>Programmi su misura</h1>
+      <p>Dalla precisione del Pilates alla fluidità dello Yoga, costruisci il tuo percorso ideale con lezioni personalizzate.</p>
       <div class="hero-cta">
-        <a href="#pilates" class="btn">Pilates Reformer</a>
-        <a href="#yoga" class="btn btn-light">Scopri lo Yoga</a>
+        <a href="#pilates" class="btn">Pilates</a>
+        <a href="#yoga" class="btn btn-light">Yoga</a>
       </div>
     </div>
 
+    <!-- Hamburger menu mobile -->
     <nav class="hamburger-menu">
       <input type="checkbox" id="menu-toggle">
       <label for="menu-toggle" class="menu-icon">☰</label>
@@ -379,51 +427,49 @@
   </header>
 
   <main>
-    <section class="full-span">
+    <section class="intro desktop-span-2">
       <h1>I nostri corsi</h1>
       <p>Da Ellebi Studio offriamo una proposta completa di <strong>Pilates</strong> e <strong>Yoga</strong>, con percorsi individuali e di gruppo adatti a ogni livello e necessità.</p>
     </section>
 
-    <section id="pilates" class="split-section full-span">
-      <h2>Pilates</h2>
-      <div class="split-content">
-        <div class="split-text">
-          <p>Il <strong>Pilates</strong> si basa su esercizi dedicati alla <strong>muscolatura posturale</strong>, da svolgere a corpo libero o con attrezzature specifiche.</p>
-          <p>Migliora postura e controllo del corpo, offrendo <strong>forza, tonicità e consapevolezza</strong> mentre previene i disturbi alla schiena.</p>
-          <p>I macchinari <strong>Reformer</strong> e <strong>Cadillac (Tower)</strong> accompagnano il lavoro in profondità grazie a resistenze e assistenze calibrate.</p>
-        </div>
-        <div class="split-gallery">
-          <figure>
-            <img src="Reformer.jpg" alt="Allenamento Pilates con Reformer">
-          </figure>
-        </div>
+    <!-- Pilates -->
+    <section id="pilates" class="two-columns desktop-span-2">
+      <div class="text">
+        <h2>Pilates</h2>
+        <p>Il <strong>Pilates</strong> si basa su un programma di esercizi incentrati sulla <strong>muscolatura posturale</strong>, che possono essere svolti a corpo libero o con l'aiuto di attrezzature dedicate.</p>
+        <p>Migliorando la postura, il Pilates dona <strong>forza, tonicità e consapevolezza del corpo</strong>, aiutando a prevenire i disturbi della schiena. L'obiettivo è unire corpo e mente in un’unica entità dinamica, armoniosa ed equilibrata.</p>
+        <p>L’utilizzo dei macchinari <strong>Reformer</strong> e <strong>Cadillac (Tower)</strong> consente di lavorare in profondità coinvolgendo tutti i gruppi muscolari, sfruttando resistenze e assistenze delle molle.</p>
       </div>
+      <img src="Reformer.jpg" alt="Pilates con Reformer">
     </section>
 
-    <section id="yoga" class="split-section full-span">
-      <h2>Yoga</h2>
-      <div class="split-content">
-        <div class="split-text">
-          <blockquote>
-            “Lo Yoga non è un antico mito sepolto nell'oblio. È l'eredità più preziosa del presente. È il bisogno essenziale dell'oggi e la cultura del domani.”
-            <cite>— Swami Satyananda Saraswati</cite>
-          </blockquote>
-          <p>Lo <strong>Yoga</strong> è la scienza del giusto vivere e può essere integrato nella vita quotidiana in modo dolce o dinamico.</p>
-          <h3>Hatha e Vinyasa</h3>
-          <p>L’<strong>Hatha Yoga</strong> è meditativo e attento al respiro, mentre il <strong>Vinyasa Yoga</strong> è fluido e ritmato, con sequenze che connettono movimento e respirazione.</p>
-          <h3>Yin Yoga</h3>
-          <p>Lo <strong>Yin Yoga</strong> lavora sui tessuti profondi con posizioni mantenute a lungo per nutrire corpo e mente.</p>
-          <h3>Yoga Nidra</h3>
-          <p>Lo <strong>Yoga Nidra</strong> è un rilassamento guidato che conduce a uno stato di <em>sonno dinamico</em>, migliorando memoria e creatività.</p>
-          <h3>Percorsi dedicati</h3>
-          <p><strong>Yoga Prenatale</strong> accompagna le future mamme con respiro e movimento consapevole, mentre lo <strong>Yoga Mum&Baby</strong> sostiene il recupero post parto condividendo momenti speciali con il proprio bimbo.</p>
-        </div>
-        <div class="split-gallery">
-          <figure>
-            <img src="lalla.jpg" alt="Pratica di yoga nello studio">
-          </figure>
-        </div>
+    <!-- Yoga -->
+    <section id="yoga" class="two-columns reverse desktop-span-2">
+      <div class="text">
+        <h2>Yoga</h2>
+        <blockquote>
+          “Lo Yoga non è un antico mito sepolto nell'oblio. È l'eredità più preziosa del presente. È il bisogno essenziale dell'oggi e la cultura del domani.”
+          <cite>— Swami Satyananda Saraswati</cite>
+        </blockquote>
+        <p>Lo <strong>Yoga</strong> è la scienza del giusto vivere e può essere incorporato nella vita quotidiana.</p>
+        <h3>Hatha e Vinyasa Yoga</h3>
+        <p>L’<strong>Hatha Yoga</strong> è lento e meditativo, con posizioni mantenute più a lungo per favorire calma e consapevolezza.</p>
+        <p>Il <strong>Vinyasa Yoga</strong> è dinamico e fluido, sincronizza respiro e movimento in sequenze continue, quasi come una danza.</p>
+        <h3>Yin Yoga</h3>
+        <p>Lo <strong>Yin Yoga</strong> lavora sui tessuti profondi (legamenti, articolazioni, fasce, ossa).</p>
+        <p>Le posizioni, semplici ma intense, vengono mantenute a lungo (da 1 a 20 minuti) per nutrire in profondità corpo e mente.</p>
+        <h3>Yoga Nidra</h3>
+        <p>Lo <strong>Yoga Nidra</strong> è una tecnica di rilassamento consapevole che porta a uno stato di <em>sonno dinamico</em>.</p>
+        <p>Favorisce memoria, creatività e benessere, aiutando a trasformare la propria natura interiore.</p>
+        <h3>Yoga Prenatale</h3>
+        <p>Un percorso per le donne in gravidanza che unisce respiro, movimento e consapevolezza.</p>
+        <p>Aiuta a prepararsi a un parto naturale e a rafforzare la connessione con il proprio bambino. <strong>Non è necessaria esperienza pregressa di yoga.</strong></p>
+        <h3>Yoga Mum&amp;Baby</h3>
+        <p>Corso speciale dedicato alle neomamme e ai loro bambini.</p>
+        <p>Comprende posizioni yoga post-parto, tecniche di respirazione, massaggio infantile e momenti di gioco.</p>
+        <p>L’obiettivo è recuperare il benessere del corpo, proteggere la schiena e il pavimento pelvico, e imparare l’arte di rilassarsi insieme al proprio bimbo.</p>
       </div>
+      <img src="lalla.jpg" alt="Yoga in pratica">
     </section>
   </main>
 

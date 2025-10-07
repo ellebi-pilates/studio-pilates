@@ -49,6 +49,9 @@
       max-width: 900px;
       margin: auto;
       padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
     }
     footer {
       background-color: #cbb5a6;
@@ -62,9 +65,10 @@
     }
     header {
       background-color: #cbb5a6;
-      padding: 15px 20px;
+      padding: 15px 20px 40px;
       text-align: center;
       position: relative;
+      overflow: hidden;
     }
     header .logo {
       max-width: 250px;
@@ -73,15 +77,9 @@
     }
     section {
       padding: 20px;
-      margin-bottom: 20px;
       background-color: white;
-      border-radius: 12px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    section:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 18px 35px rgba(0, 0, 0, 0.12);
+      border-radius: 16px;
+      box-shadow: 0 8px 22px rgba(0,0,0,0.08);
     }
     section h1, section h2, section h3 {
       color: #cbb5a6;
@@ -94,8 +92,8 @@
       width: 100%;
       max-width: 400px;
       height: auto;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      border-radius: 12px;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.15);
     }
 
     /* ============================= */
@@ -109,26 +107,14 @@
       color: white;
       text-decoration: none;
       font-weight: bold;
-      border-radius: 6px;
+      border-radius: 8px;
       transition: background-color 0.3s ease, transform 0.3s ease;
       text-align: center;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 12px 26px rgba(0,0,0,0.12);
     }
     .btn:hover {
       background-color: #a98d7b;
       transform: translateY(-2px);
-    }
-    .btn-light {
-      background-color: rgba(255, 255, 255, 0.85);
-      color: #cbb5a6;
-    }
-    .btn-light:hover {
-      background-color: rgba(255, 255, 255, 0.95);
-      color: #9c8270;
-    }
-    section .btn {
-      display: inline-flex;
-      align-self: flex-start;
     }
 
     /* ============================= */
@@ -159,81 +145,71 @@
       transform: scale(1.1);
       background: #b59f90;
     }
-    .social-links img:hover {
-      transform: scale(1.2);
-    }
 
     /* ============================= */
-    /* HERO COPY */
+    /* HERO DESKTOP */
     /* ============================= */
-    .desktop-hero-copy {
+    .hero-desktop {
       display: none;
     }
-    .desktop-hero-copy p {
-      font-size: 1.05rem;
+    .hero-desktop p {
       margin: 0;
-      color: rgba(255, 255, 255, 0.9);
     }
     .hero-cta {
-      margin-top: 18px;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 12px;
+      margin-top: 16px;
+    }
+    .hero-cta .btn {
+      margin: 0;
+    }
+    .btn-light {
+      background-color: rgba(255,255,255,0.85);
+      color: #7a5a45;
+    }
+    .btn-light:hover {
+      background-color: rgba(255,255,255,0.95);
+      color: #5a3f2f;
     }
 
     /* ============================= */
-    /* LAYOUT UTILITIES */
+    /* CONTENT UTILITIES */
     /* ============================= */
-    .split-content {
+    .offerta-grid,
+    .bio-grid {
       display: flex;
       flex-direction: column;
       gap: 20px;
-      margin-top: 18px;
     }
-    .split-text {
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-    }
-    .split-gallery {
-      display: grid;
-      gap: 18px;
-    }
-    .split-gallery figure {
-      margin: 0;
-    }
-    .split-gallery img {
-      width: 100%;
-      border-radius: 12px;
-      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.15);
-    }
-    .feature-list {
-      padding-left: 20px;
-      display: grid;
-      gap: 12px;
-    }
-    .bio-grid {
-      display: grid;
-      gap: 18px;
-      margin-top: 20px;
-    }
-    .bio-grid figure {
-      margin: 0;
-      text-align: center;
-    }
-    .bio-grid img {
-      max-width: 360px;
-      border-radius: 16px;
-      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.16);
-    }
+    .offerta-text,
     .bio-text {
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 16px;
     }
     .bio-text h3 {
       margin-top: 0;
+    }
+    .offerta-gallery {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .offerta-gallery figure {
+      margin: 0;
+    }
+    .offerta-gallery img {
+      width: 100%;
+      border-radius: 14px;
+      box-shadow: 0 16px 32px rgba(0,0,0,0.16);
+    }
+    .feature-list {
+      padding-left: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
     }
 
     /* ============================= */
@@ -254,9 +230,7 @@
       text-decoration: none;
       transition: background-color 0.3s ease;
     }
-    nav.desktop-menu ul li a:hover {
-      background-color: #a98d7b;
-    }
+    nav.desktop-menu ul li a:hover,
     nav.desktop-menu a.active {
       background-color: #a98d7b;
     }
@@ -313,84 +287,113 @@
     }
 
     /* ============================= */
-    /* DESKTOP ENHANCEMENTS */
+    /* MEDIA QUERY MOBILE */
     /* ============================= */
-    @media (min-width: 992px) {
+    @media (max-width: 768px) {
+      nav.desktop-menu {
+        display: none;
+      }
+      .hamburger-menu {
+        display: block;
+      }
+    }
+
+    /* ============================= */
+    /* MEDIA QUERY DESKTOP */
+    /* ============================= */
+    @media (min-width: 1024px) {
       body {
         background: linear-gradient(180deg, #f7f4f1 0%, #fdfcfb 35%, #f4f0ec 100%);
       }
       header {
-        background: linear-gradient(135deg, rgba(203, 181, 166, 0.78), rgba(63, 47, 36, 0.55)), url('Reformer.jpg');
+        background: linear-gradient(135deg, rgba(203, 181, 166, 0.82), rgba(63, 47, 36, 0.55)), url('Reformer.jpg');
         background-size: cover;
         background-position: center;
-        padding: 40px 60px 220px;
-        min-height: 70vh;
+        padding: 40px 60px 260px;
         color: #ffffff;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 24px;
-        overflow: hidden;
       }
       header .logo {
-        max-width: 280px;
-        filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.25));
+        max-width: 300px;
+        margin-bottom: 20px;
+        filter: drop-shadow(0 12px 28px rgba(0,0,0,0.35));
       }
       nav.desktop-menu ul {
-        background: rgba(255, 255, 255, 0.18);
+        background: rgba(255,255,255,0.2);
         backdrop-filter: blur(12px);
         border-radius: 999px;
         padding: 10px 24px;
-        gap: 10px;
+        gap: 12px;
       }
       nav.desktop-menu ul li a {
-        padding: 12px 18px;
+        padding: 12px 20px;
         border-radius: 999px;
       }
       nav.desktop-menu ul li a:hover,
       nav.desktop-menu a.active {
-        background-color: rgba(255, 255, 255, 0.35);
+        background-color: rgba(255,255,255,0.35);
+        color: #2f241a;
       }
-      .desktop-hero-copy {
-        display: block;
-        text-align: center;
+      .hero-desktop {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
         max-width: 540px;
-        margin-top: auto;
+        margin: 40px auto 0 auto;
+        text-align: center;
       }
-      .desktop-hero-copy h1 {
+      .hero-desktop h1 {
         font-size: 2.8rem;
-        margin: 0 0 10px 0;
+        margin: 0;
         color: #ffffff;
       }
-      .desktop-hero-copy .btn {
-        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+      .hero-desktop p {
+        font-size: 1.05rem;
+        color: rgba(255,255,255,0.9);
+      }
+      .hero-cta .btn {
+        padding: 14px 30px;
+        border-radius: 999px;
+        box-shadow: 0 18px 40px rgba(0,0,0,0.18);
+      }
+      .hero-cta .btn-light {
+        color: #5f4633;
       }
       main {
         max-width: 1200px;
-        margin: -140px auto 80px auto;
+        margin: -180px auto 80px auto;
+        padding: 0 20px;
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 30px;
+        gap: 28px;
       }
       main section {
-        margin-bottom: 0;
+        margin: 0;
+        padding: 32px;
+        border-radius: 24px;
+        box-shadow: 0 22px 45px rgba(0,0,0,0.12);
       }
-      main section.full-span {
+      .desktop-span-2 {
         grid-column: span 2;
       }
-      .split-content {
+      .offerta-grid {
         display: grid;
         grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
+        gap: 28px;
         align-items: center;
-        gap: 30px;
       }
-      .split-gallery figure:nth-child(2) {
+      .offerta-gallery {
+        display: grid;
+        gap: 20px;
+      }
+      .offerta-gallery figure:nth-child(2) {
         transform: translateX(18px);
       }
       .feature-list {
-        grid-template-columns: 1fr 1fr;
-        gap: 14px 30px;
         padding-left: 10px;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px 24px;
       }
       .feature-list li {
         position: relative;
@@ -401,25 +404,26 @@
         position: absolute;
         left: 0;
         color: #cbb5a6;
+        font-size: 1.2rem;
+        line-height: 1;
       }
       .bio-grid {
-        grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+        display: grid;
+        grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+        gap: 30px;
         align-items: center;
       }
       .bio-grid figure {
+        margin: 0;
         text-align: right;
       }
+      .bio-grid img {
+        width: 100%;
+        border-radius: 20px;
+        box-shadow: 0 26px 55px rgba(0,0,0,0.18);
+      }
       .bio-text {
-        padding: 0 10px;
-      }
-    }
-
-    @media (max-width: 768px) {
-      nav.desktop-menu {
-        display: none;
-      }
-      .hamburger-menu {
-        display: block;
+        padding-right: 10px;
       }
     }
   </style>
@@ -438,11 +442,11 @@
       </ul>
     </nav>
 
-    <div class="desktop-hero-copy">
+    <div class="hero-desktop">
       <h1>Benessere in equilibrio</h1>
-      <p>Sessioni personalizzate di Pilates e Yoga in uno studio raccolto e luminoso al centro di Roma.</p>
+      <p>Sessioni personalizzate di Pilates e Yoga in uno studio raccolto e luminoso nel cuore di Roma.</p>
       <div class="hero-cta">
-        <a href="corsi.html" class="btn hero-btn">Scopri i corsi</a>
+        <a href="corsi.html" class="btn">Scopri i corsi</a>
         <a href="contatti.html" class="btn btn-light">Prenota una prova</a>
       </div>
     </div>
@@ -452,7 +456,7 @@
       <input type="checkbox" id="menu-toggle">
       <label for="menu-toggle" class="menu-icon">☰</label>
       <ul class="menu-content">
-        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html" class="active">Home</a></li>
         <li><a href="corsi.html">Corsi</a></li>
         <li><a href="eventi.html">Eventi</a></li>
         <li><a href="contatti.html">Contatti</a></li>
@@ -461,22 +465,22 @@
   </header>
 
   <main>
-    <section id="introduzione" class="intro-section full-span">
+    <section class="intro desktop-span-2">
       <h1>Benvenuti in Ellebi Studio</h1>
       <p>Uno spazio dedicato al benessere, al movimento e all’armonia attraverso <strong>Pilates</strong> e <strong>Yoga</strong>.</p>
       <p>Ellebi Studio nasce con l’intenzione di accogliere tutte le persone che vogliono prendersi cura del proprio benessere, non solo <strong>fisico</strong> ma anche <strong>mentale e spirituale</strong>. L’ambiente è intimo e accogliente: un luogo dove rigenerarsi e stare bene.</p>
     </section>
 
-    <section id="offerta" class="split-section full-span">
+    <section class="offerta desktop-span-2">
       <h2>La nostra offerta corsi</h2>
-      <div class="split-content">
-        <div class="split-text">
+      <div class="offerta-grid">
+        <div class="offerta-text">
           <p><strong>Pilates</strong> – Lezioni a corpo libero <strong>(Matwork)</strong> e con macchinari <strong>Reformer</strong> e <strong>Cadillac (Tower)</strong>, per un lavoro completo e personalizzato.</p>
           <p><strong>Yoga</strong> – È possibile praticare <em>Hatha</em>, <em>Vinyasa</em>, <em>Yin</em>, <em>Nidra</em>, in base alla propria preferenza.</p>
-          <p><strong>Yoga Prenatale e Mum&Baby</strong> – Un percorso dedicato alle donne in dolce attesa o che hanno appena partorito e vogliono riacquistare familiarità con il proprio corpo, senza doversi separare dai propri piccoli.</p>
+          <p><strong>Yoga Prenatale e Mum&amp;Baby</strong> – Un percorso dedicato alle donne in dolce attesa o che hanno appena partorito e vogliono riacquistare familiarità con il proprio corpo, senza doversi separare dai propri piccoli.</p>
           <a href="corsi.html" class="btn">Scopri di più</a>
         </div>
-        <div class="split-gallery">
+        <div class="offerta-gallery">
           <figure>
             <img src="Studio.jpg" alt="Macchinario Reformer">
           </figure>
@@ -487,7 +491,7 @@
       </div>
     </section>
 
-    <section class="info-section">
+    <section class="lesson-modes">
       <h2>Modalità di lezione</h2>
       <ul class="feature-list">
         <li>Lezioni <strong>individuali</strong> o in <strong>piccoli gruppi</strong> (max 3 persone) per un’attenzione dedicata.</li>
@@ -498,14 +502,14 @@
       <a href="contatti.html" class="btn">Scopri di più</a>
     </section>
 
-    <section class="info-section">
+    <section class="payments">
       <h2>Acquisto e pagamenti</h2>
       <p>Tutti i corsi possono essere acquistati <strong>singolarmente</strong> oppure con pacchetti da <strong>5 o 10 lezioni</strong>.<br>
       Pagamenti accettati: contanti, carte, PayPal, bonifico bancario.<br>
       <strong>Nessun costo aggiuntivo di associazione</strong>.<br></p>
     </section>
 
-    <section id="chi-sono" class="bio-section full-span">
+    <section class="bio desktop-span-2">
       <h2>Chi sono</h2>
       <div class="bio-grid">
         <figure>
