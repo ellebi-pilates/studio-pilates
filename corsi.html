@@ -49,9 +49,6 @@
       max-width: 900px;
       margin: 0 auto;
       padding: 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
     }
     h1, h2, h3, nav a {
       font-family: 'Kudryashev', serif;
@@ -62,7 +59,7 @@
     /* ============================= */
     header {
       background-color: #cbb5a6;
-      padding: 15px 20px 40px;
+      padding: 15px 20px;
       text-align: center;
       position: relative;
     }
@@ -117,9 +114,10 @@
     /* ============================= */
     section {
       padding: 20px;
+      margin-bottom: 20px;
       background-color: white;
-      border-radius: 16px;
-      box-shadow: 0 8px 22px rgba(0,0,0,0.08);
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
     section h1, section h2, section h3 {
       color: #cbb5a6;
@@ -136,72 +134,47 @@
       color: white;
       text-decoration: none;
       font-weight: bold;
-      border-radius: 8px;
-      transition: background-color 0.3s ease, transform 0.3s ease;
+      border-radius: 6px;
+      transition: background-color 0.3s ease;
       text-align: center;
-      box-shadow: 0 12px 26px rgba(0,0,0,0.12);
     }
     .btn:hover {
       background-color: #a98d7b;
-      transform: translateY(-2px);
+    }
+    section .btn {
+      display: block;
+      width: fit-content;
     }
 
     /* ============================= */
-    /* CONTENT UTILITIES */
+    /* IMAGES */
     /* ============================= */
-    .hero-desktop {
-      display: none;
+    .image-center {
+      text-align: center;
+      margin: 30px 0;
     }
-    .hero-desktop p {
-      margin: 0;
-    }
-    .hero-cta {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 12px;
-      margin-top: 16px;
-    }
-    .hero-cta .btn {
-      margin: 0;
-    }
-    .btn-light {
-      background-color: rgba(255,255,255,0.85);
-      color: #7a5a45;
-    }
-    .btn-light:hover {
-      background-color: rgba(255,255,255,0.95);
-      color: #5a3f2f;
-    }
-    .two-columns {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-    .two-columns .text {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-    .two-columns img {
+    .image-center img {
       width: 100%;
-      border-radius: 16px;
-      box-shadow: 0 18px 36px rgba(0,0,0,0.15);
+      max-width: 400px;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
     }
-    .two-columns.reverse {
-      flex-direction: column-reverse;
-    }
+
+    /* ============================= */
+    /* BLOCKQUOTE */
+    /* ============================= */
     blockquote {
       background: #f1f1f1;
-      padding: 18px 20px;
+      padding: 15px 20px;
       border-left: 5px solid #cbb5a6;
-      margin: 10px 0 20px 0;
+      margin: 20px 0;
       font-style: italic;
       color: #444;
     }
     blockquote cite {
       display: block;
-      margin-top: 6px;
+      margin-top: 5px;
       font-size: 0.9rem;
       text-align: right;
       color: #666;
@@ -210,7 +183,7 @@
     /* ============================= */
     /* MENU DESKTOP */
     /* ============================= */
-    nav.desktop-menu ul {
+    nav.menu-desktop ul {
       list-style: none;
       margin: 0;
       padding: 0;
@@ -218,16 +191,19 @@
       justify-content: center;
       background-color: #cbb5a6;
     }
-    nav.desktop-menu ul li a {
+    nav.menu-desktop ul li {
+      position: relative;
+    }
+    nav.menu-desktop ul li a {
       display: block;
       color: white;
       padding: 14px 20px;
       text-decoration: none;
-      transition: background-color 0.3s ease;
     }
-    nav.desktop-menu ul li a:hover,
-    nav.desktop-menu a.active {
+    nav.menu-desktop ul li a:hover,
+    nav.menu-desktop ul li a.active {
       background-color: #a98d7b;
+      border-bottom: 2px solid white;
     }
 
     /* ============================= */
@@ -286,11 +262,19 @@
     /* MEDIA QUERY MOBILE */
     /* ============================= */
     @media (max-width: 768px) {
-      nav.desktop-menu {
+      nav.menu-desktop {
         display: none;
       }
       .hamburger-menu {
         display: block;
+      }
+      /* two-columns diventa verticale su mobile */
+      .two-columns {
+        display: block;
+      }
+      .two-columns img {
+        margin-top: 20px;
+        width: 100%;
       }
     }
 
@@ -298,137 +282,37 @@
     /* MEDIA QUERY DESKTOP */
     /* ============================= */
     @media (min-width: 1024px) {
-      body {
-        background: radial-gradient(circle at 0% 20%, rgba(255,255,255,0.75), rgba(248,245,242,0.95)), #f1ece7;
-      }
       header {
-        background: linear-gradient(135deg, rgba(33, 22, 15, 0.35), rgba(203, 181, 166, 0.18)), url('Studio.jpg');
-        background-size: cover;
-        background-position: center;
-        padding: 70px 70px 340px;
-        color: #ffffff;
-        overflow: hidden;
-      }
-      header::after {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(180deg, rgba(18,12,8,0.25) 0%, rgba(18,12,8,0.7) 88%);
-        pointer-events: none;
-      }
-      header > * {
-        position: relative;
-        z-index: 1;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+        padding: 18px 40px;
       }
       header .logo {
-        max-width: 320px;
-        margin-bottom: 26px;
-        filter: drop-shadow(0 14px 30px rgba(0,0,0,0.45));
-      }
-      nav.desktop-menu ul {
-        background: rgba(255,255,255,0.2);
-        backdrop-filter: blur(14px);
-        border-radius: 999px;
-        padding: 12px 30px;
-        gap: 16px;
-      }
-      nav.desktop-menu ul li a {
-        padding: 12px 22px;
-        border-radius: 999px;
-        letter-spacing: 0.6px;
-      }
-      nav.desktop-menu ul li a:hover,
-      nav.desktop-menu a.active {
-        background-color: rgba(255,255,255,0.38);
-        color: #2f241a;
-      }
-      .hero-desktop {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-        max-width: 600px;
-        margin: 70px auto 0 auto;
-        text-align: center;
-      }
-      .hero-desktop h1 {
-        font-size: 3rem;
         margin: 0;
-        color: #ffffff;
-        text-shadow: 0 20px 40px rgba(0,0,0,0.38);
+        max-width: 200px;
       }
-      .hero-desktop p {
-        font-size: 1.1rem;
-        color: rgba(255,255,255,0.92);
-      }
-      .hero-cta .btn {
-        padding: 16px 36px;
-        border-radius: 999px;
-        box-shadow: 0 20px 48px rgba(0,0,0,0.2);
-      }
-      main {
-        position: relative;
-        max-width: 1240px;
-        margin: -240px auto 120px auto;
-        padding: 0 40px;
-        display: grid;
-        grid-template-columns: repeat(12, minmax(0, 1fr));
-        gap: 32px;
-      }
-      main::before {
-        content: '';
-        position: absolute;
-        inset: -60px 20px;
-        background: rgba(255,255,255,0.45);
-        filter: blur(80px);
-        z-index: 0;
-      }
-      main section {
-        position: relative;
-        z-index: 1;
-        margin: 0;
-        padding: 36px;
-        border-radius: 28px;
-        box-shadow: 0 28px 60px rgba(0,0,0,0.14);
-        background: linear-gradient(145deg, rgba(255,255,255,0.95), rgba(242, 234, 228, 0.95));
-      }
-      .intro {
-        grid-column: 2 / span 10;
-        text-align: center;
-      }
-      .cta-panel {
-        grid-column: 9 / span 3;
-        display: flex;
-        flex-direction: column;
-        gap: 18px;
-        background: linear-gradient(160deg, rgba(203,181,166,0.15), rgba(255,255,255,0.92));
-      }
-      .cta-panel .btn {
-        align-self: flex-start;
-        padding: 14px 32px;
-      }
-      #pilates {
-        grid-column: 2 / span 7;
-      }
-      #yoga {
-        grid-column: 2 / span 10;
+      nav.menu-desktop ul {
+        justify-content: flex-end;
       }
       .two-columns {
-        display: grid;
-        grid-template-columns: minmax(0, 1fr) minmax(0, 0.95fr);
+        display: flex;
+        align-items: flex-start;
         gap: 32px;
-        align-items: center;
-      }
-      .two-columns.reverse {
-        grid-template-columns: minmax(0, 0.95fr) minmax(0, 1fr);
       }
       .two-columns img {
-        width: 100%;
-        border-radius: 24px;
-        box-shadow: 0 30px 60px rgba(0,0,0,0.2);
+        flex: 0 0 45%;
+        max-width: 45%;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.12);
       }
-      .two-columns.reverse img {
-        order: -1;
+      .two-columns .text {
+        flex: 1;
+      }
+      .two-columns .text h2,
+      .two-columns .text h3 {
+        margin-top: 0;
       }
     }
   </style>
@@ -438,7 +322,7 @@
     <img src="logo.png" alt="Ellebi Studio Pilates e Yoga" class="logo">
 
     <!-- Menu desktop -->
-    <nav class="desktop-menu">
+    <nav class="menu-desktop">
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="corsi.html" class="active">Corsi</a></li>
@@ -446,15 +330,6 @@
         <li><a href="contatti.html">Contatti</a></li>
       </ul>
     </nav>
-
-    <div class="hero-desktop">
-      <h1>Programmi su misura</h1>
-      <p>Dalla precisione del Pilates alla fluidità dello Yoga, costruisci il tuo percorso ideale con lezioni personalizzate.</p>
-      <div class="hero-cta">
-        <a href="#pilates" class="btn">Pilates</a>
-        <a href="#yoga" class="btn btn-light">Yoga</a>
-      </div>
-    </div>
 
     <!-- Hamburger menu mobile -->
     <nav class="hamburger-menu">
@@ -470,53 +345,82 @@
   </header>
 
   <main>
-    <section class="intro desktop-span-2">
+    <section>
       <h1>I nostri corsi</h1>
-      <p>Da Ellebi Studio offriamo una proposta completa di <strong>Pilates</strong> e <strong>Yoga</strong>, con percorsi individuali e di gruppo adatti a ogni livello e necessità.</p>
+      <p>
+        Da Ellebi Studio offriamo una proposta completa di <strong>Pilates</strong> e <strong>Yoga</strong>, con percorsi individuali e di gruppo adatti a ogni livello e necessità.
+      </p>
     </section>
 
     <!-- Pilates -->
-    <section id="pilates" class="two-columns desktop-span-2">
+    <section class="two-columns">
       <div class="text">
         <h2>Pilates</h2>
-        <p>Il <strong>Pilates</strong> si basa su un programma di esercizi incentrati sulla <strong>muscolatura posturale</strong>, che possono essere svolti a corpo libero o con l'aiuto di attrezzature dedicate.</p>
-        <p>Migliorando la postura, il Pilates dona <strong>forza, tonicità e consapevolezza del corpo</strong>, aiutando a prevenire i disturbi della schiena. L'obiettivo è unire corpo e mente in un’unica entità dinamica, armoniosa ed equilibrata.</p>
-        <p>L’utilizzo dei macchinari <strong>Reformer</strong> e <strong>Cadillac (Tower)</strong> consente di lavorare in profondità coinvolgendo tutti i gruppi muscolari, sfruttando resistenze e assistenze delle molle.</p>
+        <p>
+          Il <strong>Pilates</strong> si basa su un programma di esercizi incentrati sulla <strong>muscolatura posturale</strong>, che possono essere svolti a corpo libero o con l'aiuto di attrezzature dedicate.
+        </p>
+        <p>
+          Migliorando la postura, il Pilates dona <strong>forza, tonicità e consapevolezza del corpo</strong>, aiutando a prevenire i disturbi della schiena. L'obiettivo è unire corpo e mente in un’unica entità dinamica, armoniosa ed equilibrata.
+        </p>
+        <p>
+          L’utilizzo dei macchinari <strong>Reformer</strong> e <strong>Cadillac (Tower)</strong> consente di lavorare in profondità coinvolgendo tutti i gruppi muscolari, sfruttando resistenze e assistenze delle molle.
+        </p>
       </div>
       <img src="Reformer.jpg" alt="Pilates con Reformer">
     </section>
 
-    <section class="cta-panel">
-      <h2>Vuoi iniziare subito?</h2>
-      <p>Programmiamo insieme il tuo percorso ideale: lezioni individuali, coppie o mini classi da tre persone, anche online.</p>
-      <a href="contatti.html" class="btn">Prenota una prova</a>
-    </section>
-
     <!-- Yoga -->
-    <section id="yoga" class="two-columns reverse desktop-span-2">
+    <section class="two-columns">
       <div class="text">
         <h2>Yoga</h2>
         <blockquote>
-          “Lo Yoga non è un antico mito sepolto nell'oblio. È l'eredità più preziosa del presente. È il bisogno essenziale dell'oggi e la cultura del domani.”
+          “Lo Yoga non è un antico mito sepolto nell'oblio. È l'eredità più preziosa del presente.
+          È il bisogno essenziale dell'oggi e la cultura del domani.”
           <cite>— Swami Satyananda Saraswati</cite>
         </blockquote>
-        <p>Lo <strong>Yoga</strong> è la scienza del giusto vivere e può essere incorporato nella vita quotidiana.</p>
+        <p>
+          Lo <strong>Yoga</strong> è la scienza del giusto vivere e può essere incorporato nella vita quotidiana.
+        </p>
         <h3>Hatha e Vinyasa Yoga</h3>
-        <p>L’<strong>Hatha Yoga</strong> è lento e meditativo, con posizioni mantenute più a lungo per favorire calma e consapevolezza.</p>
-        <p>Il <strong>Vinyasa Yoga</strong> è dinamico e fluido, sincronizza respiro e movimento in sequenze continue, quasi come una danza.</p>
+        <p>
+          L’<strong>Hatha Yoga</strong> è lento e meditativo, con posizioni mantenute più a lungo per favorire calma e consapevolezza.
+        </p>
+        <p>
+          Il <strong>Vinyasa Yoga</strong> è dinamico e fluido, sincronizza respiro e movimento in sequenze continue, quasi come una danza.
+        </p>
         <h3>Yin Yoga</h3>
-        <p>Lo <strong>Yin Yoga</strong> lavora sui tessuti profondi (legamenti, articolazioni, fasce, ossa).</p>
-        <p>Le posizioni, semplici ma intense, vengono mantenute a lungo (da 1 a 20 minuti) per nutrire in profondità corpo e mente.</p>
+        <p>
+          Lo <strong>Yin Yoga</strong> lavora sui tessuti profondi (legamenti, articolazioni, fasce, ossa).
+        </p>
+        <p>
+          Le posizioni, semplici ma intense, vengono mantenute a lungo (da 1 a 20 minuti) per nutrire in profondità corpo e mente.
+        </p>
         <h3>Yoga Nidra</h3>
-        <p>Lo <strong>Yoga Nidra</strong> è una tecnica di rilassamento consapevole che porta a uno stato di <em>sonno dinamico</em>.</p>
-        <p>Favorisce memoria, creatività e benessere, aiutando a trasformare la propria natura interiore.</p>
+        <p>
+          Lo <strong>Yoga Nidra</strong> è una tecnica di rilassamento consapevole che porta a uno stato di <em>sonno dinamico</em>.
+        </p>
+        <p>
+          Favorisce memoria, creatività e benessere, aiutando a trasformare la propria natura interiore.
+        </p>
         <h3>Yoga Prenatale</h3>
-        <p>Un percorso per le donne in gravidanza che unisce respiro, movimento e consapevolezza.</p>
-        <p>Aiuta a prepararsi a un parto naturale e a rafforzare la connessione con il proprio bambino. <strong>Non è necessaria esperienza pregressa di yoga.</strong></p>
-        <h3>Yoga Mum&amp;Baby</h3>
-        <p>Corso speciale dedicato alle neomamme e ai loro bambini.</p>
-        <p>Comprende posizioni yoga post-parto, tecniche di respirazione, massaggio infantile e momenti di gioco.</p>
-        <p>L’obiettivo è recuperare il benessere del corpo, proteggere la schiena e il pavimento pelvico, e imparare l’arte di rilassarsi insieme al proprio bimbo.</p>
+        <p>
+          Un percorso per le donne in gravidanza che unisce respiro, movimento e consapevolezza.
+        </p>
+        <p>
+          Aiuta a prepararsi a un parto naturale e a rafforzare la connessione con il proprio bambino.
+          <strong>Non è necessaria esperienza pregressa di yoga.</strong>
+        </p>
+        <h3>Yoga Mum&Baby</h3>
+        <p>
+          Corso speciale dedicato alle neomamme e ai loro bambini.
+        </p>
+        <p>
+          Comprende posizioni yoga post-parto, tecniche di respirazione, massaggio infantile e momenti di gioco.
+        </p>
+        <p>
+          L’obiettivo è recuperare il benessere del corpo, proteggere la schiena e il pavimento pelvico,
+          e imparare l’arte di rilassarsi insieme al proprio bimbo.
+        </p>
       </div>
       <img src="lalla.jpg" alt="Yoga in pratica">
     </section>
@@ -526,10 +430,10 @@
     <p>© 2025 Ellebi Studio • Pilates & Yoga</p>
     <div class="social-links">
       <a href="https://www.instagram.com/ellebi.studio.pilates/" target="_blank">
-        <img src="instagram.png" alt="Instagram">
+        <img src="instagram.png" alt="Instagram" />
       </a>
       <a href="https://wa.me/393485782729" target="_blank">
-        <img src="whatsup.png" alt="WhatsApp">
+        <img src="whatsup.png" alt="WhatsApp" />
       </a>
     </div>
   </footer>

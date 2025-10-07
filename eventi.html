@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ellebi Studio - Eventi</title>
+  <link rel="stylesheet" href="style.css">
   <style>
     /* ============================= */
     /* FONT FAMILIES */
@@ -30,39 +31,20 @@
     /* ============================= */
     /* BASE STYLES */
     /* ============================= */
-    html, body {
-      height: 100%;
-      margin: 0;
-      padding: 0;
-    }
     body {
       font-family: 'Glacial Indifference', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
       line-height: 1.6;
       background-color: #f9f9f9;
       color: #333;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
-    main {
-      flex: 1;
-      max-width: 900px;
-      margin: auto;
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
     }
     h1, h2, h3, nav a {
       font-family: 'Kudryashev', serif;
     }
-
-    /* ============================= */
-    /* HEADER */
-    /* ============================= */
     header {
       background-color: #cbb5a6;
-      padding: 15px 20px 40px;
+      padding: 15px 20px;
       text-align: center;
       position: relative;
     }
@@ -71,55 +53,17 @@
       height: auto;
       margin-bottom: 10px;
     }
-
-    /* ============================= */
-    /* FOOTER */
-    /* ============================= */
-    footer {
-      background-color: #cbb5a6;
-      padding: 20px 0;
-      text-align: center;
-      color: white;
-      width: 100%;
+    main {
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
     }
-    footer p {
-      margin: 0;
-      font-family: 'Kudryashev', serif;
-    }
-    footer .social-links {
-      margin-top: 10px;
-      text-align: center;
-    }
-    .social-links a {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 50px;
-      height: 50px;
-      margin: 0 10px;
-      background: #cbb5a6;
-      border-radius: 12px;
-      transition: transform 0.2s ease, background 0.2s ease;
-      overflow: hidden;
-    }
-    .social-links img {
-      width: 28px;
-      height: 28px;
-      border-radius: 25%;
-    }
-    .social-links a:hover {
-      transform: scale(1.1);
-      background: #b59f90;
-    }
-
-    /* ============================= */
-    /* SECTIONS */
-    /* ============================= */
     section {
       padding: 20px;
+      margin-bottom: 20px;
       background-color: white;
-      border-radius: 16px;
-      box-shadow: 0 8px 22px rgba(0,0,0,0.08);
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
     section h1, section h2, section h3 {
       color: #cbb5a6;
@@ -136,18 +80,53 @@
       color: white;
       text-decoration: none;
       font-weight: bold;
-      border-radius: 8px;
-      transition: background-color 0.3s ease, transform 0.3s ease;
+      border-radius: 6px;
+      transition: background-color 0.3s ease;
       text-align: center;
-      box-shadow: 0 12px 26px rgba(0,0,0,0.12);
     }
     .btn:hover {
       background-color: #a98d7b;
-      transform: translateY(-2px);
+    }
+    section .btn {
+      display: block;
+      width: fit-content;
     }
 
     /* ============================= */
-    /* MENU */
+    /* SOCIAL LINKS */
+    /* ============================= */
+    .social-links {
+      margin-top: 15px;
+      text-align: center;
+      
+    }
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+      margin: 0 10px;
+      background: #cbb5a6;
+      border-radius: 12px;
+      overflow: hidden;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+    .social-links img {
+      width: 28px;
+      height: 28px;
+      border-radius: 25%;
+    }
+    .social-links a:hover {
+      transform: scale(1.1);
+      background: #b59f90;
+    }
+    .social-links img:hover {
+      transform: scale(1.2);
+    }
+
+    /* ============================= */
+    /* MENU DESKTOP */
     /* ============================= */
     nav.desktop-menu ul {
       list-style: none;
@@ -162,15 +141,15 @@
       color: white;
       padding: 14px 20px;
       text-decoration: none;
-      transition: background-color 0.3s ease;
     }
     nav.desktop-menu ul li a:hover,
     nav.desktop-menu ul li a.active {
-      background-color: #a98d7b;
+      background-color: #5a3d2b;
+      border-bottom: 2px solid white;
     }
 
     /* ============================= */
-    /* HAMBURGER MENU MOBILE */
+    /* HAMBURGER MOBILE FULLSCREEN */
     /* ============================= */
     .hamburger-menu {
       display: none;
@@ -222,35 +201,7 @@
     }
 
     /* ============================= */
-    /* CONTENT UTILITIES */
-    /* ============================= */
-    .hero-desktop {
-      display: none;
-    }
-    .hero-desktop p {
-      margin: 0;
-    }
-    .event-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-    .event-card {
-      background: linear-gradient(135deg, rgba(203,181,166,0.12), rgba(255,255,255,0.9));
-      border-radius: 16px;
-      padding: 20px;
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.35);
-    }
-    .event-card h3 {
-      margin-top: 0;
-      color: #a17d66;
-    }
-    .cta {
-      text-align: center;
-    }
-
-    /* ============================= */
-    /* MEDIA QUERY MOBILE */
+    /* MEDIA QUERY */
     /* ============================= */
     @media (max-width: 768px) {
       nav.desktop-menu {
@@ -258,128 +209,6 @@
       }
       .hamburger-menu {
         display: block;
-      }
-    }
-
-    /* ============================= */
-    /* MEDIA QUERY DESKTOP */
-    /* ============================= */
-    @media (min-width: 1024px) {
-      body {
-        background: radial-gradient(circle at 85% 10%, rgba(255,255,255,0.6), rgba(247,244,241,0.95)), #f2eeea;
-      }
-      header {
-        background: linear-gradient(135deg, rgba(28, 17, 10, 0.32), rgba(203, 181, 166, 0.2)), url('Lalla in posa.jpg');
-        background-size: cover;
-        background-position: center;
-        padding: 70px 70px 320px;
-        color: #ffffff;
-        overflow: hidden;
-      }
-      header::after {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(180deg, rgba(17,11,7,0.25) 0%, rgba(17,11,7,0.68) 85%);
-        pointer-events: none;
-      }
-      header > * {
-        position: relative;
-        z-index: 1;
-      }
-      header .logo {
-        max-width: 310px;
-        margin-bottom: 24px;
-        filter: drop-shadow(0 14px 30px rgba(0,0,0,0.45));
-      }
-      nav.desktop-menu ul {
-        background: rgba(255,255,255,0.18);
-        backdrop-filter: blur(14px);
-        border-radius: 999px;
-        padding: 12px 30px;
-        gap: 16px;
-      }
-      nav.desktop-menu ul li a {
-        padding: 12px 22px;
-        border-radius: 999px;
-        letter-spacing: 0.6px;
-      }
-      nav.desktop-menu ul li a:hover,
-      nav.desktop-menu ul li a.active {
-        background-color: rgba(255,255,255,0.35);
-        color: #2f241a;
-      }
-      .hero-desktop {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-        max-width: 560px;
-        margin: 60px auto 0 auto;
-        text-align: center;
-      }
-      .hero-desktop h1 {
-        font-size: 3rem;
-        margin: 0;
-        color: #ffffff;
-        text-shadow: 0 20px 40px rgba(0,0,0,0.38);
-      }
-      .hero-desktop p {
-        font-size: 1.1rem;
-        color: rgba(255,255,255,0.9);
-      }
-      main {
-        position: relative;
-        max-width: 1220px;
-        margin: -230px auto 120px auto;
-        padding: 0 40px;
-        display: grid;
-        grid-template-columns: repeat(12, minmax(0, 1fr));
-        gap: 32px;
-      }
-      main::before {
-        content: '';
-        position: absolute;
-        inset: -60px 20px;
-        background: rgba(255,255,255,0.45);
-        filter: blur(80px);
-        z-index: 0;
-      }
-      main section {
-        position: relative;
-        z-index: 1;
-        margin: 0;
-        padding: 36px;
-        border-radius: 28px;
-        box-shadow: 0 28px 60px rgba(0,0,0,0.14);
-        background: linear-gradient(145deg, rgba(255,255,255,0.95), rgba(242, 234, 228, 0.95));
-      }
-      .intro {
-        grid-column: 2 / span 10;
-        text-align: center;
-      }
-      .event-grid {
-        grid-column: 2 / span 7;
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 28px;
-      }
-      .event-card {
-        padding: 28px;
-        border-radius: 24px;
-        box-shadow: 0 16px 36px rgba(0,0,0,0.08);
-      }
-      .cta {
-        grid-column: 9 / span 3;
-        display: flex;
-        flex-direction: column;
-        gap: 18px;
-        justify-content: center;
-        background: linear-gradient(170deg, rgba(203,181,166,0.18), rgba(255,255,255,0.92));
-      }
-      .cta .btn {
-        align-self: flex-start;
-        padding: 14px 32px;
       }
     }
   </style>
@@ -398,11 +227,6 @@
       </ul>
     </nav>
 
-    <div class="hero-desktop">
-      <h1>Eventi speciali</h1>
-      <p>Workshop, incontri e retreat dedicati al benessere: scopri le prossime proposte di Ellebi Studio.</p>
-    </div>
-
     <!-- Hamburger Menu Mobile -->
     <nav class="hamburger-menu">
       <input type="checkbox" id="menu-toggle">
@@ -417,26 +241,11 @@
   </header>
 
   <main>
-    <section class="intro desktop-span-2">
+    <section>
       <h1>Eventi speciali</h1>
-      <p>Qui troverai aggiornamenti su workshop, seminari e incontri dedicati a Pilates e Yoga.</p>
-    </section>
-
-    <section class="event-grid desktop-span-2">
-      <article class="event-card">
-        <h3>Workshop tematici</h3>
-        <p>Organizziamo appuntamenti dedicati all’allineamento, al respiro e alla mobilità. Appena fissiamo una nuova data la pubblichiamo qui e sui nostri canali social.</p>
-      </article>
-      <article class="event-card">
-        <h3>Sessioni stagionali</h3>
-        <p>Eventi all’aperto, week-end intensivi e incontri focus vengono programmati in base alle richieste della community. Seguici su Instagram o scrivici per ricevere gli aggiornamenti.</p>
-      </article>
-    </section>
-
-    <section class="cta">
-      <h2>Vuoi essere tra i primi a saperlo?</h2>
-      <p>Contattaci per iscriverti alla lista prioritaria e ricevere le informazioni appena aprono le iscrizioni.</p>
-      <a href="contatti.html" class="btn">Scrivici ora</a>
+      <p>
+        Qui troverai aggiornamenti su workshop, seminari e incontri dedicati a Pilates e Yoga.
+      </p>
     </section>
   </main>
 
@@ -444,10 +253,10 @@
     <p>© 2025 Ellebi Studio • Pilates & Yoga</p>
     <div class="social-links">
       <a href="https://www.instagram.com/ellebi.studio.pilates/" target="_blank">
-        <img src="instagram.png" alt="Instagram">
+        <img src="instagram.png" alt="Instagram" />
       </a>
       <a href="https://wa.me/393485782729" target="_blank">
-        <img src="whatsup.png" alt="WhatsApp">
+        <img src="whatsup.png" alt="WhatsApp" />
       </a>
     </div>
   </footer>

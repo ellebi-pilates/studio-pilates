@@ -21,6 +21,24 @@ Se stai lavorando su un clone locale del repository e su GitHub viene premuto il
 
 > Nota: se hai modifiche locali non ancora salvate, Git potrebbe chiederti di completare un merge o di risolvere conflitti. In questo caso è consigliabile salvare (commit) o accantonare (stash) le modifiche prima di eseguire `git pull`.
 
+### Risolvere eventuali conflitti
+
+Se dopo il `git pull` Git segnala `CONFLICT`, significa che le stesse righe sono state modificate sia in locale sia sul ramo remoto. Per risolvere:
+
+1. **Individua i file in conflitto**: `git status` elenca i file marcati come `both modified`.
+2. **Apri i file interessati** e cerca i marcatori `<<<<<<<`, `=======`, `>>>>>>>`. Mantieni solo la versione corretta eliminando i marcatori.
+3. **Segna i conflitti come risolti** eseguendo:
+   ```bash
+   git add <file-risolto>
+   ```
+4. **Completa il merge** con un nuovo commit:
+   ```bash
+   git commit
+   ```
+5. **Aggiorna il remoto** se necessario: `git push origin <nome-del-tuo-ramo>`.
+
+Suggerimento: per annullare l'unione e tornare allo stato precedente puoi usare `git merge --abort` (se il merge è ancora in corso) oppure `git reset --hard HEAD` (attenzione: perde eventuali modifiche locali non salvate).
+
 ## Pubblicazione
 
 Il sito può essere pubblicato tramite GitHub Pages. Dopo aver eseguito il commit delle modifiche e averle spinte sul repository remoto, GitHub Pages rigenererà automaticamente la versione online del sito.
