@@ -43,32 +43,3 @@ Suggerimento: per annullare l'unione e tornare allo stato precedente puoi usare 
 
 Il sito può essere pubblicato tramite GitHub Pages. Dopo aver eseguito il commit delle modifiche e averle spinte sul repository remoto, GitHub Pages rigenererà automaticamente la versione online del sito.
 
-
-## Gestione versioni desktop e smartphone
-
-Ogni pagina principale del sito ora esiste in due varianti distinte:
-
-- `*-mobile.html`: contiene il layout ottimizzato per smartphone e tablet.
-- `*-desktop.html`: contiene il layout orizzontale ottimizzato per schermi ampi.
-
-I file senza suffisso (ad esempio `index.html`, `corsi.html`, ecc.) non mostrano contenuti propri ma reindirizzano automaticamente alla versione corretta in base alla larghezza dello schermo usando `window.matchMedia('(min-width: 900px)')`.
-
-### Collegamenti interni
-
-I menu di navigazione continuano a puntare agli URL senza suffisso (`index.html`, `corsi.html`, ...). In questo modo, l'utente viene sempre indirizzato alla versione adatta, indipendentemente dalla pagina da cui proviene.
-
-### Modifica di una sola variante
-
-Se devi aggiornare solo la versione mobile o desktop:
-
-1. Apri e modifica il file `*-mobile.html` o `*-desktop.html` corrispondente.
-2. Verifica il risultato aprendo direttamente il file dal browser (ad esempio `https://.../index-mobile.html`).
-3. Non è necessario toccare il file di reindirizzamento a meno che non cambi i nomi dei file.
-
-### Disattivare temporaneamente il reindirizzamento
-
-Per controllare rapidamente una versione specifica senza cambiare la dimensione della finestra puoi:
-
-- Aprire direttamente l'URL della variante (`index-mobile.html` o `index-desktop.html`).
-- Oppure disattivare JavaScript nel browser: il file di reindirizzamento mostrerà collegamenti manuali alle due versioni.
-

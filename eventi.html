@@ -4,36 +4,407 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ellebi Studio - Eventi</title>
-  <script>
-    (function() {
-      function route() {
-        var desktop = window.matchMedia('(min-width: 900px)').matches;
-        var target = desktop ? 'eventi-desktop.html' : 'eventi-mobile.html';
-        if (!window.location.pathname.endsWith(target)) {
-          var suffix = window.location.search + window.location.hash;
-          window.location.replace(target + suffix);
-        }
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ============================= */
+    /* FONT FAMILIES */
+    /* ============================= */
+    @font-face {
+      font-family: 'Glacial Indifference';
+      src: url('GlacialIndifference-Regular.otf') format('opentype');
+      font-weight: normal;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Glacial Indifference';
+      src: url('GlacialIndifference-Bold.otf') format('opentype');
+      font-weight: bold;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Kudryashev';
+      src: url('Kudryashev.otf') format('opentype');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    /* ============================= */
+    /* BASE STYLES */
+    /* ============================= */
+    body {
+      font-family: 'Glacial Indifference', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    h1, h2, h3, nav a {
+      font-family: 'Kudryashev', serif;
+    }
+    header {
+      background-color: #cbb5a6;
+      padding: 18px 20px;
+      text-align: center;
+      position: relative;
+      color: white;
+      overflow: hidden;
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      position: relative;
+      z-index: 2;
+    }
+    header .logo {
+      max-width: 230px;
+      height: auto;
+      margin-bottom: 10px;
+    }
+    .hero-banner {
+      display: none;
+    }
+    main {
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+    }
+    section {
+      padding: 20px;
+      margin-bottom: 20px;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    section h1, section h2, section h3 {
+      color: #cbb5a6;
+    }
+
+    /* ============================= */
+    /* BUTTONS */
+    /* ============================= */
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      margin: 20px auto 0 auto;
+      background-color: #cbb5a6;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 6px;
+      transition: background-color 0.3s ease;
+      text-align: center;
+    }
+    .btn:hover {
+      background-color: #a98d7b;
+    }
+    section .btn {
+      display: block;
+      width: fit-content;
+    }
+
+    /* ============================= */
+    /* SOCIAL LINKS */
+    /* ============================= */
+    .social-links {
+      margin-top: 15px;
+      text-align: center;
+      
+    }
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+      margin: 0 10px;
+      background: #cbb5a6;
+      border-radius: 12px;
+      overflow: hidden;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+    .social-links img {
+      width: 28px;
+      height: 28px;
+      border-radius: 25%;
+    }
+    .social-links a:hover {
+      transform: scale(1.1);
+      background: #b59f90;
+    }
+    .social-links img:hover {
+      transform: scale(1.2);
+    }
+
+    /* ============================= */
+    /* MENU DESKTOP */
+    /* ============================= */
+    nav.desktop-menu ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      background-color: #cbb5a6;
+    }
+    nav.desktop-menu ul li a {
+      display: block;
+      color: white;
+      padding: 14px 20px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+      border-radius: 999px;
+    }
+    nav.desktop-menu ul li a:hover,
+    nav.desktop-menu ul li a.active {
+      background-color: #5a3d2b;
+    }
+
+    /* ============================= */
+    /* HAMBURGER MOBILE FULLSCREEN */
+    /* ============================= */
+    .hamburger-menu {
+      display: none;
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      z-index: 1100;
+    }
+    #menu-toggle {
+      display: none;
+    }
+    .menu-icon {
+      font-size: 28px;
+      color: white;
+      cursor: pointer;
+      user-select: none;
+    }
+    .menu-content {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: #cbb5a6;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      z-index: 4000;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .menu-content li {
+      margin: 20px 0;
+    }
+    .menu-content li a {
+      font-size: 2rem;
+      color: white;
+      text-decoration: none;
+    }
+    .menu-content li a:hover,
+    .menu-content li a.active {
+      color: #333;
+      text-decoration: underline;
+    }
+    #menu-toggle:checked ~ .menu-content {
+      display: flex;
+    }
+
+    /* ============================= */
+    /* MEDIA QUERY */
+    /* ============================= */
+    @media (max-width: 768px) {
+      nav.desktop-menu {
+        display: none;
       }
       if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', route);
       } else {
         route();
       }
-      window.addEventListener('resize', function() {
-        if (this.__ellebiRedirected) return;
-        this.__ellebiRedirected = true;
-        route();
-      }, { once: true });
-    })();
-  </script>
+    }
+
+    @media (min-width: 1024px) {
+      body {
+        font-size: 18px;
+        line-height: 1.8;
+        background: linear-gradient(180deg, #f6f1ec 0%, #efe4db 100%);
+      }
+      header {
+        padding: 26px 64px 220px;
+        text-align: left;
+        display: block;
+        box-shadow: 0 40px 80px rgba(58, 44, 36, 0.26);
+        background-image: linear-gradient(160deg, rgba(58, 44, 36, 0.62) 0%, rgba(104, 82, 69, 0.38) 45%, rgba(203, 181, 166, 0.22) 100%), url('Lalla in posa.jpg');
+        background-size: cover;
+        background-position: center;
+      }
+      header::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, rgba(34, 25, 20, 0.52) 0%, rgba(34, 25, 20, 0.28) 65%, rgba(34, 25, 20, 0.08) 100%);
+        z-index: 1;
+      }
+      .header-inner {
+        max-width: 1180px;
+        margin: 0 auto;
+        justify-content: space-between;
+      }
+      header .logo {
+        margin: 0;
+        max-width: 240px;
+      }
+      nav.desktop-menu ul {
+        justify-content: flex-end;
+        gap: 16px;
+        background: transparent;
+        padding: 0;
+      }
+      nav.desktop-menu ul li a {
+        padding: 12px 22px;
+        background: rgba(255, 255, 255, 0.12);
+        color: #fff;
+        backdrop-filter: blur(4px);
+      }
+      nav.desktop-menu ul li a:hover,
+      nav.desktop-menu ul li a.active {
+        background: rgba(255, 255, 255, 0.65);
+        color: #3b2a22;
+      }
+      .hero-banner {
+        display: block;
+        position: relative;
+        z-index: 2;
+        max-width: 1180px;
+        margin: 72px auto 0;
+      }
+      .hero-content {
+        max-width: 520px;
+        background: rgba(255, 255, 255, 0.15);
+        padding: 36px 42px;
+        border-radius: 28px;
+        box-shadow: 0 24px 60px rgba(24, 16, 12, 0.32);
+        backdrop-filter: blur(6px);
+      }
+      .hero-content h1 {
+        margin-top: 0;
+        font-size: 2.8rem;
+        color: #fff;
+      }
+      .hero-content p {
+        font-size: 1.2rem;
+        color: #f6f1ec;
+        margin-bottom: 18px;
+      }
+      .hero-actions {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+      .hero-actions .btn {
+        margin: 0;
+        background: #fff;
+        color: #3b2a22;
+        padding: 14px 28px;
+        box-shadow: 0 18px 36px rgba(24, 16, 12, 0.26);
+      }
+      main {
+        max-width: 1180px;
+        padding: 64px;
+        margin: -120px auto 80px auto;
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 36px;
+        box-shadow: 0 30px 60px rgba(149, 123, 105, 0.18);
+        border: 1px solid rgba(180, 155, 138, 0.25);
+        position: relative;
+        z-index: 3;
+      }
+      section {
+        margin-bottom: 36px;
+        padding: 32px 36px;
+        background: linear-gradient(180deg, #ffffff 0%, #fdf7f1 100%);
+        border-radius: 28px;
+        border: 1px solid rgba(180, 155, 138, 0.25);
+        box-shadow: 0 20px 42px rgba(149, 123, 105, 0.18);
+      }
+      section:last-of-type {
+        margin-bottom: 0;
+      }
+      section p {
+        font-size: 1.15rem;
+      }
+      .btn {
+        padding: 14px 32px;
+        font-size: 1.05rem;
+        box-shadow: 0 16px 30px rgba(149, 123, 105, 0.28);
+      }
+    }
+  </style>
 </head>
 <body>
-  <noscript>
-    <p>JavaScript è necessario per scegliere la versione corretta della pagina. Usa le seguenti alternative:</p>
-    <ul>
-      <li><a href="eventi-mobile.html">Versione smartphone</a></li>
-      <li><a href="eventi-desktop.html">Versione desktop</a></li>
-    </ul>
-  </noscript>
+  <header class="hero-eventi">
+    <div class="header-inner">
+      <img src="logo.png" alt="Ellebi Studio Pilates e Yoga" class="logo">
+
+      <!-- Menu Desktop -->
+      <nav class="desktop-menu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="corsi.html">Corsi</a></li>
+          <li><a href="eventi.html" class="active">Eventi</a></li>
+          <li><a href="contatti.html">Contatti</a></li>
+        </ul>
+      </nav>
+
+      <!-- Hamburger Menu Mobile -->
+      <nav class="hamburger-menu">
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="menu-icon">☰</label>
+        <ul class="menu-content">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="corsi.html">Corsi</a></li>
+          <li><a href="eventi.html" class="active">Eventi</a></li>
+          <li><a href="contatti.html">Contatti</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="hero-banner">
+      <div class="hero-content">
+        <h1>Workshop, retreat e incontri esclusivi</h1>
+        <p>Resta aggiornata sui prossimi appuntamenti dedicati a Pilates, Yoga e benessere o richiedi un evento su misura per il tuo gruppo.</p>
+        <div class="hero-actions">
+          <a href="#calendario" class="btn">Calendario eventi</a>
+          <a href="contatti.html" class="btn">Proponi un evento</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="calendario">
+      <h2>Eventi speciali</h2>
+      <p>
+        Qui troverai aggiornamenti su workshop, seminari e incontri dedicati a Pilates e Yoga.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Ellebi Studio • Pilates & Yoga</p>
+    <div class="social-links">
+      <a href="https://www.instagram.com/ellebi.studio.pilates/" target="_blank">
+        <img src="instagram.png" alt="Instagram" />
+      </a>
+      <a href="https://wa.me/393485782729" target="_blank">
+        <img src="whatsup.png" alt="WhatsApp" />
+      </a>
+    </div>
+  </footer>
 </body>
 </html>
