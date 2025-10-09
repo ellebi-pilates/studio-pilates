@@ -514,6 +514,9 @@ footer .container {
     gap: 2rem;
     transform: translateY(-100%);
     transition: transform 0.3s ease;
+    z-index: 40;
+    padding: 4rem 1.5rem;
+    overflow-y: auto;
   }
 
   .main-nav a {
@@ -531,6 +534,8 @@ footer .container {
 
   .nav-toggle-label {
     display: inline-flex;
+    position: relative;
+    z-index: 60;
   }
 
   .nav-toggle:checked + .nav-toggle-label span {
