@@ -507,29 +507,37 @@ footer .container {
   .main-nav {
     position: fixed;
     inset: 0;
-    background: var(--surface);
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
+    width: 100vw;
+    min-height: 100vh;
+    background: rgba(24, 20, 18, 0.94);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: 1fr;
     transform: translateY(-100%);
     transition: transform 0.3s ease;
     z-index: 40;
-    padding: 4rem 1.5rem;
-    overflow-y: auto;
+    padding: 0;
   }
 
   .main-nav a {
-    color: var(--text-main);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    color: #ffffff;
+    font-size: clamp(1.6rem, 8vw, 2.4rem);
+    letter-spacing: 0.08em;
   }
 
   .main-nav a::after {
-    background: var(--primary);
+    display: none;
   }
 
   .main-nav a:hover,
-  .main-nav a:focus {
-    color: var(--primary-dark);
+  .main-nav a:focus,
+  .main-nav a.active {
+    background: rgba(255, 255, 255, 0.08);
   }
 
   .nav-toggle-label {
@@ -576,6 +584,7 @@ footer .container {
   .hero-header .hero-text p {
     color: rgba(255, 255, 255, 0.82);
   }
+}
 
   .hero-header .hero-text strong,
   .hero-header .hero-text em {
