@@ -147,6 +147,7 @@ main {
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  z-index: 70;
 }
 
 .nav-toggle-label span,
@@ -544,11 +545,25 @@ footer .container {
   .nav-toggle-label {
     display: inline-flex;
     position: relative;
-    z-index: 60;
+    z-index: 1001;
+    transition: background 0.3s ease, border-color 0.3s ease;
   }
 
   .nav-toggle:checked + .nav-toggle-label span {
     background: transparent;
+  }
+
+  .nav-toggle:checked + .nav-toggle-label {
+    position: fixed;
+    top: clamp(1.2rem, 6vw, 2rem);
+    right: clamp(1.1rem, 6vw, 1.8rem);
+    background: rgba(24, 20, 18, 0.76);
+    border-color: rgba(255, 255, 255, 0.55);
+  }
+
+  .nav-toggle:checked + .nav-toggle-label span::before,
+  .nav-toggle:checked + .nav-toggle-label span::after {
+    background: rgba(255, 255, 255, 0.85);
   }
 
   .nav-toggle:checked + .nav-toggle-label span::before {
