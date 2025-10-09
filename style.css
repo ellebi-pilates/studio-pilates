@@ -469,6 +469,7 @@ footer .container {
   .cards {
     grid-template-columns: 1fr;
   }
+}
 
   .contact-card {
     flex-direction: column;
