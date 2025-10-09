@@ -254,7 +254,7 @@ nav.menu-desktop a.active {
   list-style: none;
   margin: 0;
   padding: 0;
-  z-index: 4000;
+  z-index: 1000;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -305,96 +305,42 @@ nav.menu-desktop a.active {
 /* LAYOUT DESKTOP (>=1024px) */
 /* ============================= */
 @media (min-width: 1024px) {
-  body {
-    font-size: 18px;
-    line-height: 1.8;
-    background: linear-gradient(180deg, #f6f1ec 0%, #efe4db 100%);
-  }
 
   header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     text-align: left;
-    padding: 22px 56px;
-    box-shadow: 0 12px 24px rgba(149, 123, 105, 0.22);
+    padding: 18px 40px;
+  }
+
+  nav.menu-desktop ul {
+    justify-content: flex-end;
+    display: flex;
   }
 
   header .logo {
     margin: 0;
-    max-width: 220px;
+    max-width: 200px;
     height: auto;
   }
 
-  nav.menu-desktop ul,
-  nav.desktop-menu ul {
-    justify-content: flex-end;
-    display: flex;
-    gap: 16px;
-    background: transparent;
-    padding: 0;
-  }
-
-  nav.menu-desktop ul li a,
-  nav.desktop-menu ul li a {
-    border-radius: 999px;
-    padding: 12px 22px;
-    background: rgba(255, 255, 255, 0.08);
-  }
-
-  nav.menu-desktop ul li a:hover,
-  nav.menu-desktop ul li a.active,
-  nav.desktop-menu ul li a:hover,
-  nav.desktop-menu ul li a.active {
-    background: rgba(255, 255, 255, 0.45);
-    color: #47362c;
-  }
-
   main {
-    max-width: 1180px;
-    padding: 56px;
-    margin: 48px auto 80px auto;
-    background: rgba(255, 255, 255, 0.85);
-    border-radius: 36px;
-    box-shadow: 0 30px 60px rgba(149, 123, 105, 0.18);
-    border: 1px solid rgba(180, 155, 138, 0.25);
+    max-width: 1400px; /* aumentata larghezza desktop */
+    padding: 40px 30px;
   }
 
-  section {
-    margin-bottom: 36px;
-    padding: 32px 36px;
-    background: linear-gradient(180deg, #ffffff 0%, #fdf7f1 100%);
-    border-radius: 28px;
-    border: 1px solid rgba(180, 155, 138, 0.25);
-    box-shadow: 0 20px 42px rgba(149, 123, 105, 0.18);
-  }
-
-  section:last-of-type {
-    margin-bottom: 0;
-  }
-
-  section p,
-  section li,
-  blockquote {
-    font-size: 1.15rem;
-  }
-
-  .btn {
-    padding: 14px 32px;
-    font-size: 1.05rem;
-    box-shadow: 0 16px 30px rgba(149, 123, 105, 0.28);
-  }
-
+  /* two-columns: immagine sinistra, testo destra */
   .two-columns {
     display: flex;
     align-items: flex-start;
-    gap: 32px;
+    gap: 40px;
   }
 
   .two-columns > img,
   .two-columns > figure {
-    flex: 0 0 46%;
-    max-width: 46%;
+    flex: 0 0 50%; /* più largo */
+    max-width: 50%;
     margin: 0;
   }
 
@@ -403,8 +349,8 @@ nav.menu-desktop a.active {
     width: 100%;
     height: auto;
     display: block;
-    border-radius: 18px;
-    box-shadow: 0 24px 50px rgba(149, 123, 105, 0.22);
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.12);
     object-fit: cover;
   }
 
@@ -417,13 +363,13 @@ nav.menu-desktop a.active {
     margin-top: 0;
   }
 
-  .image-center {
-    margin: 24px 0 12px;
-  }
+  body { font-size: 18px; line-height: 1.8; }
+  h1 { font-size: 2.8rem; }
+  h2 { font-size: 2.2rem; }
+  h3 { font-size: 1.8rem; }
+  section p, blockquote { font-size: 1.2rem; }
 
   .image-center img {
-    max-width: 640px;
-    border-radius: 18px;
-    box-shadow: 0 24px 50px rgba(149, 123, 105, 0.22);
+    max-width: 700px; /* immagini centrali più grandi su desktop */
   }
 }
