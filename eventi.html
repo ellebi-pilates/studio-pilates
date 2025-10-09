@@ -4,260 +4,54 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ellebi Studio - Eventi</title>
-  <link rel="stylesheet" href="style.css">
-  <style>
-    /* ============================= */
-    /* FONT FAMILIES */
-    /* ============================= */
-    @font-face {
-      font-family: 'Glacial Indifference';
-      src: url('GlacialIndifference-Regular.otf') format('opentype');
-      font-weight: normal;
-      font-style: normal;
-    }
-    @font-face {
-      font-family: 'Glacial Indifference';
-      src: url('GlacialIndifference-Bold.otf') format('opentype');
-      font-weight: bold;
-      font-style: normal;
-    }
-    @font-face {
-      font-family: 'Kudryashev';
-      src: url('Kudryashev.otf') format('opentype');
-      font-weight: normal;
-      font-style: normal;
-    }
-
-    /* ============================= */
-    /* BASE STYLES */
-    /* ============================= */
-    body {
-      font-family: 'Glacial Indifference', Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      line-height: 1.6;
-      background-color: #f9f9f9;
-      color: #333;
-    }
-    h1, h2, h3, nav a {
-      font-family: 'Kudryashev', serif;
-    }
-    header {
-      background-color: #cbb5a6;
-      padding: 15px 20px;
-      text-align: center;
-      position: relative;
-    }
-    header .logo {
-      max-width: 250px;
-      height: auto;
-      margin-bottom: 10px;
-    }
-    main {
-      max-width: 900px;
-      margin: auto;
-      padding: 20px;
-    }
-    section {
-      padding: 20px;
-      margin-bottom: 20px;
-      background-color: white;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-    section h1, section h2, section h3 {
-      color: #cbb5a6;
-    }
-
-    /* ============================= */
-    /* BUTTONS */
-    /* ============================= */
-    .btn {
-      display: inline-block;
-      padding: 12px 24px;
-      margin: 20px auto 0 auto;
-      background-color: #cbb5a6;
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 6px;
-      transition: background-color 0.3s ease;
-      text-align: center;
-    }
-    .btn:hover {
-      background-color: #a98d7b;
-    }
-    section .btn {
-      display: block;
-      width: fit-content;
-    }
-
-    /* ============================= */
-    /* SOCIAL LINKS */
-    /* ============================= */
-    .social-links {
-      margin-top: 15px;
-      text-align: center;
-      
-    }
-    .social-links a {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 50px;
-      height: 50px;
-      margin: 0 10px;
-      background: #cbb5a6;
-      border-radius: 12px;
-      overflow: hidden;
-      transition: transform 0.2s ease, background 0.2s ease;
-    }
-    .social-links img {
-      width: 28px;
-      height: 28px;
-      border-radius: 25%;
-    }
-    .social-links a:hover {
-      transform: scale(1.1);
-      background: #b59f90;
-    }
-    .social-links img:hover {
-      transform: scale(1.2);
-    }
-
-    /* ============================= */
-    /* MENU DESKTOP */
-    /* ============================= */
-    nav.desktop-menu ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      background-color: #cbb5a6;
-    }
-    nav.desktop-menu ul li a {
-      display: block;
-      color: white;
-      padding: 14px 20px;
-      text-decoration: none;
-    }
-    nav.desktop-menu ul li a:hover,
-    nav.desktop-menu ul li a.active {
-      background-color: #5a3d2b;
-      border-bottom: 2px solid white;
-    }
-
-    /* ============================= */
-    /* HAMBURGER MOBILE FULLSCREEN */
-    /* ============================= */
-    .hamburger-menu {
-      display: none;
-      position: absolute;
-      top: 15px;
-      right: 20px;
-      z-index: 1100;
-    }
-    #menu-toggle {
-      display: none;
-    }
-    .menu-icon {
-      font-size: 28px;
-      color: white;
-      cursor: pointer;
-      user-select: none;
-    }
-    .menu-content {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background-color: #cbb5a6;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      z-index: 1000;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
-    .menu-content li {
-      margin: 20px 0;
-    }
-    .menu-content li a {
-      font-size: 2rem;
-      color: white;
-      text-decoration: none;
-    }
-    .menu-content li a:hover,
-    .menu-content li a.active {
-      color: #333;
-      text-decoration: underline;
-    }
-    #menu-toggle:checked ~ .menu-content {
-      display: flex;
-    }
-
-    /* ============================= */
-    /* MEDIA QUERY */
-    /* ============================= */
-    @media (max-width: 768px) {
-      nav.desktop-menu {
-        display: none;
-      }
-      .hamburger-menu {
-        display: block;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css?v=3">
 </head>
-<body>
-  <header>
-    <img src="logo.png" alt="Ellebi Studio Pilates e Yoga" class="logo">
-
-    <!-- Menu Desktop -->
-    <nav class="desktop-menu">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="corsi.html">Corsi</a></li>
-        <li><a href="eventi.html" class="active">Eventi</a></li>
-        <li><a href="contatti.html">Contatti</a></li>
-      </ul>
-    </nav>
-
-    <!-- Hamburger Menu Mobile -->
-    <nav class="hamburger-menu">
-      <input type="checkbox" id="menu-toggle">
-      <label for="menu-toggle" class="menu-icon">☰</label>
-      <ul class="menu-content">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="corsi.html">Corsi</a></li>
-        <li><a href="eventi.html" class="active">Eventi</a></li>
-        <li><a href="contatti.html">Contatti</a></li>
-      </ul>
-    </nav>
+<body class="page-eventi">
+  <header class="hero-header hero-eventi">
+    <div class="topbar">
+      <div class="container">
+        <a href="index.html" class="brand">
+          <img src="logo.png" alt="Ellebi Studio Pilates e Yoga">
+        </a>
+        <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true">
+        <label for="nav-toggle" class="nav-toggle-label" aria-label="Apri il menu">
+          <span></span>
+        </label>
+        <nav class="main-nav" aria-label="Navigazione principale">
+          <a href="index.html">Home</a>
+          <a href="corsi.html">Corsi</a>
+          <a href="eventi.html" class="active">Eventi</a>
+          <a href="contatti.html">Contatti</a>
+        </nav>
+      </div>
+    </div>
+    <section class="hero hero-banner">
+      <div class="container hero-layout">
+        <div class="hero-text">
+          <h1>Eventi speciali</h1>
+          <p>Qui troverai aggiornamenti su workshop, seminari e incontri dedicati a Pilates e Yoga.</p>
+        </div>
+        <figure class="hero-media">
+          <img src="Tappetini.jpg" alt="Lezioni su tappetini">
+        </figure>
+      </div>
+    </section>
   </header>
 
   <main>
-    <section>
-      <h1>Eventi speciali</h1>
-      <p>
-        Qui troverai aggiornamenti su workshop, seminari e incontri dedicati a Pilates e Yoga.
-      </p>
-    </section>
   </main>
 
   <footer>
-    <p>© 2025 Ellebi Studio • Pilates & Yoga</p>
-    <div class="social-links">
-      <a href="https://www.instagram.com/ellebi.studio.pilates/" target="_blank">
-        <img src="instagram.png" alt="Instagram" />
-      </a>
-      <a href="https://wa.me/393485782729" target="_blank">
-        <img src="whatsup.png" alt="WhatsApp" />
-      </a>
+    <div class="container">
+      <p>© 2025 Ellebi Studio • Pilates &amp; Yoga</p>
+      <div class="social-links">
+        <a href="https://www.instagram.com/ellebi.studio.pilates/" target="_blank" rel="noopener">
+          <img src="instagram.png" alt="Instagram">
+        </a>
+        <a href="https://wa.me/393485782729" target="_blank" rel="noopener">
+          <img src="whatsup.png" alt="WhatsApp">
+        </a>
+      </div>
     </div>
   </footer>
 </body>
