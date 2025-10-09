@@ -19,6 +19,12 @@ Le ultime modifiche rendono coerente l'intestazione del sito con le richieste pr
 - La regola `.hero-header::before` in `style.css` imposta "Studio.jpg" come immagine di sfondo dell'header.
 - Un overlay graduale (`.hero-header::after`) mantiene leggibili logo e navigazione su desktop senza alterare l'esperienza mobile.
 
+### Come verificare rapidamente che lo sfondo sia attivo
+
+1. Apri uno qualunque dei file HTML e verifica che il tag `<link rel="stylesheet" href="style.css?v=3">` sia presente nell'`<head>`.
+2. Apri `style.css` e controlla che all'interno della regola `.hero-header::before` la dichiarazione `background: url('Studio.jpg') center/cover no-repeat;` sia valorizzata.
+3. Se stai navigando il sito pubblicato e non vedi l'immagine, effettua un hard refresh (⌘⇧R su macOS o Ctrl+F5 su Windows) per costringere il browser a scaricare l'ultima versione dello stylesheet.
+
 Se aprendo `index.html` (o le altre pagine) vedi ancora un'intestazione bianca, verifica che il browser non stia usando una versione cache di `style.css` eseguendo un hard refresh (⌘⇧R su macOS, Ctrl+F5 su Windows) oppure svuotando la cache.
 
 ## Aggiornare contenuti e stili
