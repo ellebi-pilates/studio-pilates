@@ -156,7 +156,7 @@ main {
   display: block;
   width: 18px;
   height: 2px;
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.6);
   position: relative;
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
@@ -487,6 +487,7 @@ footer .container {
 @media (max-width: 900px) {
   .hero-header {
     min-height: auto;
+    overflow: visible;
   }
 
   .hero-header .hero-banner {
