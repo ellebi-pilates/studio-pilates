@@ -286,6 +286,10 @@ section .section-intro {
   justify-items: start;
 }
 
+.eventi-callout .btn {
+  justify-self: center;
+}
+
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
