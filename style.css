@@ -589,6 +589,10 @@ footer .container {
     background: url('Lalla in posa.jpg') center/cover no-repeat;
   }
 
+  .page-corsi .hero-header .hero-media {
+    display: none;
+  }
+
   .hero-corsi::before {
     background:
       url('Lallaposa3.jpg') center/cover no-repeat,
@@ -623,6 +627,7 @@ footer .container {
   .hero-header .hero-text em {
     color: #ffffff;
   }
+
 }
 
 @media (max-width: 600px) {
