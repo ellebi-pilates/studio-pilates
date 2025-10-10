@@ -593,7 +593,8 @@ footer .container {
     background: url('Lalla in posa.jpg') center/cover no-repeat;
   }
 
-  .page-corsi .hero-header .hero-media {
+  .page-corsi .hero-header .hero-media,
+  .page-eventi .hero-header .hero-media {
     display: none;
   }
 
