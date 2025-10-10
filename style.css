@@ -593,6 +593,10 @@ footer .container {
     background: url('Lalla in posa.jpg') center/cover no-repeat;
   }
 
+  .page-corsi .hero-header .hero-media {
+    display: none;
+  }
+
   .hero-corsi::before {
     background:
       url('Lallaposa3.jpg') center/cover no-repeat,
@@ -628,29 +632,6 @@ footer .container {
     color: #ffffff;
   }
 
-  .page-corsi .hero-layout {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  .page-corsi .hero-media {
-    display: none;
-  }
-
-  .page-corsi .two-columns {
-    row-gap: 0;
-  }
-
-  .page-corsi .two-columns > figure {
-    margin: 0;
-  }
-
-  .page-corsi .figure-studio-desktop {
-    display: block;
-    grid-column: 2;
-    grid-row: 2;
-    align-self: start;
-    margin-top: clamp(-8rem, -10vw, -4rem);
-  }
 }
 
 @media (max-width: 600px) {
