@@ -279,6 +279,31 @@ section .section-intro {
   color: var(--text-soft);
 }
 
+.section-layout {
+  display: grid;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.section-layout .section-content {
+  color: var(--text-soft);
+}
+
+.section-layout .section-media {
+  margin: 0;
+}
+
+.section-layout .section-media img {
+  box-shadow: var(--shadow);
+}
+
+@media (min-width: 768px) {
+  .section-layout {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 360px);
+  }
+}
+
 .eventi-callout .container {
   display: grid;
   gap: 1.5rem;
