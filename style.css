@@ -649,7 +649,7 @@ footer .container {
     grid-column: 2;
     grid-row: 2;
     align-self: start;
-    margin-top: clamp(0.25rem, 0.6vw, 0.45rem);
+    margin-top: clamp(-8rem, -10vw, -4rem);
   }
 }
 
