@@ -279,6 +279,13 @@ section .section-intro {
   color: var(--text-soft);
 }
 
+.eventi-callout .container {
+  display: grid;
+  gap: 1.5rem;
+  max-width: 720px;
+  justify-items: start;
+}
+
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
