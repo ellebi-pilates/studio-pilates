@@ -420,6 +420,10 @@ section .section-intro {
   box-shadow: var(--shadow);
 }
 
+.figure-studio-desktop {
+  display: none;
+}
+
 ul {
   margin: 1.2rem 0;
   padding-left: 1.4rem;
@@ -622,6 +626,30 @@ footer .container {
   .hero-header .hero-text strong,
   .hero-header .hero-text em {
     color: #ffffff;
+  }
+
+  .page-corsi .hero-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .page-corsi .hero-media {
+    display: none;
+  }
+
+  .page-corsi .two-columns {
+    row-gap: 0;
+  }
+
+  .page-corsi .two-columns > figure {
+    margin: 0;
+  }
+
+  .page-corsi .figure-studio-desktop {
+    display: block;
+    grid-column: 2;
+    grid-row: 2;
+    align-self: start;
+    margin-top: clamp(0.25rem, 0.6vw, 0.45rem);
   }
 }
 
