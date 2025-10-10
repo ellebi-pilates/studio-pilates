@@ -17,13 +17,13 @@ Le ultime modifiche rendono coerente l'intestazione del sito con le richieste pr
 
 - Tutte le pagine HTML fanno riferimento a `style.css?v=3` per forzare GitHub Pages a scaricare lo stylesheet aggiornato.
 - La regola `.hero-header::before` in `style.css` applica "Lalla in posa.jpg" allo sfondo della home su desktop, mantenendo una resa neutra su smartphone.
-- Le classi `.hero-corsi`, `.hero-eventi` e `.hero-contatti` impostano rispettivamente "Lallaposa3.jpg", "Lallaposa2.jpg" e "lallaposa4.jpg". Ognuna include un fallback automatico a "Lalla in posa.jpg" nel caso in cui l'immagine specifica non sia presente nel repository.
+- Le classi `.hero-corsi`, `.hero-eventi` e `.hero-contatti` impostano rispettivamente "Lallaposa3.jpg", "LallaPosa2.jpg" e "lallaposa4.jpg" come sfondi desktop dedicati. Le varianti corsi e contatti includono un fallback automatico a "Lalla in posa.jpg" nel caso in cui l'immagine specifica non sia presente nel repository.
 - Un overlay graduale (`.hero-header::after`) mantiene leggibili logo e navigazione su desktop senza alterare l'esperienza mobile.
 
 ### Come verificare rapidamente che lo sfondo sia attivo
 
 1. Apri uno qualunque dei file HTML e verifica che il tag `<link rel="stylesheet" href="style.css?v=3">` sia presente nell'`<head>`.
-2. Apri `style.css` e controlla che all'interno della regola `.hero-header::before` la dichiarazione `background: url('Lalla in posa.jpg') center/cover no-repeat;` sia valorizzata e che le varianti `.hero-corsi`, `.hero-eventi` e `.hero-contatti` elenchino prima l'immagine dedicata e poi il fallback.
+2. Apri `style.css` e controlla che all'interno della regola `.hero-header::before` la dichiarazione `background: url('Lalla in posa.jpg') center/cover no-repeat;` sia valorizzata e che le varianti `.hero-corsi` e `.hero-contatti` elenchino prima l'immagine dedicata e poi il fallback, mentre `.hero-eventi` utilizza direttamente `LallaPosa2.jpg`.
 3. Se stai navigando il sito pubblicato e non vedi l'immagine, effettua un hard refresh (⌘⇧R su macOS o Ctrl+F5 su Windows) per costringere il browser a scaricare l'ultima versione dello stylesheet.
 
 Se aprendo `index.html` (o le altre pagine) vedi ancora un'intestazione bianca, verifica che il browser non stia usando una versione cache di `style.css` eseguendo un hard refresh (⌘⇧R su macOS, Ctrl+F5 su Windows) oppure svuotando la cache.

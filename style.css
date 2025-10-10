@@ -279,6 +279,17 @@ section .section-intro {
   color: var(--text-soft);
 }
 
+.eventi-callout .container {
+  display: grid;
+  gap: 1.5rem;
+  max-width: 720px;
+  justify-items: start;
+}
+
+.eventi-callout .btn {
+  justify-self: center;
+}
+
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -589,6 +600,12 @@ footer .container {
     background: url('Lalla in posa.jpg') center/cover no-repeat;
   }
 
+  .page-home .hero-header .hero-media,
+  .page-corsi .hero-header .hero-media,
+  .page-eventi .hero-header .hero-media {
+    display: none;
+  }
+
   .hero-corsi::before {
     background:
       url('Lallaposa3.jpg') center/cover no-repeat,
@@ -596,9 +613,7 @@ footer .container {
   }
 
   .hero-eventi::before {
-    background:
-      url('Lallaposa2.jpg') center/cover no-repeat,
-      url('Lalla in posa.jpg') center/cover no-repeat;
+    background: url('LallaPosa2.jpg') center/cover no-repeat;
   }
 
   .hero-contatti::before {
@@ -623,6 +638,7 @@ footer .container {
   .hero-header .hero-text em {
     color: #ffffff;
   }
+
 }
 
 @media (max-width: 600px) {
