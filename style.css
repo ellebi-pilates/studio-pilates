@@ -617,9 +617,7 @@ footer .container {
   }
 
   .hero-eventi::before {
-    background:
-      url('Lallaposa2.jpg') center/cover no-repeat,
-      url('Lalla in posa.jpg') center/cover no-repeat;
+    background: url('LallaPosa2.jpg') center/cover no-repeat;
   }
 
   .hero-contatti::before {
