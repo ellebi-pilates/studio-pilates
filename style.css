@@ -298,6 +298,12 @@ section .section-intro {
   box-shadow: var(--shadow);
 }
 
+@media (max-width: 767px) {
+  .section-layout + .btn {
+    margin-top: 1.5rem;
+  }
+}
+
 @media (min-width: 768px) {
   .section-layout {
     grid-template-columns: minmax(0, 1fr) minmax(0, 360px);
