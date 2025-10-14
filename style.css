@@ -400,6 +400,12 @@ section .section-intro {
   padding: 1.5rem;
 }
 
+.contact-panel .privacy-note {
+  margin: 0 0 1rem;
+  font-size: 0.95rem;
+  color: var(--text-soft);
+}
+
 .map-embed iframe {
   width: 100%;
   min-height: 260px;
