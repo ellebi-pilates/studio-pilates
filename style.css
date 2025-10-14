@@ -26,6 +26,7 @@
   --primary-dark: #a98d7b;
   --text-main: #3a3330;
   --text-soft: #5e544d;
+  --text-muted: #8d827a;
   --border: rgba(203, 181, 166, 0.35);
   --max-width: 1080px;
   --radius: 18px;
@@ -279,6 +280,48 @@ section .section-intro {
   color: var(--text-soft);
 }
 
+.section-layout {
+  display: grid;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.section-layout .section-content {
+  color: var(--text-soft);
+}
+
+.section-layout .section-media {
+  margin: 0;
+}
+
+.section-layout .section-media img {
+  box-shadow: var(--shadow);
+}
+
+@media (max-width: 767px) {
+  .section-layout + .btn {
+    margin-top: 1.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .section-layout {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 360px);
+  }
+}
+
+.eventi-callout .container {
+  display: grid;
+  gap: 1.5rem;
+  max-width: 720px;
+  justify-items: start;
+}
+
+.eventi-callout .btn {
+  justify-self: center;
+}
+
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -358,11 +401,69 @@ section .section-intro {
   padding: 1.5rem;
 }
 
+.contact-panel .privacy-note {
+  margin: 0 0 1rem;
+  font-size: 0.95rem;
+  color: var(--text-soft);
+}
+
 .map-embed iframe {
   width: 100%;
   min-height: 260px;
   border: 0;
   border-radius: var(--radius);
+}
+
+.reviews-section {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(239, 242, 247, 0.55) 100%);
+  padding: clamp(3rem, 6vw, 4.5rem) 0;
+}
+
+.review-list {
+  display: grid;
+  gap: clamp(1.5rem, 4vw, 2.5rem);
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  margin-top: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.review-card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.75rem;
+  display: grid;
+  gap: 0.75rem;
+  color: var(--text-soft);
+}
+
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+}
+
+.reviewer-name {
+  margin: 0;
+  color: var(--text-main);
+  font-size: 1.05rem;
+}
+
+.review-meta {
+  margin: 0.25rem 0 0;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.review-score {
+  font-weight: 700;
+  color: var(--primary);
+  font-size: 1.1rem;
+}
+
+.review-text {
+  margin: 0;
+  line-height: 1.6;
 }
 
 .hours-list {
@@ -589,6 +690,12 @@ footer .container {
     background: url('Lalla in posa.jpg') center/cover no-repeat;
   }
 
+  .page-home .hero-header .hero-media,
+  .page-corsi .hero-header .hero-media,
+  .page-eventi .hero-header .hero-media {
+    display: none;
+  }
+
   .hero-corsi::before {
     background:
       url('Lallaposa3.jpg') center/cover no-repeat,
@@ -596,9 +703,7 @@ footer .container {
   }
 
   .hero-eventi::before {
-    background:
-      url('Lallaposa2.jpg') center/cover no-repeat,
-      url('Lalla in posa.jpg') center/cover no-repeat;
+    background: url('LallaPosa2.jpg') center/cover no-repeat;
   }
 
   .hero-contatti::before {
@@ -623,6 +728,7 @@ footer .container {
   .hero-header .hero-text em {
     color: #ffffff;
   }
+
 }
 
 @media (max-width: 600px) {
