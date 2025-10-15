@@ -537,6 +537,10 @@ section .section-intro {
   box-shadow: var(--shadow);
 }
 
+.figure-studio-desktop {
+  display: none;
+}
+
 ul {
   margin: 1.2rem 0;
   padding-left: 1.4rem;
