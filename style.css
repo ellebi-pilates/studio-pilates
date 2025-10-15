@@ -300,6 +300,10 @@ section .section-intro {
 }
 
 @media (max-width: 767px) {
+  .page-corsi .hero-header .hero-media {
+    display: none;
+  }
+
   .section-layout + .btn {
     margin-top: 1.5rem;
   }
