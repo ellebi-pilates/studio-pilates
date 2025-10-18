@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://ellebi-pilates.github.io/studio-pilates/sitemap.xml
