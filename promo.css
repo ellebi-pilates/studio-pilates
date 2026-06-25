@@ -81,7 +81,7 @@
 
 .promo-luglio-price > span {
   font-size: 0.95rem;
-  margin-bottom: 0.8rem;
+  margin-bottom: 1.35rem;
 }
 
 .promo-luglio-price strong {
@@ -110,7 +110,7 @@
 
 .promo-luglio-price > em {
   font-size: 1rem;
-  margin-top: 1rem;
+  margin-top: 0.55rem;
 }
 
 @media (max-width: 900px) {
