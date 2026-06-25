@@ -1,33 +1,24 @@
 .promo-luglio {
   background:
-    radial-gradient(circle at top left, rgba(203, 181, 166, 0.18), transparent 34%),
+    radial-gradient(circle at top left, rgba(203, 181, 166, 0.24), transparent 34%),
     linear-gradient(135deg, #f7f3ef 0%, #ffffff 100%);
   border-bottom: 1px solid var(--border);
 }
 
-.promo-luglio .container {
-  width: min(88%, 980px);
-}
-
 .promo-luglio-card {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(220px, 280px);
-  gap: clamp(2rem, 5vw, 4rem);
+  grid-template-columns: minmax(0, 1fr) minmax(220px, 320px);
+  gap: clamp(1.6rem, 4vw, 3rem);
   align-items: center;
-  justify-content: center;
-  background: rgba(255, 255, 255, 0.78);
+  background: rgba(255, 255, 255, 0.72);
   border: 1px solid rgba(203, 181, 166, 0.48);
   border-radius: calc(var(--radius) + 10px);
   box-shadow: var(--shadow);
-  padding: clamp(2rem, 4.6vw, 3.4rem);
-}
-
-.promo-luglio-text {
-  max-width: 650px;
+  padding: clamp(1.6rem, 4vw, 3rem);
 }
 
 .promo-eyebrow {
-  margin: 0 0 0.55rem;
+  margin: 0 0 0.5rem;
   font-weight: 700;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -35,20 +26,18 @@
 }
 
 .promo-luglio h2 {
-  max-width: 600px;
-  font-size: clamp(2.35rem, 4.5vw, 3.65rem);
+  font-size: clamp(2.2rem, 5vw, 4rem);
   line-height: 1.05;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1rem;
 }
 
 .promo-luglio h3 {
-  margin-top: 1.45rem;
-  font-size: clamp(1.45rem, 2.8vw, 2rem);
+  margin-top: 1.4rem;
+  font-size: clamp(1.4rem, 3vw, 2rem);
 }
 
 .promo-lead {
-  max-width: 620px;
-  font-size: clamp(1.08rem, 2vw, 1.28rem);
+  font-size: clamp(1.1rem, 2.2vw, 1.35rem);
   color: var(--text-main);
 }
 
@@ -65,7 +54,6 @@
 }
 
 .promo-luglio-price {
-  width: min(100%, 280px);
   aspect-ratio: 1 / 1;
   border-radius: 50%;
   background: var(--primary);
@@ -74,7 +62,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  justify-self: center;
   text-align: center;
   padding: 2rem;
   box-shadow: 0 18px 38px rgba(58, 51, 48, 0.18);
@@ -88,32 +75,28 @@
 }
 
 .promo-luglio-price span {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
 }
 
 .promo-luglio-price strong {
   font-family: 'Kudryashev', serif;
-  font-size: clamp(4rem, 8vw, 5.5rem);
+  font-size: clamp(4rem, 9vw, 6rem);
   line-height: 1;
   margin: 0.25rem 0;
 }
 
 .promo-luglio-price em {
-  font-size: 0.95rem;
+  font-size: 1rem;
 }
 
 @media (max-width: 900px) {
-  .promo-luglio .container {
-    width: min(92%, var(--max-width));
-  }
-
   .promo-luglio-card {
     grid-template-columns: 1fr;
-    text-align: left;
   }
 
   .promo-luglio-price {
-    width: min(250px, 76vw);
+    width: min(260px, 76vw);
+    justify-self: center;
     order: -1;
   }
 }
@@ -125,9 +108,5 @@
 
   .promo-eyebrow {
     letter-spacing: 0.1em;
-  }
-
-  .promo-luglio h2 {
-    font-size: clamp(2rem, 12vw, 2.8rem);
   }
 }
