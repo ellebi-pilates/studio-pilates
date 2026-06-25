@@ -93,6 +93,7 @@
   line-height: 0.92;
   margin: 0;
   text-align: center;
+  transform: translateX(-0.10em);
 }
 
 .promo-luglio-price .price-number {
