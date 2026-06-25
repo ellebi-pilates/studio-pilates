@@ -18,17 +18,17 @@
 }
 
 .promo-eyebrow {
-  margin: 0 0 1rem;
-  font-size: 1.05rem;
+  margin: 0 0 1.35rem;
+  font-size: clamp(1.15rem, 1.6vw, 1.35rem);
   font-weight: 700;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.17em;
   text-transform: uppercase;
   color: var(--primary-dark);
 }
 
 .promo-luglio h2 {
-  font-size: clamp(2rem, 4.2vw, 3.35rem);
-  line-height: 1.05;
+  font-size: clamp(1.9rem, 3.7vw, 3rem);
+  line-height: 1.08;
   margin-bottom: 1rem;
 }
 
@@ -61,7 +61,6 @@
   color: #fff;
   display: flex;
   flex-direction: column;
-  gap: 0.55rem;
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -71,24 +70,33 @@
 
 .promo-luglio-price span,
 .promo-luglio-price em {
+  display: block;
+  width: 100%;
   font-style: normal;
   letter-spacing: 0.08em;
+  line-height: 1.1;
+  text-align: center;
   text-transform: uppercase;
 }
 
 .promo-luglio-price span {
   font-size: 0.95rem;
+  margin-bottom: 0.8rem;
 }
 
 .promo-luglio-price strong {
+  display: block;
+  width: 100%;
   font-family: 'Kudryashev', serif;
-  font-size: clamp(3.7rem, 8vw, 5.4rem);
-  line-height: 1;
-  margin: 0.15rem 0 0.25rem;
+  font-size: clamp(3.65rem, 7.7vw, 5.15rem);
+  line-height: 0.92;
+  margin: 0;
+  text-align: center;
 }
 
 .promo-luglio-price em {
   font-size: 1rem;
+  margin-top: 1rem;
 }
 
 @media (max-width: 900px) {
