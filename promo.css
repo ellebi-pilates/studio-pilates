@@ -85,14 +85,31 @@
 }
 
 .promo-luglio-price strong {
-  display: block;
+  display: inline-flex;
+  align-items: baseline;
+  justify-content: center;
   width: 100%;
   font-family: 'Kudryashev', serif;
-  font-size: clamp(3.65rem, 7.7vw, 5.15rem);
   line-height: 0.92;
   margin: 0;
   text-align: center;
-  transform: translateX(0.08em);
+}
+
+.promo-luglio-price .price-number {
+  display: inline-block;
+  width: auto;
+  font-size: clamp(3.65rem, 7.7vw, 5.15rem);
+  letter-spacing: 0;
+  line-height: 0.92;
+}
+
+.promo-luglio-price .price-currency {
+  display: inline-block;
+  width: auto;
+  font-size: clamp(3.15rem, 6.7vw, 4.45rem);
+  letter-spacing: 0;
+  line-height: 0.92;
+  margin-left: 0.02em;
 }
 
 .promo-luglio-price em {
